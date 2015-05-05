@@ -11,6 +11,7 @@ from application.extensions import (
     login_manager,
     migrate,
     debug_toolbar,
+    asset_locator,
 )
 from application import public, user
 
@@ -37,6 +38,7 @@ def register_extensions(app):
     login_manager.init_app(app)
     debug_toolbar.init_app(app)
     migrate.init_app(app, db)
+    asset_locator.init_app(app)
     return None
 
 

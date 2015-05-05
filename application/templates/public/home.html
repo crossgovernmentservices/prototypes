@@ -1,18 +1,92 @@
 
-{% extends "layout.html" %}
+{% extends "govuk_template/views/layouts/govuk_template.html" %}
 {% block content %}
 
+<main id="content" role="main">
 
-<div class="body-content">
-  <div class="row">
-    <div class="col-lg-12">
-      <h2><i class="fa fa-code"></i>TODO</h2>
-      <p>
-      Migrate prototypes here from cgt.
-      </p>
-      <p><a class="btn btn-default" href="http://getbootstrap.com/">Official website &raquo;</a></p>
-    </div>
-  </div><!-- /.row -->
-</div>
+  <h1 class="heading-xlarge">Cross government tools prototypes</h1>
+  <!-- feel free to change this page to suit your needs -->
+
+  <p>This page lists some of the main prototypes we have been working on</p>
+
+  <h2 class="heading-large">Prototypes</h2>
+
+  <h3 class="heading-medium">Profile</h3>
+  <ul>
+    <li>
+      <a href="/signup/create">Sign up</a>
+    </li>
+    <li>Basic profile</li>
+    <li>People search</li>
+  </ul>
+
+  <h3 class="heading-medium">Jobs</h3>
+  <ul>
+    <li>
+      <a href="/jobs/search_by_skill">Job search by skill</a>
+    </li>
+    <li>Application</li>
+    <li>
+      <a href="/jobs/your_apps">Application status</a></li>
+    <li>Contract</li>
+  </ul>
+  <h4 class="heading-small">Job descriptions</h4>
+  <ul>
+    <li>
+      <a href="/jobs/description_developer">Developer job description</a>
+    </li>
+    <li>
+      <a href="/jobs/description_policy">Policy job description (not complete)</a>
+    </li>
+    <li>
+      <a href="/jobs/description_general">General job description (not complete)</a>
+    </li>
+  </ul>
+
+  <h3 class="heading-medium">Professions</h3>
+  <ul>
+    <li><a href="/professions/hub">a profession's hub page</a></li>
+  </ul>
+
+  <h3 class="heading-medium">Performance</h3>
+  <ul>
+    <li>Select people to review you</li>
+    <li>
+      <a href="/jobs/review">Colleague review</a>
+    </li>
+    <li>
+      <a href="/jobs/review_summary">Performance summary</a>
+    </li>
+    <li>
+      <a href="/jobs/to_review">To review</a>
+    </li>
+  </ul>
+
+  <h2 class="heading-large">Resources</h2>
+
+  <ul class="list-bullet">
+    <li>
+      <a href="https://github.com/alphagov/govuk_prototype_kit/wiki">
+	GOV.UK kit documentation
+      </a>
+    </li>
+    <li>
+      <a href="http://govuk-elements.herokuapp.com/snippets/">
+	Guide to GOV.UK elements HTML
+      </a>
+    </li>
+    <li>
+      <a href="https://www.gov.uk/service-manual">
+	Service design manual
+      </a>
+    </li>
+    <li>
+      <a href="https://www.gov.uk/design-principles">
+	Government Digital Service Design Principles
+      </a>
+    </li>
+  </ul>
+
+</main>
+
 {% endblock %}
-
