@@ -1,0 +1,32 @@
+.skills-list li {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  margin-right: $gutter-half;
+  margin-bottom: $gutter-half;
+  border: 1px solid $panel-colour;
+
+  &:hover {
+    cursor: pointer;
+    background: $panel-colour;
+    color: $page-colour;
+  }
+
+  a {
+    text-decoration: none;
+    color: $link-colour;
+  }
+}
+
+.skills-list--dark li {
+  border-color: $page-colour;
+
+  &:hover {
+    background: $page-colour;
+  }
+}
+
+.jd__assoc-skills .skill--highlighted {
+  background: $link-hover-colour;
+  color: $page-colour;
+  border-color: $link-hover-colour;
+}

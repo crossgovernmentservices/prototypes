@@ -1,0 +1,133 @@
+// See assets.py
+@import '../../../static/css/govuk';
+
+@import 'components/back_link';
+@import 'components/search';
+@import 'components/skills';
+@import 'components/sections';
+@import 'components/search-results';
+@import 'components/jds';
+
+.jd__title h1 {
+  margin: $gutter 0 0;
+}
+
+.jd__title p {
+  margin: 0;
+  padding: $gutter-half 0;
+}
+
+.jd__title--department {
+  font-weight: 400;
+  color: $secondary-text-colour;
+}
+
+.jd__description {
+  margin: 0;
+}
+
+.jd__content, .jd__key-info {
+  padding: $gutter-half;
+}
+
+.jd__content {
+  padding-left: $gutter;
+}
+
+.jd__key-info {
+  background: $panel-colour;
+}
+
+.jd__key-info__item h4 {
+  margin: 0 0 0.25em;
+}
+
+/* search result specific */
+.jd__listing {
+  border-bottom: 1px solid $panel-colour;
+
+  .jd__role {
+    margin-bottom: 0;
+  }
+
+  .jd__title--department {
+    margin: 0;
+  }
+
+  .jd__reference {
+    float: right;
+    width: 3*$gutter;
+    line-height: 40px;
+  }
+
+  .jd__closing-date {
+    margin-top: 1em;
+  }
+
+}
+
+.jd__save {
+  &:hover {
+    cursor: pointer;
+  }
+
+  .jd__save-later {
+    display: block;
+  }
+}
+.jd__save.saved {
+  .jd__save-later {
+    display: none;
+  }
+  .jd__saved-icon {
+    display: block;
+  }
+}
+
+.jd__save-later,
+.jd__saved-icon {
+  display: none;
+  margin: 0 auto;
+  width: $gutter;
+  height: $gutter;
+}
+
+.skill {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  margin-right: $gutter-half;
+  margin-bottom: $gutter-half;
+  border: 1px solid $panel-colour;
+
+  &:hover {
+    cursor: pointer;
+    background: $panel-colour;
+    color: $page-colour;
+  }
+}
+
+.jd__readmore {
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1.25;
+  padding: em(10) em(10) em(5) em(10);
+}
+
+.search__form {
+  position: relative;
+}
+
+.nav {
+  position: absolute;
+  bottom: -$gutter;
+  right: 0;
+}
+
+.jd_-inline-heading {
+  @include bold-16();
+  display: inline-block;
+}
+
+.jd__email-contact a {
+  display: block;
+}

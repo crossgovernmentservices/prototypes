@@ -45,3 +45,7 @@ docs/_build
 # Virtualenvs
 env
 env*
+
+# programmatically imported/compiled assets
+application/static/govuk_elements
+application/static/gen

@@ -8,6 +8,3 @@ factory-boy==2.5.1
 
 # Management script
 Flask-Script
-
-# SASS, to be compiled in DEV mode only
-pyScss

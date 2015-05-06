@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block content %}
+<main id="content" role="main">
+
+  <a href="/" class="example-back-link">Back to the cross government tools' prototypes</a>
+
+  <form action="/" method="post" class="form">
+
+    <h1 class="form-title heading-large">
+      Create account
+    </h1>
+
+    <!-- Full name -->
+    <div class="form-group">
+      <label class="form-label-bold" for="full-name">Full name</label>
+      <p class="form-hint">Include your first name and surname</p>
+      <input type="text" class="form-control" id="full-name">
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label class="form-label-bold" for="email">Email</label>
+      <input type="text" class="form-control" id="email">
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+      <label class="form-label-bold" for="password">Password</label>
+      <p class="form-hint">Your password must be ...</p>
+      <input type="text" class="form-control" id="password">
+    </div>
+
+    <div class="form-group">
+      <details>
+        <summary><span class="summary">Why are we asking for these details?</span></summary>
+        <div class="panel-indent text">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam venenatis tincidunt dolor, eget aliquam metus suscipit vel. Proin hendrerit id lorem convallis scelerisque.</p>
+          <p>Donec porttitor tortor et purus dapibus lacinia eu ut magna. Maecenas tristique, sapien eget ultricies porttitor, libero arcu rutrum tellus, eu convallis augue nisi id velit. Vestibulum venenatis pharetra sem non faucibus. Cras consequat, nibh in mattis dapibus, turpis dui sagittis metus, dictum tempus massa justo vel turpis.
+          </p>
+        </div>
+      </details>
+    </div>
+
+    <!-- Primary buttons, secondary links -->
+    <div class="form-group">
+      <input type="submit" class="button" value="Continue">
+      <ul>
+        <li><a href="/">Back</a></li>
+      </ul>
+    </div>
+
+  </form>
+
+</main><!-- / #page-container -->
+{% endblock %}

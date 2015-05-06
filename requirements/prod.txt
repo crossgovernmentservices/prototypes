@@ -25,6 +25,8 @@ gunicorn>=19.1.1
 Flask-Assets==0.10
 cssmin>=0.2.0
 jsmin>=2.0.11
+#pyScss
+-e git+https://github.com/opyate/pyScss@opyate-patch-issue-315#egg=pyScss
 
 # Auth
 Flask-Login==0.2.11

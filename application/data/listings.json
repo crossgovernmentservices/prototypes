@@ -1,0 +1,37 @@
+[
+{
+  "ref": 1446570,
+  "role": "Full stack developer",
+  "department": "Government Digital Service (GDS)",
+  "closing": "Closing date: 17 Apr 2015",
+  "skills": [ "Agile", "Javascript", "Ruby", "Python", "User needs", "HTML", "CSS", "Problem solving", "Digital services", "User centred design", "Web security", "Open standards", "Open source"]
+},
+{
+  "ref": 1446611,
+  "role": "Frontend developer",
+  "department": "Government Digital Service (GDS)",
+  "closing": "Closing date: 17 Apr 2015",
+  "skills": [ "Agile", "Javascript", "User needs", "HTML", "CSS", "Problem solving", "Digital services", "User centred design", "Web security", "Open standards", "Open source"]
+},
+{
+  "ref": 1446533,
+  "role": "Backend developer",
+  "department": "Government Digital Service (GDS)",
+  "closing": "Closing date: 17 Apr 2015",
+  "skills": [ "Agile", "Javascript", "Ruby", "Python", "User needs", "Relational DBs", "Problem solving", "Digital services", "User centred design", "Web security", "Open standards", "Open source"]
+},
+{
+  "ref": 1449037,
+  "role": "Head of Strategy and Architecture",
+  "department": "Ministry of Justice",
+  "closing": "Closing date: 16 Apr 2015",
+  "skills": ["Agile", "TOGAF", "Open standards", "Open source", "User needs", "Service delivery", "TDD", "Problem solving", "Digital services", "ITIL", "Web security"]
+},
+{
+  "ref": 1426770,
+  "role": "Head of Talent and Learning",
+  "department": "Rural Payments Agency",
+  "closing": "Closing date: 21 Apr 2015",
+  "skills": ["Agile", "TOGAF", "Open standards", "Open source", "User needs", "Service delivery", "TDD", "Problem solving", "Digital services", "ITIL", "Web security"]
+}
+]

@@ -11,6 +11,8 @@ from application.user.forms import RegisterForm
 from application.utils import flash_errors
 from application.database import db
 
+import json
+
 blueprint = Blueprint('public', __name__, static_folder="../static")
 
 @login_manager.user_loader
@@ -57,3 +59,7 @@ def register():
 def about():
     form = LoginForm(request.form)
     return render_template("public/about.html", form=form)
+
+@blueprint.route('/signup/create')
+def signup_create():
+    return render_template("public/signup/create.html")
