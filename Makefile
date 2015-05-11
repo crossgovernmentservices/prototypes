@@ -1,5 +1,7 @@
 .PHONY: all test coverage coveralls flake8 dist clean
 
+include scripts/govuk-assets-flask/Makefile
+
 all:	flake8 test coverage
 
 test:
@@ -31,10 +33,3 @@ clean:
 	-find . -name "*.pyc" | sudo xargs rm -f
 	-find . -name ".webassets-cache" | sudo xargs rm -rf
 
-govuk_elements_get:
-	-./scripts/elements.sh
-
-govuk_elements_clean:
-	-rm -rf application/static/govuk_elements
-
-elements:	govuk_elements_clean govuk_elements_get

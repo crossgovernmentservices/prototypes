@@ -1,3 +1,6 @@
-[submodule "application/static/govuk_toolkit"]
-	path = application/static/govuk_toolkit
+[submodule "scripts/govuk-assets-flask"]
+	path = scripts/govuk-assets-flask
+	url = https://github.com/crossgovernmentservices/govuk-assets-flask.git
+[submodule "application/static/govuk_frontend_toolkit"]
+	path = application/static/govuk_frontend_toolkit
 	url = https://github.com/alphagov/govuk_frontend_toolkit.git

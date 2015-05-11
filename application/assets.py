@@ -24,7 +24,7 @@ css_govuk = Bundle(
 )
 
 js_govuk = Bundle(
-    'govuk_elements/govuk_elements-master/public/javascripts/vendor/details.polyfill.js',
+    'govuk_elements/public/javascripts/vendor/details.polyfill.js',
     filters='jsmin',
     output='public/js/govuk.js'
 )

@@ -1,28 +1,28 @@
 // Common place to import all GOV.UK CSS things
 
 // Import GOV.UK frontend toolkit
-@import "../govuk_toolkit/stylesheets/colours";
-@import "../govuk_toolkit/stylesheets/measurements";
-@import "../govuk_toolkit/stylesheets/conditionals";
-@import "../govuk_toolkit/stylesheets/shims";
-@import "../govuk_toolkit/stylesheets/typography";
-@import "../govuk_toolkit/stylesheets/css3";
-@import "../govuk_toolkit/stylesheets/grid_layout";
-@import "../govuk_toolkit/stylesheets/design-patterns/buttons";
+@import "../govuk_frontend_toolkit/stylesheets/colours";
+@import "../govuk_frontend_toolkit/stylesheets/measurements";
+@import "../govuk_frontend_toolkit/stylesheets/conditionals";
+@import "../govuk_frontend_toolkit/stylesheets/shims";
+@import "../govuk_frontend_toolkit/stylesheets/typography";
+@import "../govuk_frontend_toolkit/stylesheets/css3";
+@import "../govuk_frontend_toolkit/stylesheets/grid_layout";
+@import "../govuk_frontend_toolkit/stylesheets/design-patterns/buttons";
 // HACK: define $float and $width here to get alpha-beta import to work.
 // Might just be a bug on the pyScss side. (used in assets.py)
 $float: 'left';
 $width: 960;
-@import "../govuk_toolkit/stylesheets/design-patterns/alpha-beta";
+@import "../govuk_frontend_toolkit/stylesheets/design-patterns/alpha-beta";
 
 // Import GOV.UK elements which aren't yet in the frontend tookkit
-@import "../govuk_elements/govuk_elements-master/public/sass/elements/helpers";
-@import "../govuk_elements/govuk_elements-master/public/sass/elements/reset";
-@import "../govuk_elements/govuk_elements-master/public/sass/elements/layout";
-@import "../govuk_elements/govuk_elements-master/public/sass/elements/forms";
-@import "../govuk_elements/govuk_elements-master/public/sass/elements/tables";
-@import "../govuk_elements/govuk_elements-master/public/sass/elements/details";
-@import "../govuk_elements/govuk_elements-master/public/sass/elements/lists";
-@import "../govuk_elements/govuk_elements-master/public/sass/elements/panels";
+@import "../govuk_elements/public/sass/elements/helpers";
+@import "../govuk_elements/public/sass/elements/reset";
+@import "../govuk_elements/public/sass/elements/layout";
+@import "../govuk_elements/public/sass/elements/forms";
+@import "../govuk_elements/public/sass/elements/tables";
+@import "../govuk_elements/public/sass/elements/details";
+@import "../govuk_elements/public/sass/elements/lists";
+@import "../govuk_elements/public/sass/elements/panels";
 
-// TODO split these into govuk_toolkit and govuk_elements?
+// TODO split these into govuk_frontend_toolkit and govuk_elements?

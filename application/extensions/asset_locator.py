@@ -4,9 +4,13 @@ class AssetLocator(object):
         app.template_context_processors[None].append(self.locate)
 
     def locate(self):
-        # /static/govuk_toolkit/ contains the SASS files
+
+        # To define an asset path for the govuk_template, see
+        # the comments below.
+
+        # /static/govuk_frontend_toolkit/ contains the SASS files
         # (more specifically: variables) to re-use within our own SASS
-        #return {'asset_path': '/static/govuk_toolkit/'}
+        #return {'asset_path': '/static/govuk_frontend_toolkit/'}
 
         # /templates/govuk_template/ contains the template we want to extend,
         # but also some pre-compiled CSS and JS.
