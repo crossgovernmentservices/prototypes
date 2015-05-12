@@ -4,7 +4,7 @@ from flask_assets import Bundle, Environment
 # assets common to all blueprints
 css_app = Bundle(
     'css/app.scss',
-    filters='pyscss',
+    filters='scss',
     output='gen/css/app.css',
     depends="**/*.scss"
 )
@@ -18,7 +18,7 @@ js_app = Bundle(
 # GOV.UK assets
 css_govuk = Bundle(
     'css/govuk.scss',
-    filters='pyscss',
+    filters='scss',
     output='gen/css/govuk.css',
     depends="**/*.scss"
 )
@@ -31,12 +31,12 @@ js_govuk = Bundle(
 
 # 'jobs' blueprint
 # Note: specifying 'css/govuk.scss' below wouldn't make govuk
-# SASS variables available to jobs.scss, hence you still need
+# SCSS variables available to jobs.scss, hence you still need
 # @import '../../../static/css/govuk';
-# ...in your blueprint's SASS.
+# ...in your blueprint's SCSS.
 css_jobs = Bundle(
     'jobs/css/jobs.scss',
-    filters='pyscss',
+    filters='scss',
     output='gen/css/jobs.css',
     depends="**/*.scss"
 )
@@ -52,7 +52,7 @@ js_jobs = Bundle(
 css_jobs_review = Bundle(
     'jobs/css/review.scss',
     'jobs/css/radar-chart.scss',
-    filters='pyscss',
+    filters='scss',
     output='gen/css/jobs_review.css',
     depends="**/*.scss"
 )

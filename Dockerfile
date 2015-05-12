@@ -1,5 +1,6 @@
 FROM python:3.4
-RUN apt-get update -qq
+RUN apt-get update -qq && apt-get -y install rubygems
+RUN gem install sass
 
 # separate requirements space to prevent things like 'src'
 # from popping up when pip finds stuff on Github, for instance.
