@@ -61,13 +61,13 @@
 
     <h3 class="heading-medium">{{ jd.org.name }}</h3>
 
-    {{ jd.org.desc }}
+    {{ jd.org.desc | safe }}
 
     <p><a href='{{ jd.org.more }}'>Read more about what we do</a></p>
 
     <h3 class="heading-medium">The role</h3>
 
-    {{ jd.role_desc }}
+    {{ jd.role_desc | safe }}
 
     <h3 class="heading-medium">Main responsibilities</h3>
 

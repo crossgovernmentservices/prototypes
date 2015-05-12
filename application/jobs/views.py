@@ -30,4 +30,11 @@ def your_apps():
 def description_developer():
     with open('/code/application/data/dev_jd.json') as data_file:
         job_description = json.load(data_file)
-    return render_template('description_developer.html', jd=job_description)
+    return render_template('description.html', jd=job_description)
+
+
+@blueprint.route('/description_policy')
+def description_policy():
+    with open('/code/application/data/policy_jd.json') as data_file:
+        job_description = json.load(data_file)
+    return render_template('description.html', jd=job_description)
