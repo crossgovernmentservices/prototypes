@@ -47,6 +47,25 @@ js_jobs = Bundle(
     output='gen/js/jobs.js'
 )
 
+# reviews
+
+css_jobs_review = Bundle(
+    'jobs/css/review.scss',
+    'jobs/css/radar-chart.scss',
+    filters='pyscss',
+    output='gen/css/jobs_review.css',
+    depends="**/*.scss"
+)
+
+js_jobs_review = Bundle(
+    'jobs/js/review.js',
+    'jobs/js/d3.v3.min.js',
+    'jobs/js/radar-chart.js',
+    'jobs/js/review-summary.js',
+    filters='jsmin',
+    output='gen/js/jobs_review.js'
+)
+
 assets = Environment()
 
 assets.register('css_app', css_app)
@@ -57,3 +76,6 @@ assets.register("js_govuk", js_govuk)
 
 assets.register('css_jobs', css_jobs)
 assets.register('js_jobs', js_jobs)
+
+assets.register('css_jobs_review', css_jobs_review)
+assets.register('js_jobs_review', js_jobs_review)

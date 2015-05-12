@@ -1,0 +1,64 @@
+{% extends "jobs_layout.html" %}
+
+{% block head %}
+
+  {{ super() }}
+
+  {% assets "css_jobs_review" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <a href="/" class="example-back-link">Back to the cross government tools' prototypes</a>
+
+  <header class="profile--include">
+    <h1 class="form-title heading-large">
+    To review
+    </h1>
+
+    <p class="lede">Please review each of the following people</p>
+
+  </header>
+
+  <section class="review__section">
+    <h2 class="heading-medium">Your team</h2>
+
+    <div class="grid-row review__section__todo">
+      {% for user in team %}
+        <div class="column-half">
+          {% include 'includes/profile.html' %}
+        </div>
+      {% endfor %}
+    </div>
+
+  </section>
+
+  <section class="review__section">
+    <h2 class="heading-medium">Other requests</h2>
+
+    <div class="grid-row review__section__todo">
+      {% for user in others %}
+        <div class="column-half">
+          {% include 'includes/profile.html' %}
+        </div>
+      {% endfor %}
+    </div>
+
+  </section>
+
+</main><!-- / #page-container -->
+{% endblock %}
+
+{% block body_end %}
+
+  {{ super() }}
+
+  {% assets "js_jobs_review" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+
+{% endblock %}

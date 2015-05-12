@@ -1,23 +1,16 @@
 {% extends "jobs_layout.html" %}
 
-
 {% block head %}
 
   {{ super() }}
 
-  {% assets "css_jobs" %}
+  {% assets "css_jobs_review" %}
     <link rel="stylesheet" href="{{ ASSET_URL }}">
   {% endassets %}
 
 {% endblock %}
 
-
-{{$head}}
-  {{>includes/jobs_head}}
-  <link href="/public/stylesheets/review.css" media="screen" rel="stylesheet" type="text/css" />
-{{/head}}
-
-{{$content}}
+{% block content %}
 <main id="content" role="main">
 
   <a href="/" class="example-back-link">Back to the cross government tools' prototypes</a>
@@ -32,7 +25,7 @@
 
     <section class="grid-row">
       <div class="column-half">
-        {{>components/profile}}
+        {% include 'includes/profile.html' %}
       </div>
     </section>
 
@@ -48,31 +41,31 @@
         </tr>
       </thead>
       <tbody>
-        {{#skills}}
+        {% for skill in skills %}
         <tr>
-          <td>{{display_name}}</td>
+          <td>{{ skill.display_name }}</td>
           <td class="numeric">
-            <label class="hidden" for="skill-{{name}}-1">{{display_name}} (1)</label>
-            <input type="radio" id="skill-{{name}}-1" name="skill-{{name}}" value="{{name}} = 1" class="">
+            <label class="hidden" for="skill-{{ skill.name }}-1">{{ skill.display_name }} (1)</label>
+            <input type="radio" id="skill-{{ skill.name }}-1" name="skill-{{ skill.name }}" value="{{ skill.name }} = 1" class="">
           </td>
           <td class="numeric">
-            <label class="hidden" for="skill-{{name}}-2">{{display_name}} (2)</label>
-            <input type="radio" id="skill-{{name}}-2" name="skill-{{name}}" value="{{name}} = 2" class="">
+            <label class="hidden" for="skill-{{ skill.name }}-2">{{ skill.display_name }} (2)</label>
+            <input type="radio" id="skill-{{ skill.name }}-2" name="skill-{{ skill.name }}" value="{{ skill.name }} = 2" class="">
           </td>
           <td class="numeric">
-            <label class="hidden" for="skill-{{name}}-3">{{display_name}} (3)</label>
-            <input type="radio" id="skill-{{name}}-3" name="skill-{{name}}" value="{{name}} = 3" class="">
+            <label class="hidden" for="skill-{{ skill.name }}-3">{{ skill.display_name }} (3)</label>
+            <input type="radio" id="skill-{{ skill.name }}-3" name="skill-{{ skill.name }}" value="{{ skill.name }} = 3" class="">
           </td>
           <td class="numeric">
-            <label class="hidden" for="skill-{{name}}-4">{{display_name}} (4)</label>
-            <input type="radio" id="skill-{{name}}-4" name="skill-{{name}}" value="{{name}} = 4" class="">
+            <label class="hidden" for="skill-{{ skill.name }}-4">{{ skill.display_name }} (4)</label>
+            <input type="radio" id="skill-{{ skill.name }}-4" name="skill-{{ skill.name }}" value="{{ skill.name }} = 4" class="">
           </td>
           <td class="numeric">
-            <label class="hidden" for="skill-{{name}}-5">{{display_name}} (5)</label>
-            <input type="radio" id="skill-{{name}}-5" name="skill-{{name}}" value="{{name}} = 5" class="">
+            <label class="hidden" for="skill-{{ skill.name }}-5">{{ skill.display_name }} (5)</label>
+            <input type="radio" id="skill-{{ skill.name }}-5" name="skill-{{ skill.name }}" value="{{ skill.name }} = 5" class="">
           </td>
         </tr>
-        {{/skills}}
+        {% endfor %}
       </tbody>
     </table>
 
@@ -104,11 +97,14 @@
   </form>
 
 </main><!-- / #page-container -->
-{{/content}}
+{% endblock %}
 
-{{$bodyEnd}}
-  {{>includes/elements_scripts}}
-  <script src="/public/javascripts/review.js"></script>
-{{/bodyEnd}}
+{% block body_end %}
 
-{{/govuk_template}}
+  {{ super() }}
+
+  {% assets "js_jobs_review" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+
+{% endblock %}

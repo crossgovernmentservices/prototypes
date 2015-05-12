@@ -45,3 +45,24 @@ def description_general():
     with open('/code/application/data/general_jd.json') as data_file:
         job_description = json.load(data_file)
     return render_template('description.html', jd=job_description)
+
+
+@blueprint.route('/review')
+def review():
+    with open('/code/application/data/review_skills.json') as data_file:
+        skills = json.load(data_file)
+    return render_template('review.html', skills=skills)
+
+
+@blueprint.route('/review_summary')
+def review_summary():
+    return render_template('review_summary.html')
+
+
+@blueprint.route('/to_review')
+def to_review():
+    with open('/code/application/data/review_team.json') as data_file:
+        team = json.load(data_file)
+    with open('/code/application/data/review_others.json') as data_file:
+        others = json.load(data_file)
+    return render_template('to_review.html', team=team, others=others)

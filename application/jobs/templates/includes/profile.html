@@ -1,0 +1,34 @@
+<div class="profile profile__status profile__status--{{status}}">
+  <img src="http://placehold.it/100x100" class="profile__pic">
+  <div class="profile__info">
+    <h3 class="heading-normal profile__name">
+      {% if user is defined %}
+        {{ user.name }}
+      {% else %}
+        Joe Bloggs
+      {% endif %}
+    </h3>
+    <ul>
+      <li>
+      {% if user is defined %}
+        {{ user.role }}
+      {% else %}
+        Developer
+      {% endif %}
+      </li>
+      <li class="profile__team">
+      {% if user is defined %}
+        {{ user.team }}
+      {% else %}
+        Cross government tools
+      {% endif %}
+      </li>
+      <li>
+        <ul>
+          <li><a href="">view job description</a></li>
+          <li class="profile--review"><a href="">perform review</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

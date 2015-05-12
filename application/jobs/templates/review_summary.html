@@ -1,12 +1,16 @@
-{{<govuk_template}}
+{% extends "jobs_layout.html" %}
 
-{{$head}}
-  {{>includes/jobs_head}}
-  <link href="/public/stylesheets/radar-chart.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="/public/stylesheets/review.css" media="screen" rel="stylesheet" type="text/css" />
-{{/head}}
+{% block head %}
 
-{{$content}}
+  {{ super() }}
+
+  {% assets "css_jobs_review" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+{% endblock %}
+
+{% block content %}
 <main id="content" role="main">
 
   <a href="/" class="example-back-link">Back to the cross government tools' prototypes</a>
@@ -19,8 +23,10 @@
     <div class="grid-row">
       <div class="column-half"><p class="lede">Compare how you thought you've performed with how your colleagues think you've performed</p></div>
     </div>
-    <div class="column-half profile--right">{{>components/profile}}</div>
-    
+    <div class="column-half profile--right">
+      {% include 'includes/profile.html' %}
+    </div>
+
   </header>
 
   <section class="review__section">
@@ -56,13 +62,14 @@
   </section>
 
 </main><!-- / #page-container -->
-{{/content}}
+{% endblock %}
 
-{{$bodyEnd}}
-  {{>includes/elements_scripts}}
-  <script src="/public/javascript/lib/d3.v3.min.js" charset="utf-8"></script>
-  <script src="/public/javascripts/lib/radar-chart.js"></script>
-  <script src="/public/javascripts/review-summary.js"></script>
-{{/bodyEnd}}
+{% block body_end %}
 
-{{/govuk_template}}
+  {{ super() }}
+
+  {% assets "js_jobs_review" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+
+{% endblock %}
