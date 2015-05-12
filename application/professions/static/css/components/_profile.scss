@@ -1,0 +1,99 @@
+.profile {
+  @extend %contain-floats;
+  margin-bottom: $gutter;
+  padding: $gutter-half;
+  border: 1px solid $border-colour;
+}
+
+.profile--small {
+  padding: ($gutter)/3;
+  margin-bottom: $gutter-half;
+
+  .profile__pic {
+    width: 75px;
+    padding-right: ($gutter)/3;
+  }
+  .profile__team {
+    font-size: 16px;
+  }
+}
+
+.profile__pic {
+  float: left;
+  width: 100px;
+  padding-right: $gutter-half;
+}
+
+.profile__info {
+  float: left;
+  width: 50%;
+}
+
+.profile__name {
+  font-weight: 700;
+  a {
+    color: $link-colour;
+    text-decoration: none;
+  }
+}
+
+.profile__team {
+  color: $secondary-text-colour;
+}
+
+.profile--right {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  .profile {
+    text-align: right;
+  }
+  .profile__pic {
+    float: right;
+    padding-right: 0;
+  }
+  .profile__info {
+    float: right;
+    width: 50%;
+    padding-right: $gutter-half;
+  }
+}
+
+.profile--include {
+  position: relative;
+}
+
+.profile__status {
+  position: relative;
+
+  &::before {
+    visibility: hidden;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $page-colour;
+    position: absolute;
+    top: $gutter/3;
+    right: 0;
+    line-height: 1em;
+    padding: 5px 5px 2px;
+    font-weight: 600;
+  }
+  
+}
+
+.profile__status--reviewed::before {
+  visibility: visible;
+  content: "reviewed";
+  background: $button-colour;
+}
+
+.profile__status--draft::before {
+  visibility: visible;
+  content: "draft";
+  background: $beta-colour;
+}
+
+.profile--review {
+  display: none;
+}

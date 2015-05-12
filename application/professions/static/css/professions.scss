@@ -1,0 +1,84 @@
+// See assets.py
+// Even though govuk.css is built for all views, we
+// still include it here for access to SASS variables.
+@import '../../../static/css/govuk';
+
+@import 'components/back_link';
+@import 'components/sections';
+@import 'components/profile';
+@import 'components/community';
+@import 'components/jds';
+@import 'components/event';
+
+.people-search-form {
+  margin-bottom: $gutter-half;
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.people-search-results:empty {
+  display: none;
+}
+
+.people-search-results {
+  margin-bottom: 20px;
+}
+
+.column-three-quarters {
+  @include grid-column(3/4);
+}
+
+.data__narrative {
+  margin-bottom: 0;
+}
+
+.link__out {
+  color: $link-colour;
+  font-size: 16px;
+  text-decoration: none;
+
+  &:visited {
+    color: $link-colour;
+  }
+}
+
+.learning-section {
+  padding: 0;
+
+  a {
+    text-decoration: none;
+    color: $text-colour;
+  }
+
+  &:hover a {
+    color: $link-colour;
+  }
+}
+
+.learning-section:first-of-type {
+  padding-right: $gutter-half;
+}
+
+.learning-section__img {
+  max-width: 100%;
+}
+
+.data__skills {
+  margin-top: $gutter;
+
+  .bold-xlarge,
+  .bold-small {
+    margin: 0;
+  }
+
+  ul {
+    padding-left: $gutter;
+  }
+}
+
+.section:first-of-type {
+  border: none;
+}

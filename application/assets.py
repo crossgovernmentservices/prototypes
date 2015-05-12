@@ -31,7 +31,7 @@ js_govuk = Bundle(
 
 # 'jobs' blueprint
 # Note: specifying 'css/govuk.scss' below wouldn't make govuk
-# SCSS variables available to jobs.scss, hence you still need
+# SCSS variables available to your SCSS file, hence you still need
 # @import '../../../static/css/govuk';
 # ...in your blueprint's SCSS.
 css_jobs = Bundle(
@@ -66,6 +66,27 @@ js_jobs_review = Bundle(
     output='gen/js/jobs_review.js'
 )
 
+# 'professions' blueprint
+# Note: specifying 'css/govuk.scss' below wouldn't make govuk
+# SCSS variables available to your SCSS file, hence you still need
+# @import '../../../static/css/govuk';
+# ...in your blueprint's SCSS.
+css_professions = Bundle(
+    'professions/css/professions.scss',
+    filters='scss',
+    output='gen/css/professions.css',
+    depends="**/*.scss"
+)
+
+js_professions = Bundle(
+    'professions/js/professions.js',
+    'professions/js/underscore.js',
+    'professions/js/mustache.min.js',
+    filters='jsmin',
+    output='gen/js/professions.js'
+)
+
+
 assets = Environment()
 
 assets.register('css_app', css_app)
@@ -79,3 +100,6 @@ assets.register('js_jobs', js_jobs)
 
 assets.register('css_jobs_review', css_jobs_review)
 assets.register('js_jobs_review', js_jobs_review)
+
+assets.register('css_professions', css_professions)
+assets.register('js_professions', js_professions)
