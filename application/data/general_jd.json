@@ -1,0 +1,62 @@
+{
+  "ref": "1439267",
+  "role": "Business Support Officer",
+  "team": "Care Quality Commission",
+  "closing_date": "17th May 2015",
+  "department": "NHS",
+  "location": "Swindon",
+  "grade": "F",
+  "contract": "Fixed",
+  "org": {
+    "name": "Care Quality Commission",
+    "desc": "<p>We monitor, inspect and regulate health and social care services to make sure they meet fundamental standards of quality and safety.</p>",
+    "more": "http://www.cqc.org.uk/content/what-we-do"
+  },
+  "profession": "Administration/Corporate Support",
+  "skills": {
+    "universal": ["Administration", "Support","Operational Delivery","Secretarial","Event Planning","Communications"],
+    "essential": [
+      "good organisational skills, ability to prioritise and meet deadlines",
+      "excellent communication skills",
+      "history of using IT, management information systems and software packages",
+      "flexible and adaptable team player",
+      "experience of working in a fast-paced environment"
+    ],
+    "desirable": [
+      "GCSE (preferably Maths & English) or Business Admin NVQ L2 or equivalent",
+      "ability to present complex information in an accessible format",
+      "knowledge or experience of the Health and Social Care sector and/or CQC responsibilities"
+    ]
+  },
+  "salary_range": "£21,500 - 23,000",
+  "role_desc": "<p>You’ll deliver high quality business support to the CQC’s directorates, working with colleagues and external customers to provide an efficient and effective service.</p>",
+  "responsibilities": [
+    "provide support at key meetings, recording action points",
+    "maintain records and systems (eg databases, workflow tools, distribution lists)",
+    "assist with the production of team newsletters and introduction packs",
+    "support procurement processes and invoice reconciliation",
+    "organise own work in line with business needs and priorities",
+    "update programme logs (eg risks, covalent, issues, change)",
+    "support planning and delivery of business area events and corporate days"
+  ],
+  "competencies": [
+    "changing and improving",
+    "managing a quality service",
+    "collaborating and partnering"
+  ],
+  "benefits": [
+    "For successful candidates, pension schemes are available",
+    "Annual leave allowance of 25 days rising to 30 after five years",
+    "9 bank/public holidays, including Queen’s birthday privilege day",
+    "Individual training and development plan"
+  ],
+  "interview_dates": {
+    "start": "20th May 2015",
+    "end": "29th May 2015"
+  },
+  "contacts": {
+    "external_cand": "nhsjobs@jobs.nhs.uk",
+    "about_role": "https://www.jobs.nhs.uk/",
+    "terms": "nhs.external@dwp.gsi.gov.uk"
+  }
+}

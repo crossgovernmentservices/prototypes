@@ -38,3 +38,10 @@ def description_policy():
     with open('/code/application/data/policy_jd.json') as data_file:
         job_description = json.load(data_file)
     return render_template('description.html', jd=job_description)
+
+
+@blueprint.route('/description_general')
+def description_general():
+    with open('/code/application/data/general_jd.json') as data_file:
+        job_description = json.load(data_file)
+    return render_template('description.html', jd=job_description)
