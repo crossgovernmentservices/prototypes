@@ -1,0 +1,136 @@
+<div class="jd__title">
+  <h1 class="heading-xlarge">{{ jd.role }}</h1>
+  <p class="heading-medium jd__title--department">{{ jd.team }}</p>
+  <p class="heading-medium">Closing date: {{ jd.closing_date }}</p>
+</div>
+
+<div class="grid-row jd__description">
+  <div class="column-third jd__key-info">
+    <div class="jd__key-info__item">
+      <h4 class="heading-small">Reference</h4>
+      <p>{{ jd.ref }}</p>
+    </div>
+    <div class="jd__key-info__item">
+      <h4 class="heading-small">Profession</h4>
+      <p>{{ jd.profession }}</p>
+    </div>
+    <div class="jd__key-info__item">
+      <h4 class="heading-small">Salary range</h4>
+      <p>{{ jd.salary_range }}</p>
+    </div>
+    <div class="jd__key-info__item">
+      <h4 class="heading-small">Average hours per week</h4>
+      <p>37</p>
+    </div>
+    <div class="jd__key-info__item">
+      <h4 class="heading-small">Associated skills</h4>
+      <ul class="skills-list skills-list--dark">
+        {% for skill in jd.skills.universal %}
+        <li class="skill"><a href="/jobs/search_by_skill#{{ skill }}">{{ skill }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="column-two-thirds jd__content">
+
+    <table>
+      <tbody>
+        <tr>
+          <td>Division:</td>
+          <td>{{ jd.team }}</td>
+        </tr>
+        <tr>
+          <td>Department</td>
+          <td>{{ jd.department }}</td>
+        </tr>
+        <tr>
+          <td>Location:</td>
+          <td>{{ jd.location }}</td>
+        </tr>
+        <tr>
+          <td>Grade:</td>
+          <td>{{ jd.grade }}</td>
+        </tr>
+        <tr>
+          <td>Contract Type:</td>
+          <td>{{ jd.contract }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="heading-medium">{{ jd.org.name }}</h3>
+
+    {{ jd.org.desc }}
+
+    <p><a href='{{ jd.org.more }}'>Read more about what we do</a></p>
+
+    <h3 class="heading-medium">The role</h3>
+
+    {{ jd.role_desc }}
+
+    <h3 class="heading-medium">Main responsibilities</h3>
+
+    <p>You’ll:</p>
+
+    <ul class="list-bullet">
+      {% for responsibility in jd.responsibilities %}
+      <li>{{ responsibility }}</li>
+      {% endfor %}
+    </ul>
+
+    <h3 class="heading-medium">Skills and experience</h3>
+
+    <p>Essential:</p>
+
+    <ul class="list-bullet">
+      {% for skill in jd.skills.essential %}
+      <li>{{ skill }}</li>
+      {% endfor %}
+    </ul>
+
+    <p>Desirable:</p>
+
+    <ul class="list-bullet">
+      {% for skill in jd.skills.desirable %}
+      <li>{{ skill }}</li>
+      {% endfor %}
+    </ul>
+
+    <h3 class="heading-medium">Civil Service Competencies</h3>
+
+    <p>The successful candidate must show the following competencies from the <a href="http://www.civilservice.gov.uk/wp-content/uploads/2012/07/Civil-Service-Competency-Framework-July-2012.pdf">Civil Service Competency Framework</a>:</p>
+
+    <ul class="list-bullet">
+      {% for competency in jd.competencies %}
+      <li>{{ competency }}</li>
+      {% endfor %}
+    </ul>
+
+    <h3 class="heading-medium">Benefits</h3>
+    <ul class="list-bullet">
+      {% for benefit in jd.benefits %}
+      <li>{{ benefit }}</li>
+      {% endfor %}
+    </ul>
+
+    <h3 class="heading-medium">How to apply</h3>
+
+    <p>Email your covering letter and CV to <a href="mailto:{{ jd.contacts.external_cand }}">{{ jd.contacts.external_cand }}</a>, quoting ref number IRC {{ jd.ref }}</p>
+
+    <p>If you’re a civil servant please check <a href="/jobs/internal_advice">the terms and conditions</a> before applying.</p>
+
+    <p>Applications are welcome from part-timers and job sharers.</p>
+
+    <ul>
+      <li><h4 class="jd_-inline-heading">Closing date:</h4> {{ jd.closing_date }}</li>
+      <li><h4 class="jd_-inline-heading">Expected interview dates:</h4> {{ jd.interview_dates.start }} - {{ jd.interview_dates.end }}</li>
+    </ul>
+
+    <h3 class="heading-medium">Further information</h3>
+
+    <p class="jd__email-contact">For more on this role: <a href="mailto:{{ jd.contacts.about_role }}">{{ jd.contacts.about_role }}</a></p>
+    <p class="jd__email-contact">For terms and conditions, eligibility and recruitment: <a href="mailto:{{ jd.contacts.terms }}">{{ jd.contacts.terms }}</a></p>
+
+  </div>
+</div>
