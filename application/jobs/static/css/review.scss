@@ -1,0 +1,57 @@
+@import 'elements';
+@import 'components/back_link';
+@import 'components/profile';
+
+.review__table {
+  margin-bottom: $gutter;
+}
+
+.skills__list {
+  padding: $gutter-half 0 0 $gutter-half;
+}
+
+.skills__list:empty {
+  display: none;
+}
+
+.skills__list li {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  margin-right: $gutter-half;
+  margin-bottom: $gutter-half;
+  border: 1px solid $panel-colour;
+  position: relative;
+  transition: padding 0.5s ease;
+
+  &:hover {
+    cursor: pointer;
+    background: $panel-colour;
+    color: $page-colour;
+    padding-right: 1.5em;
+  }
+
+  &:hover::before {
+    content: 'x';
+    position: absolute;
+    color: $error-colour;
+    right: 0.5em;
+  }
+}
+
+.caption {
+  font-size: 16px;
+  color: $secondary-text-colour;
+}
+
+.review__section {
+  border-top: 1px solid $border-colour;
+  padding-top: $gutter;
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.review__section__todo .profile--review {
+  display: inline;
+}

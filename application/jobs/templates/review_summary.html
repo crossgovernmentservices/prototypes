@@ -1,0 +1,68 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/jobs_head}}
+  <link href="/public/stylesheets/radar-chart.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/review.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+<main id="content" role="main">
+
+  <a href="/" class="example-back-link">Back to the cross government tools' prototypes</a>
+
+  <header class="profile--include">
+    <h1 class="form-title heading-large">
+    Your review
+    </h1>
+
+    <div class="grid-row">
+      <div class="column-half"><p class="lede">Compare how you thought you've performed with how your colleagues think you've performed</p></div>
+    </div>
+    <div class="column-half profile--right">{{>components/profile}}</div>
+    
+  </header>
+
+  <section class="review__section">
+    <h2 class="heading-medium">Skills for ...</h2>
+    <div class="grid-row">
+      <div class="column-half">
+        <div class="results__personal"></div>
+        <p class="caption">How you scored yourself</p>
+      </div>
+      <div class="column-half">
+        <div class="results__peer"></div>
+        <p class="caption">How your colleagues scored you</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="review__section">
+    <h2 class="heading-medium">Additional skills</h2>
+    <div class="grid-row">
+      <div class="column-half">
+      </div>
+      <div class="column-half">
+      </div>
+    </div>
+  </section>
+
+  <section class="review__section">
+    <h2 class="heading-medium">Feedback</h2>
+  </section>
+
+  <section class="review__section">
+    <h2 class="heading-medium">Suggested learning</h2>
+  </section>
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+  <script src="/public/javascript/lib/d3.v3.min.js" charset="utf-8"></script>
+  <script src="/public/javascripts/lib/radar-chart.js"></script>
+  <script src="/public/javascripts/review-summary.js"></script>
+{{/bodyEnd}}
+
+{{/govuk_template}}

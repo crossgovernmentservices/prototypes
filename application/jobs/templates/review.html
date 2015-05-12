@@ -1,0 +1,114 @@
+{% extends "jobs_layout.html" %}
+
+
+{% block head %}
+
+  {{ super() }}
+
+  {% assets "css_jobs" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+{% endblock %}
+
+
+{{$head}}
+  {{>includes/jobs_head}}
+  <link href="/public/stylesheets/review.css" media="screen" rel="stylesheet" type="text/css" />
+{{/head}}
+
+{{$content}}
+<main id="content" role="main">
+
+  <a href="/" class="example-back-link">Back to the cross government tools' prototypes</a>
+
+  <form action="/" method="post" class="form">
+
+    <h1 class="form-title heading-large">
+      Review colleague
+    </h1>
+
+    <p class="lede">Please rate your colleague for the following skills</p>
+
+    <section class="grid-row">
+      <div class="column-half">
+        {{>components/profile}}
+      </div>
+    </section>
+
+    <table class="review__table">
+      <thead>
+        <tr>
+          <th scope="col">Skill</th>
+          <th class="numeric" scope="col">1</th>
+          <th class="numeric" scope="col">2</th>
+          <th class="numeric" scope="col">3</th>
+          <th class="numeric" scope="col">4</th>
+          <th class="numeric" scope="col">5</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#skills}}
+        <tr>
+          <td>{{display_name}}</td>
+          <td class="numeric">
+            <label class="hidden" for="skill-{{name}}-1">{{display_name}} (1)</label>
+            <input type="radio" id="skill-{{name}}-1" name="skill-{{name}}" value="{{name}} = 1" class="">
+          </td>
+          <td class="numeric">
+            <label class="hidden" for="skill-{{name}}-2">{{display_name}} (2)</label>
+            <input type="radio" id="skill-{{name}}-2" name="skill-{{name}}" value="{{name}} = 2" class="">
+          </td>
+          <td class="numeric">
+            <label class="hidden" for="skill-{{name}}-3">{{display_name}} (3)</label>
+            <input type="radio" id="skill-{{name}}-3" name="skill-{{name}}" value="{{name}} = 3" class="">
+          </td>
+          <td class="numeric">
+            <label class="hidden" for="skill-{{name}}-4">{{display_name}} (4)</label>
+            <input type="radio" id="skill-{{name}}-4" name="skill-{{name}}" value="{{name}} = 4" class="">
+          </td>
+          <td class="numeric">
+            <label class="hidden" for="skill-{{name}}-5">{{display_name}} (5)</label>
+            <input type="radio" id="skill-{{name}}-5" name="skill-{{name}}" value="{{name}} = 5" class="">
+          </td>
+        </tr>
+        {{/skills}}
+      </tbody>
+    </table>
+
+    <div class="form-group">
+      <label class="form-label" for="other-skills">Please add any other skills your colleague has shown</label>
+      <input class="form-control" type="text" id="other-skills"/>
+      <!--<datalist id="skills">
+        <option value="Public speaking"\>
+        <option value="Coaching" \>
+        <option value="Leadership" \>
+        <option value="Accounting" \>
+      </datalist>-->
+      <ul class="panel-indent skills__list"></ul>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="other-comments">Any other comments</label>
+      <textarea class="form-control" type="text" id="other-comments"></textarea>
+    </div>
+
+    <!-- Primary buttons, secondary links -->
+    <div class="form-group">
+      <input type="submit" class="button" value="Complete">
+      <ul>
+        <li><a href="/">Back</a></li>
+      </ul>
+    </div>
+
+  </form>
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+  <script src="/public/javascripts/review.js"></script>
+{{/bodyEnd}}
+
+{{/govuk_template}}
