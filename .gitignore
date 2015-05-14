@@ -51,3 +51,4 @@ application/static/govuk_elements
 application/static/gen
 application/templates/govuk_template
 application/static/govuk_template
+application/static/govuk_frontend_toolkit/
