@@ -59,7 +59,3 @@ def register():
 def about():
     form = LoginForm(request.form)
     return render_template("public/about.html", form=form)
-
-@blueprint.route('/signup/create')
-def signup_create():
-    return render_template("public/signup/create.html")

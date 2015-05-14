@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block head %}
+
+  {{ super() }}
+
+  {% assets "css_signup" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+{% endblock %}
+
+{% block body_end %}
+
+  {{ super() }}
+
+  {% assets "js_signup" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+
+{% endblock %}

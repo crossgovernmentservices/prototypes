@@ -13,7 +13,7 @@ from application.extensions import (
     debug_toolbar,
     asset_locator,
 )
-from application import public, user, jobs, professions
+from application import public, user, jobs, professions, signup
 
 
 def create_app(config_object=ProdConfig):
@@ -47,6 +47,7 @@ def register_blueprints(app):
     app.register_blueprint(user.views.blueprint)
     app.register_blueprint(jobs.views.blueprint)
     app.register_blueprint(professions.views.blueprint)
+    app.register_blueprint(signup.views.blueprint)
     return None
 
 

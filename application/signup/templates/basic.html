@@ -1,0 +1,27 @@
+{% extends "signup_layout.html" %}
+{% block content %}
+<main id="content" role="main">
+
+  <a href="/" class="example-back-link">Back to the cross government tools' prototypes</a>
+
+  <form action="">
+    <div class="form-group">
+      <label class="form-label-bold" for="email">Email</label>
+      <input type="text" class="form-control signup__input" id="email">
+    </div>
+
+    <!-- Primary buttons, secondary links -->
+    <div class="form-group">
+      <button type="submit" class="button signup__btn">
+        <span data-provider="default" class="signup__btn__content--active">Create profile</span>
+        <span data-provider="google">Create using google account</span>
+        <span data-provider="facebook">Create using facebook account</span>
+      </button>
+      <ul>
+        <li><a href="/">Back</a></li>
+      </ul>
+    </div>
+  </form>
+
+</main><!-- / #page-container -->
+{% endblock %}

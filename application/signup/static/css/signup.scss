@@ -1,0 +1,46 @@
+// See assets.py
+// Even though govuk.css is built for all views, we
+// still include it here for access to SASS variables.
+@import '../../../static/css/govuk';
+
+@import 'components/back_link';
+@import 'components/sections';
+
+.signup__btn {
+  position: relative;
+
+  & span {
+    display: none;
+
+    &.signup__btn__content--active {
+      display: inline;
+    }
+  }
+}
+
+.signup__btn:after {
+    content: "";
+    display: block;
+    height: 38px;
+    width: 38px;
+    position: absolute;
+    top: 0;
+    left: 8px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+$google: #dd4b39;
+$facebook: #3B5998;
+.signup__btn--google {
+  background: $google;
+  padding-left: 53px;
+}
+
+.signup__btn--google:after {
+  background-image: url(/public/images/google_icon.png);
+}
+
+.signup__btn--facebook {
+  background: $facebook;
+}

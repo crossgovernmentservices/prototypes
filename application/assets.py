@@ -86,6 +86,24 @@ js_professions = Bundle(
     output='gen/js/professions.js'
 )
 
+# 'signup' blueprint
+# Note: specifying 'css/govuk.scss' below wouldn't make govuk
+# SCSS variables available to your SCSS file, hence you still need
+# @import '../../../static/css/govuk';
+# ...in your blueprint's SCSS.
+css_signup = Bundle(
+    'signup/css/signup.scss',
+    filters='scss',
+    output='gen/css/signup.css',
+    depends="**/*.scss"
+)
+
+js_signup = Bundle(
+    'signup/js/signup.js',
+    filters='jsmin',
+    output='gen/js/signup.js'
+)
+
 
 assets = Environment()
 
@@ -103,3 +121,6 @@ assets.register('js_jobs_review', js_jobs_review)
 
 assets.register('css_professions', css_professions)
 assets.register('js_professions', js_professions)
+
+assets.register('css_signup', css_signup)
+assets.register('js_signup', js_signup)
