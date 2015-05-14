@@ -1,0 +1,32 @@
+// See assets.py
+// Even though govuk.css is built for all views, we
+// still include it here for access to SASS variables.
+@import '../../../static/css/govuk';
+
+.email {
+  max-width: 600px;
+  margin: 2*$gutter auto;
+  border: 1px solid $secondary-text-colour;
+}
+
+.email__meta {
+  .email__meta__item:last-child {
+    margin-top: em(5, 16 );
+    margin-bottom: em(5, 16);
+
+    @include media(tablet) {
+      margin-top: em(5);
+      margin-bottom: em(5);
+    }
+  }
+  span {
+    font-weight: 600;
+    padding: 0 0.5em;
+  }
+}
+
+.email__content {
+  border-top: 1px solid $secondary-text-colour;
+  min-height: 300px;
+  padding: $gutter-half;
+}

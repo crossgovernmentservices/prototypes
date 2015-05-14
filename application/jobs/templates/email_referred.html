@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="lte-ie8" lang=""><![endif]-->
+<!--[if gt IE 8]><!--><html lang=""><!--<![endif]-->
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <title>GOV.UK - The best place to find government services and information</title>
+
+    {% assets "css_jobs" %}
+      <link rel="stylesheet" href="{{ ASSET_URL }}">
+    {% endassets %}
+
+    {% assets "jobs/css/email.scss",
+       filters="scss", output="gen/css/email.css" %}
+        <link rel="stylesheet" href="{{ ASSET_URL }}">
+    {% endassets %}
+  </head>
+
+  <body>
+
+    <a href="/">&lt; back</a>
+
+    <div class="email">
+      <header class="email__meta">
+        <p class="email__meta__item"><span>To:</span>{{ email.to }}</p>
+        <p class="email__meta__item"><span>From:</span>{{ email.from }}</p>
+        <p class="email__meta__item"><span>Subject</span>{{ email.subject }}</p>
+      </header>
+      <article class="email__content">
+        {{ email.content | safe }}
+      </article>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+{% extends "jobs_layout.html" %}
+
+{% block head %}
+
+  {{ super() }}
+
+  {% assets "jobs/css/contract.scss",
+      filters="scss", output="gen/css/contract.css" %}
+      <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <a href="/" class="example-back-link">Back to the cross government tools' prototypes</a>
+
+  <header class="profile--include">
+    <h1 class="form-title heading-large">
+    Contract
+    </h1>
+    <p class="lede">Read the details carefully before signing</p>
+  </header>
+
+  <section class="section contract contract__summary">
+    <dl>
+      <dt>Name</dt>
+      <dd>Colm Britton</dd>
+      <dt>Role</dt>
+      <dd>Frontend Designer</dd>
+      <dd><a href="">check job description</a></dd>
+      <dt>Company</dt>
+      <dd>GDS</dd>
+      <dt>Contract type</dt>
+      <dd>Temporary</dd>
+      <dt>Salary</dt>
+      <dd>£46,450</dd>
+      <dt>Start date</dt>
+      <dd><datetime>12th June 2015</datetime></dd>
+      <dt>Employee number</dt>
+      <dd>???</dd>
+    </dl>
+    
+  </section>
+
+  <section class="section">
+    <details class="contract__terms">
+      <summary>Terms and conditions</summary>
+      <div class="contract__terms__content text">
+        <ul class="list-number">
+          <li><h4 class="heading-small">Use of Confidential Information</h4>
+          The Contractor shall not use the Confidential Information for any purpose other than in connection with the performance of the Services. When the Services are at an end the Contractor undertakes to return all copies of any documents containing the Confidential Information and to destroy all copies of such Confidential Information held in electronic form or on electronic media.</li>
+          <li><h4 class="heading-small">Duration</h4>
+          This Agreement shall come into effect on the Commencement Date and shall endure for a term of five (5) years.</li>
+          <li><h4 class="heading-small">Exceptions</h4>
+            <p>This Agreement does not apply to any Confidential Information:</p>
+            <ul class="list-bullet">
+              <li>to the extent that it is or becomes publicly known other than by breach of this Agreement
+          by the Contractor and/or the Company;</li>
+              <li>which the Contractor and/or the Company can show by written records was the
+          Contractor’s and/or the Company's possession prior to disclosure and was not the subject
+          of any other non-disclosure or confidentiality agreement;</li>
+              <li>which at the Commencement Date was already in the public domain;</li>
+              <li>disclosure of which is required by law or by any regulation or rule of any stock exchange
+          or any governmental authority or any recognised supervisory or regulatory body to whose rules the receiving Party is subject.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <section class="section">
+    <details class="contract__terms">
+      <summary>Appendix</summary>
+      <div class="contract__terms__content text">
+        <p><span>Confidential Information</span> means any information disclosed and/or available to the Contractor, whether or not project specific, (whether before or after the date of this Agreement and whether in writing, verbally, electronically or by any other means and whether directly or indirectly) by Kainos or by another person acting on Kainos’ behalf including, without limitation, any information relating to Kainos’ products, customers, operations, processes, plans or intentions, product information, know-how, design rights, trade secrets, technical information, market opportunities, business affairs or any information which is by its very nature confidential.</p>
+
+        <p><span>Intellectual Property</span> means patents, trademarks, service marks, registered designs, applications for any of those rights, trade and business names (including internet domain names and e-mail address names), unregistered trademarks and service marks, copyrights, database rights, know-how, rights in designs and inventions, moral rights and rights of the same or similar effect or nature in each case in any jurisdiction.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <section class="section">
+
+    <div class="switch">
+      <input id="sign" name="sign" type="checkbox" class="switch__checkbox" value="y" />
+      <label for="sign" class="switch__label">Sign</label>
+      <span class="switch__checkbox__label">Sign contract</span>
+    </div>
+
+  </section>
+
+</main><!-- / #page-container -->
+{% endblock %}
+
+{% block body_end %}
+
+  {{ super() }}
+
+  {% assets "jobs/js/contract.js",
+      filters="jsmin", output="gen/js/contract.js" %}
+      <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+
+{% endblock %}

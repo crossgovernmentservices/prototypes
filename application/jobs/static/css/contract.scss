@@ -1,0 +1,82 @@
+// See assets.py
+// Even though govuk.css is built for all views, we
+// still include it here for access to SASS variables.
+@import '../../../static/css/govuk';
+
+@import 'components/back_link';
+@import 'components/search';
+@import 'components/skills';
+@import 'components/sections';
+@import 'components/search-results';
+@import 'components/jds';
+
+$gutter-third: $gutter/3;
+
+.switch {
+  position: relative;
+}
+
+.switch__label {
+  display: block;
+  width: 3*$gutter;
+  background: $panel-colour;
+  text-indent: -9999px;
+  height: 2*$gutter;
+  position: absolute;
+  top: 0; left: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.contract--signed ~ .section {
+  .switch__label {
+    background: $link-hover-colour;
+  }
+}
+
+.switch__label::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: $gutter-third;
+  left: $gutter-third;
+  width: ((3*$gutter) - 2*$gutter-third)/2;
+  height: (2*$gutter) - 2*$gutter-third;
+  background: #fff;
+  transition: all 0.2s ease-in;
+}
+
+.switch__checkbox:checked ~ .switch__label::after {
+  left: $gutter-third + ((3*$gutter) - 2*$gutter-third)/2;
+}
+
+.switch__checkbox__label {
+  margin-left: 3*$gutter;
+  line-height: 2*$gutter;
+}
+
+.contract {
+  background: #ededed url(/static/images/crest-bookmark-grey.png) no-repeat right 15px top;
+  background-size: 80px;
+  opacity: 0.8;
+  padding: $gutter-half;
+}
+
+.contract--signed {
+  background: #ededed url(/static/images/crest-bookmark-blue.png) no-repeat right 15px top;
+  opacity: 1;
+}
+
+.contract__summary dt {
+  @extend .heading-small;
+}
+
+.contract__terms__content {
+  @include copy-16();
+}
+
+.contract__terms__content span {
+  font-weight: bolder;
+}

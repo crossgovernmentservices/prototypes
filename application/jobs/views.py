@@ -66,3 +66,27 @@ def to_review():
     with open('/code/application/data/review_others.json') as data_file:
         others = json.load(data_file)
     return render_template('to_review.html', team=team, others=others)
+
+
+@blueprint.route('/email_referred')
+def email_referred():
+    email = {
+        'to': 'DavidDavids@gmail.com',
+        'from': 'iamtherecruiter@gmail.com',
+        'subject': 'Front-end dev role',
+        'content': """
+            <p>Hi David,</p>
+
+            <p>Hope you are keeping well. I saw this great front-end developer role at GDS that I thought you might be interested in. You can found out more about it <a href="/jobs/description_frontend_developer">here</a></p>
+
+            <p>Let me know how you get on,</p>
+
+            <p>Mr Recruiter</p>
+        """
+    }
+    return render_template('email_referred.html', email=email)
+
+
+@blueprint.route('/contract')
+def contract():
+    return render_template('contract.html')
