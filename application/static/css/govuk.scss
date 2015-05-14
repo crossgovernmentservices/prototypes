@@ -16,11 +16,11 @@
 @import "../govuk_frontend_toolkit/stylesheets/design-patterns/alpha-beta";
 
 // Import GOV.UK elements which aren't yet in the frontend tookkit
+@import "../govuk_elements/public/sass/elements/helpers";
 @import "../govuk_elements/public/sass/elements/buttons";
 @import "../govuk_elements/public/sass/elements/details";
 @import "../govuk_elements/public/sass/elements/elements-typography";
 @import "../govuk_elements/public/sass/elements/forms";
-@import "../govuk_elements/public/sass/elements/helpers";
 @import "../govuk_elements/public/sass/elements/icons";
 @import "../govuk_elements/public/sass/elements/layout";
 @import "../govuk_elements/public/sass/elements/lists";
