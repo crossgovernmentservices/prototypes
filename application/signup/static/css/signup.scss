@@ -44,3 +44,15 @@ $facebook: #3B5998;
 .signup__btn--facebook, .signup__btn--facebook:hover {
   background: $facebook;
 }
+
+.success__summary {
+  visibility: hidden;
+
+  .loggedin & {
+    visibility: visible;
+  }
+}
+
+.loggedin .creation__form {
+  display: none;
+}

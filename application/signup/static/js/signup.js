@@ -52,6 +52,7 @@
       window.setTimeout(function() {
         openedWindow.close();
         // do next now logged in thing here...
+        $("body").addClass("loggedin");
       }, 4000);
       return false;
     });
