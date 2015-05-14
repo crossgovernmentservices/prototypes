@@ -44,6 +44,18 @@
       checkProvider(e.target.value);
     });
 
+    $(".signup__btn").on("click", function(e) {
+      e.preventDefault();
+      var openedWindow = window.open('googlelogin',
+                                  'signing into google',
+                                  'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=300,height=300');
+      window.setTimeout(function() {
+        openedWindow.close();
+        // do next now logged in thing here...
+      }, 4000);
+      return false;
+    });
+
   });
 
 }(jQuery));

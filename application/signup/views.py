@@ -21,3 +21,7 @@ def create():
 @blueprint.route('/basic')
 def basic():
     return render_template("basic.html")
+
+@blueprint.route('/googlelogin')
+def googlelogin():
+    return render_template("googlelogin.html")

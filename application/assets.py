@@ -104,6 +104,13 @@ js_signup = Bundle(
     output='gen/js/signup.js'
 )
 
+css_oauth = Bundle(
+    'signup/css/googlelogin.scss',
+    filters='scss',
+    output='gen/css/oauth.css',
+    depends="**/*.scss"
+)
+
 
 assets = Environment()
 
@@ -124,3 +131,6 @@ assets.register('js_professions', js_professions)
 
 assets.register('css_signup', css_signup)
 assets.register('js_signup', js_signup)
+
+assets.register('css_oauth', css_oauth)
+
