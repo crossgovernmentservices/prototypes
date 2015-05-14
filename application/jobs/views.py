@@ -67,6 +67,7 @@ def to_review():
         others = json.load(data_file)
     return render_template('to_review.html', team=team, others=others)
 
+
 @blueprint.route('/email_referred')
 def email_referred():
     email = {
@@ -84,3 +85,8 @@ def email_referred():
         """
     }
     return render_template('email_referred.html', email=email)
+
+
+@blueprint.route('/contract')
+def contract():
+    return render_template('contract.html')
