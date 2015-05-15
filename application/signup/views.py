@@ -38,6 +38,18 @@ def basicprofile_jobs():
 def csprofile():
     return render_template("csprofile.html", CivilServant=True, activeTab="you")
 
+@blueprint.route('/csprofile_jobs')
+def csprofile_jobs():
+    return render_template("csprofile_jobs.html", CivilServant=True, activeTab="jobs")
+
+@blueprint.route('/csprofile_learning')
+def csprofile_learning():
+    return render_template("csprofile_learning.html", CivilServant=True, activeTab="learning")
+
+@blueprint.route('/csprofile_perf')
+def csprofile_perf():
+    return render_template("csprofile_perf.html", CivilServant=True, activeTab="performance")
+
 @blueprint.route('/csprofile_services')
 def csprofile_services():
     with open('/code/application/data/services.json') as data_file:
