@@ -7,12 +7,37 @@ read NAME
 mkdir -p application/${NAME}/{static,templates}
 mkdir -p application/${NAME}/static/{css,js}
 
+cat << EOF > application/${NAME}/static/css/main.scss
+// See assets.py
+// Even though govuk.css is built for all views, we
+// still include it here for access to SASS variables.
+@import '../../../static/css/govuk';
+
+.welcome_orange {
+  color: red + green;
+}
+EOF
+
 cat << EOF > application/${NAME}/templates/hello.html
 {% extends "layout.html" %}
+
+{% block head %}
+
+  {{ super() }}
+
+  {% assets "${NAME}/css/main.scss",
+      filters="scss", output="gen/css/${NAME}.css" %}
+      <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+{% endblock %}
+
 {% block content %}
 <main id="content" role="main">
-  <h1>Hello!</h1>
-  <p>Blueprint <em>${NAME}</em> is ready.</p>
+  <h1>Hello from ${NAME}!</h1>
+  <p>For routes, see application/${NAME}/views.py</p>
+  <p class="welcome_orange">For CSS, see application/${NAME}/static/css/main.scss</p>
+  <p>This template lives at application/${NAME}/templates/hello.html</p>
 </main>
 {% endblock %}
 EOF
