@@ -62,6 +62,7 @@ js_jobs_review = Bundle(
     'jobs/js/d3.v3.min.js',
     'jobs/js/radar-chart.js',
     'jobs/js/review-summary.js',
+    'jobs/js/details.polyfill.js',
     filters='jsmin',
     output='gen/js/jobs_review.js'
 )
@@ -134,4 +135,3 @@ assets.register('css_signup', css_signup)
 assets.register('js_signup', js_signup)
 
 assets.register('css_oauth', css_oauth)
-
