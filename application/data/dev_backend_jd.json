@@ -1,0 +1,68 @@
+{
+  "ref": "1449218",
+  "role": "Back-end Developer",
+  "team": "Government Digital Service (GDS)",
+  "closing_date": "17th May 2015",
+  "department": "Cabinet Office",
+  "location": "Floor 3, Aviation House, Holborn, London",
+  "grade": "A",
+  "contract": "2 Year: Fixed Term (for external) / Loan (current civil servants)",
+  "org": {
+    "name": "GDS",
+    "desc": "<p>We are leading the digital transformation of government, making public services digital by default, and simpler, clearer and faster to use.</p>",
+    "more": "https://www.gov.uk/government/organisations/government-digital-service/about"
+  },
+  "profession": "Digital",
+  "skills": {
+    "technical": ["Scala", "Ruby", "Python", "Web security"],
+    "knowledge": ["Agile", "User needs", "Open standards", "Open source", "User centred design", "Digital services"],
+    "personal": ["Problem solving", "Decision making"],
+    "essential": [
+      "back-end experience, with detailed knowledge of Ruby, Java, Python and Scala",
+      "understanding of software design principles, problem solving and the ability to diagnose and debug production issues",
+      "experience of using testing to validate solutions",
+      "ability to research and learn new programming tools and techniques",
+      "understanding of agile environments, version control and technical debt",
+      "knowledge of technologies used for web applications, (eg databases, backups, CDNs and search) and of Unix-like operating systems (eg Linux and/or Mac OS)",
+      "experience of using third-party libraries and configuration management tools",
+      "understanding of web security practices (eg monitoring and intrusion detection)"
+    ],
+    "desirable": [
+      "passion for digital services and agile working",
+      "ability to communicate technical concepts",
+      "experience of building and scaling high-traffic websites",
+      "history of leading technical projects"
+    ]
+  },
+  "salary_range": "£40,001 - 50,000",
+  "role_desc": "<p>You’ll deliver high quality code, thrive using agile methods and work as part of a multidisciplinary team.</p><p>You must be familiar with modern frameworks and languages, as well as working practices such as TDD, continuous integration, continuous delivery and DevOps.</p>",
+  "responsibilities": [
+    "build web and mobile products to serve citizen and government needs",
+    "take the lead for technology on small projects",
+    "implement toolkits and APIs for integration, performance optimisation and security and scalability",
+    "build automated tests to support continuous deployment environment",
+    "act as a digital ambassador across government and the web community (eg posting blogs, tech talks at conferences)",
+    "participate in our in-house and out-of-hours support rota",
+    "help recruit developers"
+  ],
+  "competencies": [
+    "changing and improving",
+    "managing a quality service",
+    "collaborating and partnering"
+  ],
+  "benefits": [
+    "For successful candidates, pension schemes are available",
+    "Annual leave allowance of 25 days rising to 30 after five years",
+    "Queen’s Birthday privilege holiday plus 8 bank/public holidays",
+    "Recruitment and Retention allowance of up to £3500"
+  ],
+  "interview_dates": {
+    "start": "18th May 2015",
+    "end": "27th May 2015"
+  },
+  "contacts": {
+    "external_cand": "cabinet-office.external@dwp.gsi.gov.uk",
+    "about_role": "gds-recruitment@digital.cabinet-office.gov.uk",
+    "terms": "cabinet-office.external@dwp.gsi.gov.uk"
+  }
+}

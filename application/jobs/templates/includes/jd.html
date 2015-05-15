@@ -23,9 +23,21 @@
       <p>37</p>
     </div>
     <div class="jd__key-info__item">
-      <h4 class="heading-small">Associated skills</h4>
+      <h4 class="heading-small">Technical skills</h4>
       <ul class="skills-list skills-list--dark">
-        {% for skill in jd.skills.universal %}
+        {% for skill in jd.skills.technical %}
+        <li class="skill"><a href="/jobs/search_by_skill#{{ skill }}">{{ skill }}</a></li>
+        {% endfor %}
+      </ul>
+      <h4 class="heading-small">Knowledge skills</h4>
+      <ul class="skills-list skills-list--dark">
+        {% for skill in jd.skills.knowledge %}
+        <li class="skill"><a href="/jobs/search_by_skill#{{ skill }}">{{ skill }}</a></li>
+        {% endfor %}
+      </ul>
+      <h4 class="heading-small">Personal skills</h4>
+      <ul class="skills-list skills-list--dark">
+        {% for skill in jd.skills.personal %}
         <li class="skill"><a href="/jobs/search_by_skill#{{ skill }}">{{ skill }}</a></li>
         {% endfor %}
       </ul>

@@ -14,7 +14,9 @@
   },
   "profession": "Administration/Corporate Support",
   "skills": {
-    "universal": ["Administration", "Support","Operational Delivery","Secretarial","Event Planning","Communications"],
+    "technical": ["Secretarial", "CMS"],
+    "knowledge": ["Operational Delivery","Event Planning"],
+    "personal": ["Communications", "Methodical", "Time management"],
     "essential": [
       "good organisational skills, ability to prioritise and meet deadlines",
       "excellent communication skills",

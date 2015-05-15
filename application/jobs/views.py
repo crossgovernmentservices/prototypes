@@ -26,9 +26,17 @@ def your_apps():
     return render_template('your_apps.html')
 
 
-@blueprint.route('/description_developer')
-def description_developer():
-    with open('/code/application/data/dev_jd.json') as data_file:
+@blueprint.route('/description_frontend_developer')
+def description_frontend_developer():
+    return description_developer('frontend')
+
+
+@blueprint.route('/description_backend_developer')
+def description_backend_developer():
+    return description_developer('backend')
+
+def description_developer(which):
+    with open('/code/application/data/dev_%s_jd.json' % which) as data_file:
         job_description = json.load(data_file)
     return render_template('description.html', jd=job_description)
 
