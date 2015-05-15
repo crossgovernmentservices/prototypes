@@ -33,3 +33,7 @@ def basicprofile():
 @blueprint.route('/basicprofile_jobs')
 def basicprofile_jobs():
     return render_template("basicprofile_jobs.html", activeTab="jobs")
+
+@blueprint.route('/csprofile')
+def csprofile():
+    return render_template("csprofile.html", CivilServant=True, activeTab="you")
