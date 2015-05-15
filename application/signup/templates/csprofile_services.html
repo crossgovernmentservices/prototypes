@@ -1,0 +1,22 @@
+{% extends "signup_layout.html" %}
+{% block content %}
+
+{% include "partials/nav.html" ignore missing %}
+
+<main id="content" role="main">
+  <h1 class="heading-medium">Services</h1>
+  <p class="lede">These are the services that can access your account and data. <a href="">Learn more</a>.</p>
+  <section class="section">
+    <ul>
+
+      {% from "partials/service.html" import build_service_item %}
+      {% for service in services %}
+        {{ build_service_item(service) }}
+      {% endfor %}
+
+
+    </ul>
+  </section>
+</main>
+
+{% endblock %}

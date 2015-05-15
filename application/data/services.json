@@ -1,0 +1,5 @@
+[
+  {"name": "Job alerts", "permissions": "read-only", "desc": "", "approval_date": "Tues 6th May 2015"},
+  {"name": "Building security", "permissions": "read-only", "desc": "The building security team uses some of your personal data to print passes", "approval_date": "Tues 20th May 2015"},
+  {"name": "Learning", "permissions": "read and write", "desc": "Learning uses your data to keep your learning record up to date", "approval_date": "Mon 19th May 2015"}
+]

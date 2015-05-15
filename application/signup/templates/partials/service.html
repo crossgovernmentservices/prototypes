@@ -1,0 +1,17 @@
+{% macro build_service_item(service) %}
+
+<li class="grid-row service__item">
+  <div class="column-three-quarter">
+    <h3 class="heading-small">{{ service.name }}</h3>
+    <p class="text">{{ service.desc }}</p>
+    <p class="secondary">
+      <span>Permissions: {{ service.permissions }}</span>
+      <span>Date approved: {{ service.approval_date }}</span>
+    </p>
+  </div>
+  <div class="column-quarter">
+    <button class="button revoke__btn">revoke</button>
+  </div>
+</li>
+
+{% endmacro %}
