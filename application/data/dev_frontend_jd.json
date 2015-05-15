@@ -1,6 +1,6 @@
 {
   "ref": "1449218",
-  "role": "Developer",
+  "role": "Front-end Developer",
   "team": "Government Digital Service (GDS)",
   "closing_date": "17th May 2015",
   "department": "Cabinet Office",
@@ -14,15 +14,15 @@
   },
   "profession": "Digital",
   "skills": {
-    "universal": [ "Agile", "Javascript", "Ruby", "Python", "User needs", "HTML", "CSS", "Problem solving", "Digital services", "User centred design", "Web security", "Open standards", "Open source"],
+    "technical": [ "HTML", "CSS", "Javascript"],
+    "knowledge": ["Agile", "User needs", "Open standards", "Open source", "User centred design", "Digital services"],
+    "personal": ["Problem solving", "Decision making"],
     "essential": [
-      "front-end and/or back-end experience, with detailed knowledge of at least one of the following: Ruby, Java, Python, Javascript, Scala or Go",
-      "CSS, HTML and Javascript skills (for front-end developers)",
+      "front-end experience, with detailed knowledge of CSS, HTML, and Javascript",
       "understanding of software design principles, problem solving and the ability to diagnose and debug production issues",
       "experience of using testing to validate solutions",
-      "ability to research and learn new programming tools and techniques",
+      "ability to research and learn new front-end tools and techniques",
       "understanding of agile environments, version control and technical debt",
-      "knowledge of technologies used for web applications, (eg databases, backups, CDNs and search) and of Unix-like operating systems (eg Linux and/or Mac OS)",
       "experience of using third-party libraries and configuration management tools",
       "understanding of web security practices (eg monitoring and intrusion detection)"
     ],
@@ -38,7 +38,6 @@
   "responsibilities": [
     "build web and mobile products to serve citizen and government needs",
     "take the lead for technology on small projects",
-    "implement toolkits and APIs for integration, performance optimisation and security and scalability",
     "build automated tests to support continuous deployment environment",
     "act as a digital ambassador across government and the web community (eg posting blogs, tech talks at conferences)",
     "participate in our in-house and out-of-hours support rota",
