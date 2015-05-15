@@ -1,11 +1,18 @@
+{% if CivilServant %}
+<nav class="profile__nav">
+  <ul>
+    <li class="profile__nav__item {% if activeTab == 'you' %}profile__nav__item--active{% endif %}"><a href="/signup/csprofile">You</a></li>
+    <li class="profile__nav__item {% if activeTab == 'jobs' %}profile__nav__item--active{% endif %}"><a href="/signup/csprofile_jobs">Jobs</a></li>
+    <li class="profile__nav__item {% if activeTab == 'learning' %}profile__nav__item--active{% endif %}"><a href="">Learning</a></li>
+    <li class="profile__nav__item {% if activeTab == 'performance' %}profile__nav__item--active{% endif %}"><a href="">Performance</a></li>
+    <li class="profile__nav__item {% if activeTab == 'services' %}profile__nav__item--active{% endif %}"><a href="/signup/csprofile_services">Services</a></li>
+  </ul>
+</nav>
+{% else %}
 <nav class="profile__nav">
   <ul>
     <li class="profile__nav__item {% if activeTab == 'you' %}profile__nav__item--active{% endif %}"><a href="/signup/basicprofile">You</a></li>
     <li class="profile__nav__item {% if activeTab == 'jobs' %}profile__nav__item--active{% endif %}"><a href="/signup/basicprofile_jobs">Jobs</a></li>
-    {% if CivilServant %}
-    <li class="profile__nav__item {% if activeTab == 'learning' %}profile__nav__item--active{% endif %}"><a href="">Learning</a></li>
-    <li class="profile__nav__item {% if activeTab == 'performance' %}profile__nav__item--active{% endif %}"><a href="">Performance</a></li>
-    <li class="profile__nav__item {% if activeTab == 'services' %}profile__nav__item--active{% endif %}"><a href="/signup/csprofile_services">Services</a></li>
-    {% endif %}
   </ul>
 </nav>
+{% endif %}
