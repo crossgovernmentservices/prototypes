@@ -17,16 +17,17 @@
 
 // Import GOV.UK elements which aren't yet in the frontend tookkit
 @import "../govuk_elements/public/sass/elements/helpers";
+@import "../govuk_elements/public/sass/elements/reset";
+@import "../govuk_elements/public/sass/elements/elements-typography";
+@import "../govuk_elements/public/sass/elements/layout";
+@import "../govuk_elements/public/sass/elements/forms";
+@import "../govuk_elements/public/sass/elements/tables";
 @import "../govuk_elements/public/sass/elements/buttons";
 @import "../govuk_elements/public/sass/elements/details";
-@import "../govuk_elements/public/sass/elements/elements-typography";
-@import "../govuk_elements/public/sass/elements/forms";
-@import "../govuk_elements/public/sass/elements/icons";
-@import "../govuk_elements/public/sass/elements/layout";
 @import "../govuk_elements/public/sass/elements/lists";
 @import "../govuk_elements/public/sass/elements/panels";
-@import "../govuk_elements/public/sass/elements/reset";
-@import "../govuk_elements/public/sass/elements/tables";
+
+@import "../govuk_elements/public/sass/elements/icons";
 
 @import "../govuk_elements/public/sass/elements/forms/form-block-labels";
 @import "../govuk_elements/public/sass/elements/forms/form-date";
