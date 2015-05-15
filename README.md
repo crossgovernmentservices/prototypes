@@ -8,6 +8,7 @@ Supersedes **cgt_prototypes**.
 
 Run [dev-env bootstrap](https://github.com/crossgovernmentservices/dev-env#3-bootstrap).
 
+Quickly add a new blueprint with ```./scripts/blueprint```
 
 ## TODO
 

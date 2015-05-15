@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="lte-ie8" lang=""><![endif]-->
+<!--[if gt IE 8]><!--><html lang=""><!--<![endif]-->
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <title>GOV.UK - The best place to find government services and information</title>
+
+    {% assets "prejoining/css/access.scss",
+      filters="scss", output="gen/css/prejoining.css" %}
+      <link rel="stylesheet" href="{{ ASSET_URL }}">
+    {% endassets %}
+  </head>
+
+  <body>
+    <a href="/">&lt; back</a>
+
+    <main class="access-summary">
+      <article class="access-summary__content">
+        <h1 class="heading-large">Request to use data</h1>
+        {% block content %}{% endblock %}
+      </article>
+    </main>
+  </body>
+</html>

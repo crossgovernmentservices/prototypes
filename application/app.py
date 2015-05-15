@@ -13,7 +13,14 @@ from application.extensions import (
     debug_toolbar,
     asset_locator,
 )
-from application import public, user, jobs, professions, signup
+from application import (
+    prejoining,
+    public,
+    user,
+    jobs,
+    professions,
+    signup
+)
 
 
 def create_app(config_object=ProdConfig):
@@ -43,6 +50,7 @@ def register_extensions(app):
 
 
 def register_blueprints(app):
+    app.register_blueprint(prejoining.views.blueprint)
     app.register_blueprint(public.views.blueprint)
     app.register_blueprint(user.views.blueprint)
     app.register_blueprint(jobs.views.blueprint)

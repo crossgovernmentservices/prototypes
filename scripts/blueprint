@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+echo "What is the blueprint name?\n"
+read NAME
+
+# create blueprint
+mkdir -p application/${NAME}/{static,templates}
+mkdir -p application/${NAME}/static/{css,js}
+
+cat << EOF > application/${NAME}/templates/hello.html
+{% extends "layout.html" %}
+{% block content %}
+<main id="content" role="main">
+  <h1>Hello!</h1>
+  <p>Blueprint <em>${NAME}</em> is ready.</p>
+</main>
+{% endblock %}
+EOF
+
+cat << EOF > application/${NAME}/views.py 
+from flask import (
+    Blueprint,
+    render_template,
+)
+import json
+
+
+blueprint = Blueprint(
+    '${NAME}',
+    __name__,
+    url_prefix='/${NAME}',
+    static_folder='static',
+    template_folder='templates')
+
+
+@blueprint.route('/hello')
+def hello():
+    return render_template('hello.html')
+EOF
+
+echo "from . import views" > application/${NAME}/__init__.py
+
+# import blueprint
+sed -i -e "/from application import (/a\\    ${NAME}," application/app.py
+
+# register blueprint
+sed -i -e "/def register_blueprints/a\\    app.register_blueprint(${NAME}.views.blueprint)" application/app.py
+
+echo
+echo "Done. See the example page at /${NAME}/hello"
