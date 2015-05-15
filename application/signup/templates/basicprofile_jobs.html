@@ -1,0 +1,26 @@
+{% extends "signup_layout.html" %}
+{% block content %}
+
+{% include "partials/nav.html" ignore missing %}
+
+<main id="content" role="main">
+  <section class="column-quarter">
+    <section>
+      <h5 class="heading-small">Colm Britton</h5>
+      <span>0 applications</span>
+    </section>
+    <section class="section">
+      <nav>
+        <ul>
+          <li><a href="">Search</a></li>
+          <li><a href="">Your apps</a></li>
+        </ul>
+      </nav>
+    </section>
+  </section>
+  <section class="column-three-quarter">
+    {% include "partials/job_search.html" ignore missing %}
+  </section>
+</main>
+
+{% endblock %}

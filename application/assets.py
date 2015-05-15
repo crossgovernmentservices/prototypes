@@ -93,6 +93,7 @@ js_professions = Bundle(
 # ...in your blueprint's SCSS.
 css_signup = Bundle(
     'signup/css/signup.scss',
+    'signup/css/basicprofile.scss',
     filters='scss',
     output='gen/css/signup.css',
     depends="**/*.scss"

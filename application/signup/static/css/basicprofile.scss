@@ -1,0 +1,42 @@
+// See assets.py
+// Even though govuk.css is built for all views, we
+// still include it here for access to SASS variables.
+@import '../../../static/css/govuk';
+
+@import '../../../static/govuk_elements/public/sass/elements/lists';
+
+#global-header-bar {
+  display: none;
+}
+
+.column-three-quarter {
+  @include grid-column(3/4);
+}
+
+.profile__nav {
+  background: $panel-colour;
+  text-align: center;
+}
+
+.profile__nav__item {
+  display: inline-block;
+  padding: $gutter-half $gutter;
+
+  a {
+    text-decoration: none;
+    color: $text-colour;
+  }
+
+  &:hover {
+    cursor: pointer;
+    border-bottom: 3px solid $link-hover-colour;
+  }
+}
+
+.profile__nav__item--active {
+  border-bottom: 3px solid $link-colour;
+}
+
+.temp {
+  height: 330px;
+}
