@@ -14,7 +14,9 @@
   },
   "profession": "Policy",
   "skills": {
-    "universal": ["Analytical","Economics","Data Governance","Operational Delivery","Operational Research","Policy","Trend Analysis","Statistics"],
+    "technical": [ "Trend Analysis", "Statistics"],
+    "knowledge": ["Economics", "Data Governance", "Operational Delivery","Operational Research", "Policy"],
+    "personal": ["Analytical", "Decision making"],
     "essential": [
       "history of developing policies with regard to accessing and using data",
       "understanding of the potential of sharing data, and its challenges",
