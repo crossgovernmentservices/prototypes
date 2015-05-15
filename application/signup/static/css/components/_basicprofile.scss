@@ -1,0 +1,25 @@
+.basicprofile {
+  background: $link-hover-colour;
+  padding-top: 2*$gutter;
+}
+.basicprofile__content {
+  position: relative;
+  background: #fff;
+}
+.basicprofile__pic {
+  position: absolute;
+  top: -1*$gutter;
+  left: $gutter-half;
+}
+.basicprofile__content__items {
+  padding-left: 100px + $gutter;
+}
+
+.basicprofile__name {
+  padding-top: 10px;
+  margin-bottom: 0;
+}
+
+.basicprofile__email {
+  font-size: 14px;
+}

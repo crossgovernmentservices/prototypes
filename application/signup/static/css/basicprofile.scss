@@ -3,6 +3,9 @@
 // still include it here for access to SASS variables.
 @import '../../../static/css/govuk';
 
+@import 'components/profile';
+@import 'components/basicprofile';
+
 #global-header-bar {
   display: none;
 }
@@ -58,4 +61,9 @@
   span {
     display: block;
   }
+}
+
+// for sections containing widgets
+.container {
+  margin-top: $gutter-half;
 }
