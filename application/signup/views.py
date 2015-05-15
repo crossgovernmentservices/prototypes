@@ -28,7 +28,9 @@ def googlelogin():
 
 @blueprint.route('/basicprofile')
 def basicprofile():
-    return render_template("basicprofile.html", activeTab="you")
+    with open('/code/application/data/noncivilservant.json') as data_file:
+      person = json.load(data_file)
+    return render_template("basicprofile.html", activeTab="you", person=person)
 
 @blueprint.route('/basicprofile_jobs')
 def basicprofile_jobs():
@@ -36,7 +38,9 @@ def basicprofile_jobs():
 
 @blueprint.route('/csprofile')
 def csprofile():
-    return render_template("csprofile.html", CivilServant=True, activeTab="you")
+    with open('/code/application/data/civilservant.json') as data_file:
+      person = json.load(data_file)
+    return render_template("csprofile.html", CivilServant=True, activeTab="you", person=person)
 
 @blueprint.route('/csprofile_jobs')
 def csprofile_jobs():
