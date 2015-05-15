@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block head %}
+
+  {{ super() }}
+
+  {% assets "being_a_civil_servant/css/receipts.scss",
+      filters="scss", output="gen/css/receipts.css" %}
+      <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  <a href="/" class="example-back-link">Back to the cross government tools' prototypes</a>
+
+  <section class="section">
+    <h2 class="heading-medium">Add receipts</h2>
+    <input type="file" id="take-picture" accept="image/*">
+  </section>
+
+  <section class="section">
+    <h2 class="heading-medium">Preview:</h2>
+    <img src="about:blank" alt="" id="show-picture" />
+  </section>
+
+</main><!-- / #page-container -->
+{% endblock %}
+
+{% block body_end %}
+
+  {{ super() }}
+
+  {% assets "being_a_civil_servant/js/receipts.js",
+      filters="jsmin", output="gen/js/receipts.js" %}
+      <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+
+{% endblock %}

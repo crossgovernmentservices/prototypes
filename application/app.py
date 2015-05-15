@@ -14,6 +14,7 @@ from application.extensions import (
     asset_locator,
 )
 from application import (
+    being_a_civil_servant,
     prejoining,
     public,
     user,
@@ -50,6 +51,7 @@ def register_extensions(app):
 
 
 def register_blueprints(app):
+    app.register_blueprint(being_a_civil_servant.views.blueprint)
     app.register_blueprint(prejoining.views.blueprint)
     app.register_blueprint(public.views.blueprint)
     app.register_blueprint(user.views.blueprint)
