@@ -1,0 +1,26 @@
+.side-menu {
+  
+}
+
+.side-menu__item {
+  line-height: 1.5em;
+  margin-bottom: 0.5em;
+  padding: 5px 0 5px $gutter-half;
+
+  &:hover {
+    background: $highlight-colour;
+  }
+
+  a {
+    color: $text-colour;
+    text-decoration: none;
+
+    :hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.side-menu__item--active {
+  border-right: 3px solid $link-colour;
+}

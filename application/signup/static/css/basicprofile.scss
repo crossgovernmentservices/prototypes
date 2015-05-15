@@ -6,7 +6,9 @@
 @import 'components/profile';
 @import 'components/basicprofile';
 @import 'components/services';
+@import 'components/side-menu';
 
+// global for all profile based pages
 #global-header-bar {
   display: none;
 }
@@ -38,6 +40,7 @@
 .profile__nav__item--active {
   border-bottom: 3px solid $link-colour;
 }
+
 
 .temp {
   height: 330px;

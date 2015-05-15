@@ -4,8 +4,21 @@
 {% include "partials/nav.html" ignore missing %}
 
 <main id="content" role="main">
-  <h1 class="heading-large">Jobs</h1>
-  <section class="temp"></section>
+  <div class="grid-row">
+    <div class="column-quarter">
+      <section class="container">
+          <ul class="side-menu">
+            <li class="side-menu__item side-menu__item--active"><a href="">Search</a></li>
+            <li class="side-menu__item"><a href="">History</a></li>
+            <li class="side-menu__item"><a href="">Alerts</a></li>
+          </ul>
+      </section>
+    </div>
+    <div class="column-three-quarter">
+      <h1 class="heading-large">Jobs</h1>
+    </div>
+  </div>
+
 </main>
 
 {% endblock %}
