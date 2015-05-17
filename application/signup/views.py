@@ -46,9 +46,22 @@ def csprofile():
 def csprofile_learning():
     return render_template("csprofile_learning.html", CivilServant=True, activeTab="learning")
 
+# CS Profile - PERFORMANCE
 @blueprint.route('/csprofile_perf')
 def csprofile_perf():
-    return render_template("csprofile_perf.html", CivilServant=True, activeTab="performance")
+    return render_template("csprofile_perf.html", CivilServant=True, activeTab="performance", activeMenu="home")
+
+@blueprint.route('/csprofile_perf/objectives')
+def csprofile_perf_obj():
+    return render_template("csprofile_perf_obj.html", CivilServant=True, activeTab="performance", activeMenu="obj")
+
+@blueprint.route('/csprofile_perf/history')
+def csprofile_perf_history():
+    return render_template("csprofile_perf_history.html", CivilServant=True, activeTab="performance", activeMenu="history")
+
+@blueprint.route('/csprofile_perf/last')
+def csprofile_perf_last():
+    return render_template("csprofile_perf_last_review.html", CivilServant=True, activeTab="performance", activeMenu="last")
 
 # CS Profile - JOBS
 @blueprint.route('/csprofile_jobs')
