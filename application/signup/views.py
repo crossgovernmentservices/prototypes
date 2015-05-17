@@ -42,10 +42,6 @@ def csprofile():
       person = json.load(data_file)
     return render_template("csprofile.html", CivilServant=True, activeTab="you", person=person)
 
-@blueprint.route('/csprofile_jobs')
-def csprofile_jobs():
-    return render_template("csprofile_jobs.html", CivilServant=True, activeTab="jobs")
-
 @blueprint.route('/csprofile_learning')
 def csprofile_learning():
     return render_template("csprofile_learning.html", CivilServant=True, activeTab="learning")
@@ -54,9 +50,22 @@ def csprofile_learning():
 def csprofile_perf():
     return render_template("csprofile_perf.html", CivilServant=True, activeTab="performance")
 
+# CS Profile - JOBS
+@blueprint.route('/csprofile_jobs')
+def csprofile_jobs():
+    return render_template("csprofile_jobs.html", CivilServant=True, activeTab="jobs", activeMenu="home")
+
 @blueprint.route('/csprofile_jobs/alerts')
 def csprofile_jobs_alerts():
-    return render_template("csprofile_jobs_alerts.html", CivilServant=True, activeTab="jobs")
+    return render_template("csprofile_jobs_alerts.html", CivilServant=True, activeTab="jobs", activeMenu="alerts")
+
+@blueprint.route('/csprofile_jobs/history')
+def csprofile_jobs_history():
+    return render_template("csprofile_jobs_history.html", CivilServant=True, activeTab="jobs", activeMenu="history")
+
+@blueprint.route('/csprofile_jobs/apps')
+def csprofile_jobs_apps():
+    return render_template("csprofile_jobs_apps.html", CivilServant=True, activeTab="jobs", activeMenu="apps")
 
 @blueprint.route('/csprofile_services')
 def csprofile_services():

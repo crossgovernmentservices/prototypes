@@ -7,11 +7,10 @@
   <div class="grid-row">
     <div class="column-quarter">
       <section class="container">
-          <ul class="side-menu">
-            <li class="side-menu__item"><a href="">Search</a></li>
-            <li class="side-menu__item"><a href="">History</a></li>
-            <li class="side-menu__item side-menu__item--active"><a href="/signup/csprofile_jobs/alerts">Alerts</a></li>
-          </ul>
+        {% include "partials/jobs_profile.html" ignore missing %}
+      </section>
+      <section class="container section">
+        {% include "partials/jobs_menu.html" ignore missing %}
       </section>
     </div>
     <div class="column-three-quarter">
