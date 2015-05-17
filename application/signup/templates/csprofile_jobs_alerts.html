@@ -1,0 +1,26 @@
+{% extends "signup_layout.html" %}
+{% block content %}
+
+{% include "partials/nav.html" ignore missing %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-quarter">
+      <section class="container">
+          <ul class="side-menu">
+            <li class="side-menu__item"><a href="">Search</a></li>
+            <li class="side-menu__item"><a href="">History</a></li>
+            <li class="side-menu__item side-menu__item--active"><a href="/signup/csprofile_jobs/alerts">Alerts</a></li>
+          </ul>
+      </section>
+    </div>
+    <div class="column-three-quarter">
+      <h1 class="heading-large">Your job alerts</h1>
+      <p class="lede">Below are the job alerts you currently have set up</p>
+      {% include "partials/job_alerts.html" ignore missing %}
+      <section class="section"><button class="button">+ add alert</button></section>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

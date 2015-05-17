@@ -7,6 +7,8 @@
 @import 'components/basicprofile';
 @import 'components/services';
 @import 'components/side-menu';
+@import 'components/job_alerts';
+@import 'components/skills';
 
 // global for all profile based pages
 #global-header-bar {
@@ -49,4 +51,12 @@
 // for sections containing widgets
 .container {
   margin-top: $gutter-half;
+}
+
+.skill {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  margin-right: $gutter-half;
+  margin-bottom: $gutter-half;
+  border: 1px solid $panel-colour;
 }

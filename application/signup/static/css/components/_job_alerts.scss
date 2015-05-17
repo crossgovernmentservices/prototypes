@@ -1,0 +1,37 @@
+.job-alerts {
+}
+
+.job-alert {
+  background: $highlight-colour;
+  position: relative;
+  padding: $gutter-half;
+  margin-bottom: $gutter-half;
+}
+
+.job-alert__param {
+  line-height: 1.7em;
+  dt, dd {
+    display: inline;
+  }
+  dt {
+    font-weight: 600;
+    margin-right: $gutter-half;
+  }
+}
+.job-alert__remove,
+.job-alert__toggle {
+  position: absolute;
+  right: 10px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+.job-alert__remove {
+  top: 10px;
+}
+
+.job-alert__toggle {
+  bottom: 10px;
+}
+
