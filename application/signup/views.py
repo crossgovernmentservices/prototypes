@@ -32,6 +32,12 @@ def basicprofile():
       person = json.load(data_file)
     return render_template("basicprofile.html", activeTab="you", person=person)
 
+@blueprint.route('/basicprofile/checklist')
+def basicprofile_checklist():
+    with open('/code/application/data/noncivilservant.json') as data_file:
+      person = json.load(data_file)
+    return render_template("basicprofile_checklist.html", activeTab="you", person=person)
+
 @blueprint.route('/basicprofile_jobs')
 def basicprofile_jobs():
     return render_template("basicprofile_jobs.html", activeTab="jobs", activeMenu="home")

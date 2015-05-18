@@ -1,0 +1,36 @@
+.cl_item {}
+.cl_item__head {
+  border: 1px solid $panel-colour;
+  padding: $gutter-half;
+  display: block;
+}
+.cl_item__status {
+  position: relative;
+
+  &:after {
+    content: "not started";
+    color: $grey-2;
+    position: absolute;
+    right: $gutter-half;
+    top: 13px;
+    border: 1px solid $grey-2;
+    border-radius: 2px;
+    padding: 3px;
+    font-size: 16px;
+  }
+}
+.cl_item__status--complete:after {
+  content: "completed";
+  color: $button-colour;
+  border-color: $button-colour;
+}
+.cl_item__status--in-progress:after {
+  content: "in progress";
+  color: $yellow;
+  border-color: $yellow;
+}
+.cl_item__content {
+  padding: $gutter-half $gutter;
+  background: $highlight-colour;
+  margin: -5px 5px 5px;
+}

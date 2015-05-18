@@ -1,0 +1,92 @@
+{% extends "signup_layout.html" %}
+{% block content %}
+
+{% include "partials/nav.html" ignore missing %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-third">
+      <section class="container">
+      {% include "partials/basicprofile.html" ignore missing %}
+      </section>
+    </div>
+    <div class="column-two-thirds">
+      <h2 class="heading-medium">Pre joiners checklist</h2>
+      <details class="cl_item">
+        <summary class="cl_item__head cl_item__status cl_item__status--complete">Security checks</summary>
+        <div class="cl_item__content">
+          some content
+        </div>
+      </details>
+      <details class="cl_item">
+        <summary class="cl_item__head cl_item__status cl_item__status--complete">Health check</summary>
+        <div class="cl_item__content">
+          some content
+        </div>
+      </details>
+      <details class="cl_item">
+        <summary class="cl_item__head cl_item__status cl_item__status--in-progress">Contract</summary>
+        <div class="cl_item__content">
+          <p class="text">Your contract is ready for you to review and sign.</p>
+          <p class="text">Any queries or issues please contact <a href="">david.mann@digital.cabinet-office.gov.uk</a></p>
+          <p class="text"><a href="/jobs/contract" class="button">View contract</a></p>
+        </div>
+      </details>
+      <details class="cl_item">
+        <summary class="cl_item__head cl_item__status">Building pass</summary>
+        <div class="cl_item__content">
+          <p class="text">Building services require your permission for them to use your profile data to produce a pass for you to access government buildings.</p>
+          <p class="text"><a href="/prejoining/pass_data" class="button">View details</a></p>
+        </div>
+      </details>
+      <details class="cl_item">
+        <summary class="cl_item__head cl_item__status">Choose equipment</summary>
+        <div class="cl_item__content">
+          <form>
+            <fieldset>
+              <legend class="form-label-bold">Choose laptop</legend>
+              <label class="block-label" for="radio-1">
+                <input id="radio-1" type="radio" name="radio-group" value="macbook air 13">
+                Macbook Air "13
+              </label>
+              <label class="block-label" for="radio-2">
+                <input id="radio-2" type="radio" name="radio-group" value="Lenovo">
+                Lenovo
+              </label>
+              <p class="form-block">or</p>
+              <label class="block-label" for="radio-3">
+                <input id="radio-3" type="radio" name="radio-group" value="Microsoft">
+                Microsoft
+              </label>
+            </fieldset>
+            <fieldset>
+              <legend class="form-label-bold">Choose mobile</legend>
+              <label class="block-label" for="radio-1">
+                <input id="radio-1" type="radio" name="radio-group" value="iphone 5s">
+                iPhone 5s
+              </label>
+              <label class="block-label" for="radio-2">
+                <input id="radio-2" type="radio" name="radio-group" value="blackberry">
+                Blackberry
+              </label>
+              <p class="form-block">or</p>
+              <label class="block-label" for="radio-3">
+                <input id="radio-3" type="radio" name="radio-group" value="Sony Xperia 5">
+                Sony Xperia 5
+              </label>
+            </fieldset>
+            <button class="button" type="submit">Submit choices</button>
+          </form>
+        </div>
+      </details>
+      <details class="cl_item">
+        <summary class="cl_item__head cl_item__status">First day details</summary>
+        <div class="cl_item__content">
+          some content
+        </div>
+      </details>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
