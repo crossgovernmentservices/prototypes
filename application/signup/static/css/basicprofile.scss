@@ -27,6 +27,10 @@
   height: 330px;
 }
 
+.form {
+  @extend %contain-floats;
+}
+
 // for sections containing widgets
 .container {
   margin-top: $gutter-half;
