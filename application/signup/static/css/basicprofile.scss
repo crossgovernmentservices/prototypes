@@ -9,6 +9,7 @@
 @import 'components/side-menu';
 @import 'components/job_alerts';
 @import 'components/skills';
+@import 'components/profile_nav';
 
 // global for all profile based pages
 #global-header-bar {
@@ -18,31 +19,6 @@
 .column-three-quarter {
   @include grid-column(3/4);
 }
-
-.profile__nav {
-  background: $panel-colour;
-  text-align: center;
-}
-
-.profile__nav__item {
-  display: inline-block;
-  padding: $gutter-half $gutter;
-
-  a {
-    text-decoration: none;
-    color: $text-colour;
-  }
-
-  &:hover {
-    cursor: pointer;
-    border-bottom: 3px solid $link-hover-colour;
-  }
-}
-
-.profile__nav__item--active {
-  border-bottom: 3px solid $link-colour;
-}
-
 
 .temp {
   height: 330px;
