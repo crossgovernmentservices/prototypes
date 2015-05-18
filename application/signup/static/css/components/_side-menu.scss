@@ -9,10 +9,14 @@
 
   &:hover {
     background: $highlight-colour;
+
+    a {
+      color: $text-colour;;
+    }
   }
 
   a {
-    color: $text-colour;
+    color: $secondary-text-colour;
     text-decoration: none;
 
     :hover {
@@ -22,5 +26,8 @@
 }
 
 .side-menu__item--active {
-  border-right: 3px solid $link-colour;
+  border-left: 3px solid $link-colour;
+  a {
+    color: $text-colour;
+  }
 }
