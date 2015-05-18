@@ -97,7 +97,7 @@ css_signup = Bundle(
     'signup/css/basicprofile.scss',
     filters='scss',
     output='gen/css/signup.css',
-    depends="**/*.scss"
+    depends=['**/*.scss', 'signup/css/**/*.scss']
 )
 
 js_signup = Bundle(

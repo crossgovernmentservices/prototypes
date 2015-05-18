@@ -32,4 +32,5 @@ clean:
 	-find . -name "__pycache__" | sudo xargs rm -rf
 	-find . -name "*.pyc" | sudo xargs rm -f
 	-find . -name ".webassets-cache" | sudo xargs rm -rf
+	-sudo rm -rf application/static/gen
 
