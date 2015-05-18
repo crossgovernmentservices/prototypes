@@ -1,0 +1,22 @@
+{% extends "signup_layout.html" %}
+{% block content %}
+
+{% include "partials/nav.html" ignore missing %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-third">
+      <section class="container">
+      {% include "partials/basicprofile.html" ignore missing %}
+      </section>
+    </div>
+    <div class="column-third">
+      {% include "partials/expenses_widget.html" ignore missing %}
+    </div>
+    <div class="column-two-thirds">
+      
+    <div>
+  </div>
+</main>
+
+{% endblock %}

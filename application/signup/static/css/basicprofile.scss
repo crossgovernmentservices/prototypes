@@ -11,6 +11,7 @@
 @import 'components/skills';
 @import 'components/profile_nav';
 @import 'components/add_widget';
+@import 'components/widget';
 
 // global for all profile based pages
 #global-header-bar {
@@ -36,4 +37,9 @@
   margin-right: $gutter-half;
   margin-bottom: $gutter-half;
   border: 1px solid $panel-colour;
+}
+
+.info__item {
+  font-weight: bolder;
+  text-align: right;
 }

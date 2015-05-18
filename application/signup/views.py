@@ -50,6 +50,12 @@ def csprofile():
       person = json.load(data_file)
     return render_template("csprofile.html", CivilServant=True, activeTab="you", person=person)
 
+@blueprint.route('/csprofile_more')
+def csprofile_more():
+    with open('/code/application/data/civilservant.json') as data_file:
+      person = json.load(data_file)
+    return render_template("csprofile_more.html", CivilServant=True, activeTab="you", person=person)
+
 @blueprint.route('/csprofile_learning')
 def csprofile_learning():
     return render_template("csprofile_learning.html", CivilServant=True, activeTab="learning")

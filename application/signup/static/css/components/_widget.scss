@@ -1,0 +1,14 @@
+.widget-wrap {
+  background: $highlight-colour;
+}
+
+.widget__head {
+  margin: 0;
+  padding: 8px $gutter-half;
+  background: $border-colour;
+  color: $page-colour;
+}
+
+.widget__body {
+  padding: $gutter-half;
+}
