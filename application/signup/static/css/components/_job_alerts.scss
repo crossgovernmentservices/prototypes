@@ -21,17 +21,78 @@
 .job-alert__remove,
 .job-alert__toggle {
   position: absolute;
-  right: 10px;
+  right: 6px;
 
   &:hover {
     cursor: pointer;
   }
 }
 .job-alert__remove {
-  top: 10px;
+  top: 8px;
+  outline: none;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: $secondary-text-colour;
 }
 
 .job-alert__toggle {
   bottom: 10px;
 }
 
+.job-alert__switch {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.job-alert__toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+.job-alert__toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+input.job-alert__toggle--on-off + label {
+  width: 90px;
+  height: 45px;
+}
+input.job-alert__toggle--on-off + label:before,
+input.job-alert__toggle--on-off + label:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  line-height: 45px;
+}
+input.job-alert__toggle--on-off + label:before {
+  background-color: #dddddd;
+  content: attr(data-off);
+  transition: transform 0.5s;
+  backface-visibility: hidden;
+}
+input.job-alert__toggle--on-off + label:after {
+  background-color: #8ce196;
+  content: attr(data-on);
+  transition: transform 0.5s;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+input.job-alert__toggle--on-off:checked + label:before {
+  transform: rotateY(180deg);
+}
+input.job-alert__toggle--on-off:checked + label:after {
+  transform: rotateY(0);
+}
