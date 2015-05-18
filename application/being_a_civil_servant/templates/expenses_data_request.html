@@ -1,0 +1,14 @@
+{% extends "data_access.html" %}
+{% block content %}
+<p>The expenses service would like to access:</p>
+<ul class="list-bullet">
+  <li>your payroll details</li>
+  <li>bank details</li>
+  <li>your team and role details</li>
+  <li>your expenses history</li>
+</ul>
+<p>
+  <a class="button" href="/being_a_civil_servant/addreceipt">Grant access</a>
+  <a class="button button-secondary" href="/signup/csprofile">Deny</a>
+</p>
+{% endblock %}

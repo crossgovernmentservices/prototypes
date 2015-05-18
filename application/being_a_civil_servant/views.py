@@ -16,3 +16,7 @@ blueprint = Blueprint(
 @blueprint.route('/addreceipt')
 def hello():
     return render_template('addreceipt.html')
+
+@blueprint.route('/expenses_data_request')
+def expense_data():
+    return render_template('expenses_data_request.html')
