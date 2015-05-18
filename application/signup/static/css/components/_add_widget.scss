@@ -1,0 +1,31 @@
+.add_widget {
+  border: 1px dashed $secondary-text-colour;
+  padding: $gutter;
+  max-width: 150px;
+  display: block;
+  text-decoration: none;
+
+  p {
+    color: $secondary-text-colour;
+    font-size: 19px;
+    margin: 0;
+    padding-left: $gutter;
+    position: relative;
+  }
+
+  p:after {
+    content: "+";
+    position: absolute;
+    top: 10px;
+    left: 0;
+  }
+
+  &:hover, &:focus {
+    border-color: $text-colour;
+
+    p {
+      color: $text-colour;
+    }
+  }
+}
+
