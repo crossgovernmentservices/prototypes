@@ -1,1 +1,54 @@
 // TODO components/{back_links,sections'
+// See assets.py
+// Even though govuk.css is built for all views, we
+// still include it here for access to SASS variables.
+@import '../../../static/css/govuk';
+
+@import '../../../signup/static/css/components/sections';
+
+@import 'components/receipt-bank';
+
+.form {
+  @extend %contain-floats;
+}
+
+.receipt-process__container {
+  background: $highlight-colour;
+  padding: 5px;
+}
+
+.receipt-process {
+  position: relative;
+  text-align: center;
+  border: 2px dashed #fff;
+}
+
+.receipt-process__image {
+  margin: 0 auto;
+}
+
+.receipt--processed .receipt-process__image {
+  opacity: 0.4;
+}
+
+.receipt-bank-block {
+  position: absolute;
+  top: 2px;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.receipt--processed .receipt-process,
+.receipt--processed .receipt-bank-action {
+  border-color: $turquoise;
+  color: $turquoise;
+  font-weight: bolder;
+}
+
+.receipt--processed .receipt-bank-processing, .receipt-bank-processed, .receipt__submit { display: none; }
+.receipt--processed .receipt-bank-processed, .receipt--processed .receipt__submit  { display: block; }
+.receipt--processed .receipt__submit {
+  margin: 0 auto;
+}

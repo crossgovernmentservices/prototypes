@@ -1,0 +1,27 @@
+.receipt-bank-block {
+  width: 50px;
+  padding: $gutter-half $gutter-half 10px;
+
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column; /* works with row or column */
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.receipt-bank-logo {
+  width: 40px;
+}
+.receipt-bank-processing {
+  img {
+    margin: 5px auto 0;
+    width: 40px;
+    display: block;
+  }
+}
+.receipt-bank-action {
+  color: #f3793d;
+  font-size: 12px;
+}
