@@ -34,7 +34,15 @@ def basicprofile():
 
 @blueprint.route('/basicprofile_jobs')
 def basicprofile_jobs():
-    return render_template("basicprofile_jobs.html", activeTab="jobs")
+    return render_template("basicprofile_jobs.html", activeTab="jobs", activeMenu="home")
+
+@blueprint.route('/basicprofile_jobs/apps')
+def basicprofile_jobs_apps():
+    return render_template("basicprofile_jobs_apps.html", activeTab="jobs", activeMenu="apps")
+
+@blueprint.route('/basicprofile_jobs/alerts')
+def basicprofile_jobs_alerts():
+    return render_template("basicprofile_jobs_alerts.html", activeTab="jobs", activeMenu="alerts")
 
 @blueprint.route('/csprofile')
 def csprofile():

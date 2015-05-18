@@ -14,7 +14,10 @@
     </section>
   </section>
   <section class="column-three-quarter">
-    {% include "partials/job_search.html" ignore missing %}
+    <h1 class="heading-large">Your job alerts</h1>
+    <p class="lede">Below are the job alerts you currently have set up</p>
+    {% include "partials/job_alerts.html" ignore missing %}
+    <section class="section"><button class="button">+ add alert</button></section>
   </section>
 </main>
 
