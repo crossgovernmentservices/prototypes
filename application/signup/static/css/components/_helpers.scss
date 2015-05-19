@@ -1,0 +1,9 @@
+%inline__dl {
+  dt, dd {
+    display: inline;
+  }
+  dt {
+    font-weight: 600;
+    margin-right: $gutter-half;
+  }
+}

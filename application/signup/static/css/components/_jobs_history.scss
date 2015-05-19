@@ -1,0 +1,13 @@
+.past-role {
+  padding: $gutter-half;
+  margin-bottom: $gutter-half;
+  border: 1px solid $panel-colour;
+}
+
+.past-role__title {
+  margin: 0;
+}
+
+.past-role__dates {
+  @extend %inline__dl;
+}

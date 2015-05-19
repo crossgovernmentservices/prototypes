@@ -3,6 +3,7 @@
 // still include it here for access to SASS variables.
 @import '../../../static/css/govuk';
 
+@import 'components/helpers';
 @import 'components/profile';
 @import 'components/basicprofile';
 @import 'components/services';
@@ -13,6 +14,7 @@
 @import 'components/add_widget';
 @import 'components/widget';
 @import 'components/checklist';
+@import 'components/jobs_history';
 
 // global for all profile based pages
 #global-header-bar {
