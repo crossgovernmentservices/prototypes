@@ -15,9 +15,17 @@
     </div>
     <div class="column-three-quarter">
       {% include "partials/job_search.html" ignore missing %}
+      {% include "partials/jd_listings.html" ignore missing %}
     </div>
   </div>
 
 </main>
 
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  {% assets "js_profile_jobs" %}
+    <script src="{{ ASSET_URL }}"></script>
+  {% endassets %}
 {% endblock %}

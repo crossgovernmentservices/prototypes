@@ -40,7 +40,9 @@ def basicprofile_checklist():
 
 @blueprint.route('/basicprofile_jobs')
 def basicprofile_jobs():
-    return render_template("basicprofile_jobs.html", activeTab="jobs", activeMenu="home")
+    with open('/code/application/data/listings.json') as data_file:
+        listings = json.load(data_file)
+    return render_template("basicprofile_jobs.html", activeTab="jobs", activeMenu="home", listings=listings)
 
 @blueprint.route('/basicprofile_jobs/apps')
 def basicprofile_jobs_apps():
@@ -95,7 +97,9 @@ def csprofile_perf_last():
 # CS Profile - JOBS
 @blueprint.route('/csprofile_jobs')
 def csprofile_jobs():
-    return render_template("csprofile_jobs.html", CivilServant=True, activeTab="jobs", activeMenu="home")
+    with open('/code/application/data/listings.json') as data_file:
+      listings = json.load(data_file)
+    return render_template("csprofile_jobs.html", CivilServant=True, activeTab="jobs", activeMenu="home", listings=listings)
 
 @blueprint.route('/csprofile_jobs/alerts')
 def csprofile_jobs_alerts():
