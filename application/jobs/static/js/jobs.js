@@ -51,8 +51,18 @@
       e.preventDefault();
     });
 
+    $(".signup__close").on("click", function(e) {
+      $(".signup__wrap").slideUp();
+      e.preventDefault();
+    });
+
     $(".jd__save").on('click', function() {
-      $(this).toggleClass( 'saved' );
+      if( $("body").hasClass("notloggedin") ) {
+        $(".signup__wrap").slideDown();
+        console.log("not logged in");
+      } else {
+        $(this).toggleClass( 'saved' );
+      }
     });
   });
 

@@ -1,5 +1,36 @@
 {% extends "jobs_layout.html" %}
+{% block body_classes %}notloggedin{% endblock %}
 {% block content %}
+
+<aside class="signup__wrap">
+  <div class="signup">
+    <form class="signup__form" action="">
+      <h2 class="heading-medium">Create gov profile</h2>
+      <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input type="text" class="form-control signup__input" id="email">
+      </div>
+
+      <!-- Primary buttons, secondary links -->
+      <div class="form-group">
+        <button type="submit" class="button signup__btn">
+          <span data-provider="default" class="signup__btn__content--active">Create profile</span>
+          <span data-provider="google">Create using google account</span>
+          <span data-provider="facebook">Create using facebook account</span>
+        </button>
+        <ul>
+          <li><a class="signup__close" href="/">Close</a></li>
+        </ul>
+      </div>
+    </form>
+  </div>
+</aside>
+<div class="signup__success__wrap">
+  <div class="signup__success">
+    <p>Profile successfully created. <a href="/signup/basicprofile">Visit profile now</a></p>
+  </div>
+</div>
+
 <main id="content" role="main">
 
   <a href="/" class="example-back-link">Back to the cross government tools' prototypes</a>

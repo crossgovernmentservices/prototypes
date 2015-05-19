@@ -1,0 +1,94 @@
+.signup__wrap {
+  background: $highlight-colour;
+  padding: $gutter-half 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  display: none;
+}
+.signup {
+  @extend #content;
+  padding-bottom: 0;
+}
+
+.signup__success__wrap {
+  background: $turquoise;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  display: none;
+}
+
+.signup__success {
+  @extend #content;
+  color: $page-colour;
+  padding: $gutter-half 0;
+  font-size: 19px;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: $page-colour;
+  }
+}
+
+.signup__form {
+  h2 {
+    margin-top: $gutter;
+  }
+}
+
+.signup__btn {
+  position: relative;
+
+  & span {
+    display: none;
+
+    &.signup__btn__content--active {
+      display: inline;
+    }
+  }
+}
+
+.signup__btn:after {
+    content: "";
+    display: block;
+    height: 38px;
+    width: 38px;
+    position: absolute;
+    top: 0;
+    left: 8px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+$google: #dd4b39;
+$facebook: #3B5998;
+.signup__btn--google, .signup__btn--google:hover {
+  background: $google;
+  padding-left: 53px;
+}
+
+.signup__btn--google:after {
+  background-image: url(/static/images/google_icon.png);
+}
+
+.signup__btn--facebook, .signup__btn--facebook:hover {
+  background: $facebook;
+}
+
+.success__summary {
+  visibility: hidden;
+
+  .loggedin & {
+    visibility: visible;
+  }
+}
+
+.loggedin .creation__form {
+  display: none;
+}

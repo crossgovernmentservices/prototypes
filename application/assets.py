@@ -38,10 +38,11 @@ css_jobs = Bundle(
     'jobs/css/jobs.scss',
     filters='scss',
     output='gen/css/jobs.css',
-    depends="**/*.scss"
+    depends=['**/*.scss', 'jobs/css/**/*.scss']
 )
 
 js_jobs = Bundle(
+    'jobs/js/signup.js',
     'jobs/js/jobs.js',
     filters='jsmin',
     output='gen/js/jobs.js'
