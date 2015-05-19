@@ -1,0 +1,9 @@
+{
+  "mandatory": [
+    {"name": "Health & safety awareness" , "date": "Today", "status": "not-started"},
+    {"name": "Confirmation bias", "date": "5th Jun", "status": "completed"},
+    {"name": "Fire safety", "date": "23rd Jun", "status": "not-started"},
+    {"name": "Freedom of information", "date": "10th Oct", "status": "not-started"}
+  ],
+  "personal": []
+}

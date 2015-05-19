@@ -64,7 +64,9 @@ def csprofile_more():
 
 @blueprint.route('/csprofile_learning')
 def csprofile_learning():
-    return render_template("csprofile_learning.html", CivilServant=True, activeTab="learning")
+    with open('/code/application/data/courses.json') as data_file:
+      courses = json.load(data_file)
+    return render_template("csprofile_learning.html", CivilServant=True, activeTab="learning", courses=courses)
 
 # CS Profile - PERFORMANCE
 @blueprint.route('/csprofile_perf')

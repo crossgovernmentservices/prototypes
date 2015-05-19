@@ -1,0 +1,8 @@
+{% macro build_course_item(course) %}
+
+<li class="course-list__item">
+  <div class="column-quarter course__date">{{ course.date }}</div>
+  <div class="column-three-quarter course-list__item__title course__status course__status--{{ course.status }}">{{ course.name }}</div>
+</li>
+
+{% endmacro %}
