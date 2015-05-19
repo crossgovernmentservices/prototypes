@@ -35,6 +35,10 @@
   @include grid-column(1/12);
 }
 
+.bold-xxsmall {
+  @include bold-14();
+}
+
 .temp {
   height: 330px;
 }
