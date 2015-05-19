@@ -1,0 +1,48 @@
+.course-list__item {
+  padding: $gutter-half 0;
+  border-bottom: 1px solid $panel-colour;
+  @extend %contain-floats;
+
+  .course-list__item__title {
+    font-weight: 700;
+    color: $link-colour;
+    padding-left: 0;
+  }
+}
+
+.course-list__item:first-child {
+  border-top: 1px solid $panel-colour;
+}
+
+.course__date {
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.course__status {
+  position: relative;
+
+  &:after {
+    content: "not started";
+    position: absolute;
+    right: 5px;
+    font-size: 16px;
+    padding: 5px 5px 2px;
+    border: 1px solid $grey-2;
+    color: $grey-2;
+    line-height: 1em;
+    border-radius: 3px;
+  }
+}
+
+.course__status--completed:after {
+  content: "completed";
+  border-color: $button-colour;
+  color: $button-colour;
+}
+.course__status--started:after {
+  content: "started";
+  border-color: $yellow;
+  color: $yellow;
+}

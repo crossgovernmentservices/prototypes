@@ -4,8 +4,29 @@
 {% include "partials/nav.html" ignore missing %}
 
 <main id="content" role="main">
-  <h1 class="heading-large">Learning</h1>
-  <section class="temp"></section>
+  <h1 class="heading-large">Your learning</h1>
+  <section class="grid-row section">
+    <div class="column-half">
+      <h2 class="heading-medium">Mandatory courses</h2>
+      <ul>
+        <li class="course-list__item">
+          <div class="column-quarter course__date">Today</div>
+          <div class="column-three-quarter course-list__item__title course__status">Health & safety awareness</div>
+        </li>
+        <li class="course-list__item">
+          <div class="column-quarter course__date">18th June</div>
+          <div class="column-three-quarter course-list__item__title course__status course__status--started">Confirmation bias</div>
+        </li>
+        <li class="course-list__item">
+          <div class="column-quarter course__date">23rd June</div>
+          <div class="column-three-quarter course-list__item__title course__status course__status--completed">Fire safety</div>
+        </li>
+      </ul>
+    </div>
+    <div class="column-half">
+      <h2 class="heading-medium">Your courses</h2>
+    </div>
+  </section>
 </main>
 
 {% endblock %}
