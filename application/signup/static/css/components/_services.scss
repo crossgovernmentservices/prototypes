@@ -1,5 +1,10 @@
 .service__item {
   border-bottom: 1px dotted $panel-colour;
+  padding: $gutter-half;
+}
+
+.service__item__meta {
+  margin-bottom: 0;
 }
 
 .secondary {
