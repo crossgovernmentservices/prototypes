@@ -1,0 +1,35 @@
+<section class="review__section">
+
+  <p class="search-results__number"><span>0</span> results found</p>
+
+  <ul class="jd__results">
+
+    {% for listing in listings %}
+
+    <li class="jd__listing">
+      <div class="jd__reference">
+        <span>#{{ listing.ref }}</span>
+        <div class="jd__save">
+          <img class="jd__save-later" src="/static/images/star_outline.svg" alt="not saved" />
+          <img class="jd__saved-icon" src="/static/images/star_filled.svg" alt="saved for later" />
+        </div>
+      </div>
+
+      <h1 class="heading-large jd__role">{{ listing.role }}</h1>
+      <p class="heading-medium jd__title--department">{{ listing.department }}</p>
+      <p class="heading-medium jd__closing-date">{{ listing.closing }}</p>
+      <h4 class="heading-small">Associated skills</h4>
+      <ul class="jd__assoc-skills">
+        {% for skill in listing.skills %}
+        <li class="skill" data-skill="{{ skill }}">{{ skill }}</li>
+        {% endfor %}
+      </ul>
+      <a href="" class="button">Apply now</a>
+      <span class="jd__readmore"><a href="">read more</a></span>
+    </li>
+
+    {% endfor %} {# listings #}
+
+  </ul>
+
+</section>
