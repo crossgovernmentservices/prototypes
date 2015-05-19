@@ -5,13 +5,14 @@
   &:hover .app__wrapper {
     margin-left: 0;
   }
-
 }
 
+$info_width: 170px;
+$hidden_width: $info_width - 10px;
 .app__wrapper {
   position: relative;
-  width: 110%;
-  margin-left: -15%;
+  width: calc(100% + #{$hidden_width});
+  margin-left: -$hidden_width;
   transition: margin 0.5s ease;
 }
 
@@ -21,14 +22,18 @@
   box-sizing: border-box;
 }
 
+.app__info {
+  width: calc(100% - #{$info_width});
+  padding-left: $gutter-half;
+  margin-left: $info_width;
+}
+
 .app__status {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  width: 15%;
-  //margin-left: -100px;
-  //height: 100px;
+  width: $info_width;
   background: $link-hover-colour;
   color: $page-colour;
   padding: $gutter-half;
@@ -44,12 +49,6 @@
 .app__status--incomplete, .button--incomplete.active, .button--incomplete:hover { background: $beta-colour; }
 .app__status--in-progress, .button--in-progress.active, .button--in-progress:hover { background: $link-visited-colour; }
 .app__status--offer, .button--offer.active, .button--offer:hover { background: $button-colour; }
-
-.app__info {
-  width: 85%;
-  padding-left: $gutter;
-  margin-left: 15%;
-}
 
 .app__status__button {
   display: inline-block;
