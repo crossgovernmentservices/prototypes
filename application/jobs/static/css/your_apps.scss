@@ -1,0 +1,76 @@
+@import 'elements';
+@import 'components/back_link';
+@import 'components/sections';
+
+.app__container {
+  width: 100%;
+  overflow: hidden;
+
+  &:hover .app__wrapper {
+    margin-left: 0;
+  }
+
+}
+
+.app__wrapper {
+  position: relative;
+  width: 110%;
+  margin-left: -15%;
+  transition: margin 0.5s ease;
+}
+
+.app__status,
+.app__info {
+  //float: left;
+  box-sizing: border-box;
+}
+
+.app__status {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 15%;
+  //margin-left: -100px;
+  //height: 100px;
+  background: $link-hover-colour;
+  color: $page-colour;
+  padding: $gutter-half;
+}
+
+.button--received.active, .button--received:hover { 
+  background: $link-hover-colour;
+}
+.button--saved, .button--rejected, .button--incomplete, .button--in-progress,
+.button--offer, .button--received { background: $border-colour; }
+.app__status--saved, .button--saved.active, .button--saved:hover { background: $yellow; }
+.app__status--rejected, .button--rejected.active, .button--rejected:hover { background: $error-colour; }
+.app__status--incomplete, .button--incomplete.active, .button--incomplete:hover { background: $beta-colour; }
+.app__status--in-progress, .button--in-progress.active, .button--in-progress:hover { background: $link-visited-colour; }
+.app__status--offer, .button--offer.active, .button--offer:hover { background: $button-colour; }
+
+.app__info {
+  width: 85%;
+  padding-left: $gutter;
+  margin-left: 15%;
+}
+
+.app__status__button {
+  display: inline-block;
+  color: $page-colour;
+  text-align: center;
+  text-decoration: none;
+  padding: em(10) em(15) em(5) em(15);
+  border: 1px solid $page-colour;
+  border-radius: 3px;
+  transition: box-shadow 0.3s ease;
+
+  &:visited {
+    color: $page-colour;
+  }
+
+  &:hover {
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.3),
+                -2px -2px 2px rgba(255,255,255,0.3);
+  }
+}

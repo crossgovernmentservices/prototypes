@@ -94,6 +94,7 @@ js_professions = Bundle(
 # ...in your blueprint's SCSS.
 css_signup = Bundle(
     'signup/css/signup.scss',
+    'signup/css/jobs.scss',
     'signup/css/basicprofile.scss',
     filters='scss',
     output='gen/css/signup.css',
@@ -110,6 +111,13 @@ css_oauth = Bundle(
     'signup/css/googlelogin.scss',
     filters='scss',
     output='gen/css/oauth.css',
+    depends="**/*.scss"
+)
+
+css_profile_jobs = Bundle(
+    'signup/css/jobs.scss',
+    filters='scss',
+    output='gen/css/jobs.css',
     depends="**/*.scss"
 )
 

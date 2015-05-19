@@ -1,4 +1,15 @@
 {% extends "signup_layout.html" %}
+
+{% block head %}
+
+  {{ super() }}
+
+  {% assets "css_profile_jobs" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+{% endblock %}
+
 {% block content %}
 
 {% include "partials/nav.html" ignore missing %}
