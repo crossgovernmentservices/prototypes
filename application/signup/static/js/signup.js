@@ -57,6 +57,13 @@
       return false;
     });
 
+    // for the settings section
+    $(".settings-btn").on("click", function(e) {
+      $(this).blur();
+      $(".settings__wrap").toggleClass('settings--active');
+      e.preventDefault();
+    });
+
   });
 
 }(jQuery));

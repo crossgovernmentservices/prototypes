@@ -1,0 +1,45 @@
+.settings-btn {
+  display: inline-block;
+  text-decoration: none;
+  background-image: url(/static/images/settings.svg);
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position: 0;
+  padding: 0 20px;
+  margin: 5px 0;
+  opacity: 0.7;
+
+  &:hover {
+    text-decoration: underline;
+    opacity: 1;
+  }
+}
+
+a.settings-btn,
+a.settings-btn:visited {
+  color: $secondary-text-colour;
+}
+
+.settings-btn--right {
+  float: right;
+}
+
+.settings__wrap {
+  background: $grey-2;
+  max-height: 0;
+  opacity: 0;
+}
+
+.settings--active.settings__wrap {
+  opacity: 1;
+  max-height: 500px;
+  transition: all 0.4s ease-in;
+}
+
+.settings__form {
+  padding: 0 $gutter $gutter;
+  display: none;
+  .settings--active & {
+    display: block;
+  }
+}
