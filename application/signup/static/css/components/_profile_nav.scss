@@ -13,19 +13,23 @@
   }
 
   &:hover {
+    background: $link-hover-colour;
     cursor: pointer;
-    border-bottom: 3px solid $link-hover-colour;
+    border-bottom: 3px solid $link-colour;
 
     a {
-      color: $text-colour;
+      color: $page-colour;
     }
   }
 }
 
 .profile__nav__item--active {
+  background: $link-colour;
   border-bottom: 3px solid $link-colour;
+  color: $page-colour;
+  font-weight: bold;
 
   a {
-    color: $text-colour;
+    color: $page-colour;
   }
 }
