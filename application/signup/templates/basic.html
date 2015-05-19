@@ -1,4 +1,15 @@
 {% extends "signup_layout.html" %}
+
+{% block head %}
+
+  {{ super() }}
+
+  {% assets "css_login" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+{% endblock %}
+
 {% block content %}
 <main id="content" role="main">
 
