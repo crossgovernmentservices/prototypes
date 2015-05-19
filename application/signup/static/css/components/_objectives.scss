@@ -1,0 +1,23 @@
+.objectives {}
+.objective {
+  border: 1px solid $panel-colour;
+  margin-bottom: $gutter-half;
+
+  .heading-small {
+    margin-top: 0;
+  }
+}
+.objective__heading {
+  padding: $gutter-half 0.5em;
+  margin: 0;
+  border-bottom: 1px solid $panel-colour;
+}
+.objective__body {
+  @extend %contain-floats;
+}
+.objective__part {
+  padding: $gutter-half $gutter;
+}
+.objective__progress {
+  padding: $gutter-half;
+}
