@@ -12,6 +12,11 @@
   }
 }
 
+.section--bottom {
+  @extend .section;
+  padding-bottom: $gutter;
+}
+
 .review__section {
   @extend .section;
 }

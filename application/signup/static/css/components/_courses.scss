@@ -51,3 +51,30 @@
   border-color: $grass-green;
   color: $grass-green;
 }
+
+.development-path {
+  @extend %contain-floats;
+  padding: $gutter-half 0;
+}
+
+.stage__status {
+  position: relative;
+  min-height: $gutter;
+
+  &:hover {
+    cursor: pointer;
+    &:after {
+      border: 1px solid $light-blue;
+    }
+  }
+}
+.stage__status:after {
+  position: absolute;
+  content: " ";
+  background: $panel-colour;
+  width: $gutter; height: $gutter;
+  border-radius: 50%;
+}
+.stage__status--complete:after {
+  background: $pink;
+}
