@@ -1,0 +1,27 @@
+{% extends "signup_layout.html" %}
+{% block content %}
+
+{% include "partials/nav.html" ignore missing %}
+
+<main id="content" role="main">
+  <h1 class="heading-large">Your learning record</h1>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Name</th>
+        <th scope="col">Score</th>
+        <th scope="col">Type</th>
+        <th scope="col" colspan="2">Expiry</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% from "partials/course_list.html" import build_record_item %}
+      {% for course in courses.completed %}
+        {{ build_record_item(course) }}
+      {% endfor %}
+    </tbody>
+  </table>
+</main>
+
+{% endblock %}

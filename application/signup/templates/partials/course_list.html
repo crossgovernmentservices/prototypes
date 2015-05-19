@@ -6,3 +6,16 @@
 </li>
 
 {% endmacro %}
+
+{% macro build_record_item(course) %}
+
+<tr>
+  <td>{{ course.date }}</td>
+  <td>{{ course.name }}</td>
+  <td>{{ course.score }}</td>
+  <td>{{ course.type }}</td>
+  <td>{{ course.expiry }}</td>
+  <td><a href="" class="button">refresh</a></td>
+</tr>
+
+{% endmacro %}

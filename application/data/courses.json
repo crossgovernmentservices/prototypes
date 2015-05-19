@@ -8,5 +8,18 @@
   "personal": [
     {"name": "SCRUM Master" , "date": "28th May", "status": "booked"},
     {"name": "Creative JS" , "date": "Online", "status": "started"}
+  ],
+  "completed": [
+    {"name": "SCRUM Practitioner", "date": "28/05/2014", "type": "offline", "score": "pass", "expiry": "-"},
+    {"name": "Health & safety awareness", "date": "12/06/2014", "type": "online", "score": "90%", "expiry": "12/06/2015"},
+    {"name": "Confirmation bias", "date": "9/03/2014", "type": "online", "score": "100%", "expiry": "-"},
+    {"name": "Advanced JS design patterns", "date": "28/02/2014", "type": "online", "score": "pass", "expiry": "-"},
+    {"name": "Health & safety awareness", "date": "15/06/2013", "type": "online", "score": "85%", "expiry": "15/06/2014"},
+    {"name": "Fire safety", "date": "17/05/2013", "type": "online", "score": "92%", "expiry": "18/06/2015"},
+    {"name": "Confirmation bias", "date": "12/10/2012", "type": "online", "score": "85%", "expiry": "-"},
+    {"name": "JS design patterns", "date": "2/10/2012", "type": "online", "score": "pass", "expiry": "-"},
+    {"name": "Health & safety awareness", "date": "18/06/2012", "type": "online", "score": "95%", "expiry": "18/06/2013"},
+    {"name": "HTML5 101", "date": "1/04/2012", "type": "online", "score": "pass", "expiry": "-"},
+    {"name": "CS competencies framework", "date": "15/02/2012", "type": "online", "score": "pass", "expiry": "-"}
   ]
 }
