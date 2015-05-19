@@ -19,6 +19,14 @@
     </div>
     <div class="column-half">
       <h2 class="heading-medium">Your courses</h2>
+      <ul class="course-list">
+
+        {% from "partials/course_list.html" import build_course_item %}
+        {% for course in courses.personal %}
+          {{ build_course_item(course) }}
+        {% endfor %}
+
+      </ul>
     </div>
   </section>
 </main>

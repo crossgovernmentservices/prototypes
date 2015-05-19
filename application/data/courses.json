@@ -5,5 +5,8 @@
     {"name": "Fire safety", "date": "23rd Jun", "status": "not-started"},
     {"name": "Freedom of information", "date": "10th Oct", "status": "not-started"}
   ],
-  "personal": []
+  "personal": [
+    {"name": "SCRUM Master" , "date": "28th May", "status": "booked"},
+    {"name": "Creative JS" , "date": "Online", "status": "started"}
+  ]
 }

@@ -46,3 +46,8 @@
   border-color: $yellow;
   color: $yellow;
 }
+.course__status--booked:after {
+  content: "booked";
+  border-color: $grass-green;
+  color: $grass-green;
+}
