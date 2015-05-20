@@ -12,7 +12,9 @@
   font-weight: bold;
 }
 .data-item__entry {}
-button.data-item__edit {
+
+button.data-item__edit,
+button.btn--edit {
   background: $grey-2;
   box-shadow: none;
   line-height: 1.5em;
