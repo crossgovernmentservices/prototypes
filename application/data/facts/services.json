@@ -1,0 +1,42 @@
+[
+  {
+    "id": "payroll",
+    "name": "Payroll",
+    "desc": "Payroll use your bank and tax data to pay correctly each month",
+    "url": "/route/services/payroll",
+    "redirect": "/todo",
+    "scopes": ["your payroll details", "your banking details", "your profile details"]
+  },
+  {
+    "id": "jobalerts",
+    "name": "Job alerts",
+    "desc": "Job alerts",
+    "url": "/route/services/jobalerts",
+    "redirect": "/todo",
+    "scopes": ["your profile details"]
+  },
+  {
+    "id": "buildingsecurity",
+    "name": "Building security",
+    "desc": "The building security team uses some of your personal data to print passes",
+    "url": "/route/services/buildingsecurity",
+    "redirect": "/todo",
+    "scopes": ["your profile details"]
+  },
+  {
+    "id": "learning",
+    "name": "Learning",
+    "desc": "Learning uses your data to keep your learning record up to date",
+    "url": "/route/services/learning",
+    "redirect": "/todo",
+    "scopes": ["your learning details", "your profile details"]
+  },
+  {
+    "id": "expenses",
+    "name": "Expenses",
+    "desc": "For expensing things",
+    "url": "/route/services/expenses",
+    "redirect": "/being_a_civil_servant/addreceipt",
+    "scopes": ["your expenses details", "your banking details", "your profile details"]
+  }
+]

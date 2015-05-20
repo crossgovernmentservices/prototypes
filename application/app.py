@@ -10,10 +10,10 @@ from application.extensions import (
     db,
     login_manager,
     migrate,
-    debug_toolbar,
     asset_locator,
 )
 from application import (
+    route,
     being_a_civil_servant,
     prejoining,
     public,
@@ -43,13 +43,13 @@ def register_extensions(app):
     cache.init_app(app)
     db.init_app(app)
     login_manager.init_app(app)
-    debug_toolbar.init_app(app)
     migrate.init_app(app, db)
     asset_locator.init_app(app)
     return None
 
 
 def register_blueprints(app):
+    app.register_blueprint(route.views.blueprint)
     app.register_blueprint(being_a_civil_servant.views.blueprint)
     app.register_blueprint(prejoining.views.blueprint)
     app.register_blueprint(public.views.blueprint)

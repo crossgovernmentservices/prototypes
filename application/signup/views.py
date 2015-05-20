@@ -56,7 +56,14 @@ def basicprofile_jobs_alerts():
 def csprofile():
     with open('application/data/civilservant.json') as data_file:
       person = json.load(data_file)
-    return render_template("csprofile.html", CivilServant=True, activeTab="you", person=person)
+    with open('application/data/facts/services.json') as data_file:
+      services = json.load(data_file)
+    return render_template(
+        "csprofile.html",
+        CivilServant=True,
+        activeTab="you",
+        person=person,
+        services=services)
 
 @blueprint.route('/csprofile_more')
 def csprofile_more():

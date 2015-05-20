@@ -1,0 +1,19 @@
+{% extends "data_access.html" %}
+{% block content %}
+
+{% if service %}
+<p>The <em>{{ service.name }}</em> service would like to access:</p>
+<ul class="list-bullet">
+  {% for scope in service.scopes %}
+  <li>{{ scope }}</li>
+  {% endfor %}
+</ul>
+<p>
+  <a class="button" href="{{ service.id }}/grant">Grant access</a>
+  <a class="button button-secondary" href="{{ service.id }}/deny">Deny</a>
+</p>
+
+{% else %}
+<p>Invalid service</p>
+{% endif %}
+{% endblock %}

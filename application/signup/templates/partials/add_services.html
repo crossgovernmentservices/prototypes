@@ -1,0 +1,10 @@
+{% if services is defined %}
+  <h2 class="heading-medium">Add more services</h2>
+
+  {% for service in services %}
+  <a href="{{ service.url }}" class="add_widget">
+    <p>add {{ service.name }} service</p>
+  </a>
+  {% endfor %}
+
+{% endif %}
