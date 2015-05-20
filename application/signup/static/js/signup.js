@@ -81,6 +81,29 @@
       performFilter($(this).data("status"));
     });
 
+    // -------
+    // for skills component
+    // -------
+    var $skillsList = $(".skills__additional");
+    var $extraSkills = $(".skills__extra");
+
+    var addSkill = function(skill) {
+      var $skill = $("<li></li>").addClass("skill").text(skill);
+      $skillsList.append($skill);
+    };
+
+    $("#other-skills").on("keydown", function(e) {
+      if (e.keyCode === 13) {
+        addSkill(e.currentTarget.value);
+        e.preventDefault();
+        $(this).val("");
+      }
+    });
+
+    $(".skills__extra__btn").on("click", function() {
+      $extraSkills.toggleClass("active");
+    });
+
   });
 
 }(jQuery));

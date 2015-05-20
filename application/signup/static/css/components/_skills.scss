@@ -30,3 +30,29 @@
   color: $page-colour;
   border-color: $link-hover-colour;
 }
+.skills__extra__head {
+  margin-bottom: 0.25em;
+  h4 {
+    display: inline;
+  }
+} 
+.skills__extra__btn {
+  font-size: 19px;
+  font-weight: bolder;
+  border: 1px dashed $grey-2;
+  outline: none;
+  background: transparent;
+  padding: 10px 10px 5px;
+  line-height: 1em;
+  &:hover {
+    cursor: pointer;
+    background: $grey-4;
+    color: $mellow-red;
+  }
+}
+.skills__extra {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
