@@ -1,0 +1,42 @@
+.next-meeting {
+  @extend %contain-floats;
+  border: 1px solid $grey-4;
+  height: 100px;
+}
+.next-meeting__map {
+  background: url(/static/images/location_holborn.png) no-repeat;
+  background-sizing: contain;
+
+  img {
+    display: block;
+    width: $gutter*2;
+    height: $gutter*2;
+    margin: 20px auto;
+  }
+}
+.next-meeting__heading {
+  color: $secondary-text-colour;
+  font-size: 14px;
+  margin: 0;
+}
+
+.next-meeting__details__wrap {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column; /* works with row or column */
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 100%;
+}
+.next-meeting__details {
+  font-size: 16px;
+}
+
+.next-meeting__name {
+  font-weight: bold;
+  color: $link-colour;
+  font-size: 19px;
+}
