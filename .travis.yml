@@ -1,11 +1,10 @@
-# Config file for automatic testing at travis-ci.org
-
 language: python
-
 python:
-  - "3.3"
-  - "2.7"
-
+- '3.4'
 install: pip install -r requirements/dev.txt
-
 script: py.test tests
+deploy:
+  provider: heroku
+  app: x-gov-services-prototypes
+  api_key:
+    secure: SfqhBo4DPZ2c+OiXgkIAEa2BS7WTIcU+1oWAq/DfMmAR8Cco4CY6Pl16lfQ1NzSYp5T6F3qa7ul6cz18qMBIL7uiHE7nLMflJc6AM4Ke3VXmfShp5lulBmgPYIrKqdxqFLT2dhaVcG98TlxYFjxogFK2olGr/8d9NXNTBNXXoS8/TLTg8BfTCjO0sC8nZapG5G0I14fK8bJMCL558/nzbe+uGUat5XQj/0JjXJdEUt/RrVaAmrrjup4Umr/DNQT8tVZ59X/o6rTAE3qp8Dq9JdNjwboXmfv6mwFzhd/JG610YhsqkKksrKE9kr23kZs3t50NUpBh+V2gVfA+wmvwVfgpmcjHmSfsx4giHA6Eu8WciO8vlW1Q2NoGTcUQpA4dNkL78LsGLqKWSTmOUb5Kwyw2PWPmzYIqYbaXKenziVJFalOsm54lQhBtAtVmput2z7ehU19sbe7g47RcTVP4wOuqoeJUef5DkXLwRbnve+HXJoJH6KHCFyYReK527OSLbYr6aRbChpcx34nB3t3ljC1hRGel44HyNoTBFSQUi0cjpNQUAMhfTI0YRVpwzNtcwanIx6kAdWlyWYDCIoIivqfdxIp2en2yP3iaX3zuCD95qLhSZche2S2Ql5zdBe8gxy9cKctGKW9kGb6XwywOwQf/7QlMCWGH/Zecc4SZqa4=
