@@ -38,17 +38,37 @@ $hidden_width: $info_width - 10px;
   color: $page-colour;
   padding: $gutter-half;
 }
-
-.button--received.active, .button--received:hover { 
-  background: $link-hover-colour;
+.filter-btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  border-radius: 2px;
+  &:hover,
+  &.active {
+    color: $page-colour;
+  }
 }
-.button--saved, .button--rejected, .button--incomplete, .button--in-progress,
-.button--offer, .button--received { background: $border-colour; }
-.app__status--saved, .button--saved.active, .button--saved:hover { background: $yellow; }
-.app__status--rejected, .button--rejected.active, .button--rejected:hover { background: $error-colour; }
-.app__status--incomplete, .button--incomplete.active, .button--incomplete:hover { background: $beta-colour; }
-.app__status--in-progress, .button--in-progress.active, .button--in-progress:hover { background: $link-visited-colour; }
-.app__status--offer, .button--offer.active, .button--offer:hover { background: $button-colour; }
+@mixin filter-btn($colour) {
+  border: 1px solid $colour;
+  color: $colour;
+  &:hover,
+  &.active { 
+    background: $colour;
+  }
+}
+.button--received { @include filter-btn($link-hover-colour); }
+.button--saved { @include filter-btn($yellow); }
+.button--rejected { @include filter-btn($error-colour); }
+.button--incomplete { @include filter-btn($beta-colour); }
+.button--in-progress { @include filter-btn($link-visited-colour); }
+.button--offer { @include filter-btn($button-colour); }
+
+.app__status--saved { background: $yellow; }
+.app__status--rejected { background: $error-colour; }
+.app__status--incomplete { background: $beta-colour; }
+.app__status--in-progress { background: $link-visited-colour; }
+.app__status--offer { background: $button-colour; }
 
 .app__status__button {
   display: inline-block;
