@@ -86,3 +86,35 @@
     padding-right: 0;
   }
 }
+
+.job-history__item {
+  border-bottom: 1px solid $grey-2;
+  padding: $gutter;
+  .job-history__role {
+    margin: 0;
+  }
+}
+.job-history__company,
+.job-history__date {
+  color: $secondary-text-colour;
+}
+.job-history__company {
+  font-size: 19px;
+  font-weight: bold;
+}
+.job-history__date {
+  font-size: 16px;
+  margin-bottom: 0;
+}
+$linkedin: #0077b5;
+.from-linkedin {
+  font-size: 14px;
+  margin-top: 4px;
+  color: $linkedin;
+  text-align: right;
+}
+.linkedin-image {
+  vertical-align: middle;
+  margin-left: 5px;
+  margin-top: -1px;
+}

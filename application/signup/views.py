@@ -30,6 +30,10 @@ def googlelogin():
 def application():
     return render_template('application.html')
 
+@blueprint.route('/application/employment-history')
+def application_em_history():
+    return render_template('application_history.html')
+
 @blueprint.route('/basicprofile')
 def basicprofile():
     with open('application/data/noncivilservant.json') as data_file:
