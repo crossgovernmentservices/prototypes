@@ -1,0 +1,37 @@
+.week-view__wrap {
+  padding: $gutter-half 0;
+  text-align: center;
+
+  a {
+    color: $grey-2;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      color: $grey-1;
+    }
+  }
+}
+.week-view {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row; /* works with row or column */
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+$dimension: $gutter + $gutter-half;
+.week-view__day {
+  width: $dimension; height: $dimension;
+  background: $link-colour;
+  line-height: $dimension;
+  text-align: center;
+  color: $page-colour;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.week-view__day--unavailable { background: $grey-2; }
+.week-view__day--annual-leave { background: $yellow; }
