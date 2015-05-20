@@ -34,6 +34,10 @@ def application():
 def application_em_history():
     return render_template('application_history.html')
 
+@blueprint.route('/application/competencies')
+def application_competenciesy():
+    return render_template('application_competencies.html')
+
 @blueprint.route('/basicprofile')
 def basicprofile():
     with open('application/data/noncivilservant.json') as data_file:

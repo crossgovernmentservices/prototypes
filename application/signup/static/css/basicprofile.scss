@@ -119,3 +119,12 @@ $linkedin: #0077b5;
   margin-left: 5px;
   margin-top: -1px;
 }
+
+// horrid
+.app_section li.app__competency {
+  margin-bottom: $gutter-half;
+
+  textarea {
+    width: 100%;
+  }
+}

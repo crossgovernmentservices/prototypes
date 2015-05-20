@@ -1,0 +1,59 @@
+{% extends "signup_layout.html" %}
+
+{% block head %}
+
+  {{ super() }}
+
+  {% assets "css_jobs_review" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-quarter">
+      {% include "partials/mini_jobs_profile.html" ignore missing %}
+      <section class="section">
+        {% include "partials/application_menu.html" ignore missing %}
+      </section>
+    </div>
+    <div class="column-three-quarter">
+      <header class="header-group">
+        <h1 class="sub-heading">Application</h1>
+        <h2 class="heading-large post-sub-heading">Competencies</h2>
+      </header>
+
+      <section>
+        <ul class="list-number app_section">
+          <li class="app__competency">
+            <label class="form-label" for="restrictions-text">Changing and improving</label>
+            <textarea class="form-control" id="restrictions-text" name="restrictions-text" rows="6"></textarea>
+          </li>
+          <li class="app__competency">
+            <label class="form-label" for="restrictions-text">Managing a quality service</label>
+            <textarea class="form-control" id="restrictions-text" name="restrictions-text" rows="6"></textarea>
+          </li>
+          <li class="app__competency">
+            <label class="form-label" for="restrictions-text">Collaborating and partnering</label>
+            <textarea class="form-control" id="restrictions-text" name="restrictions-text" rows="6"></textarea>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+</main><!-- / #page-container -->
+{% endblock %}
+
+{% block body_end %}
+
+  {{ super() }}
+
+  {% assets "js_jobs_review" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+
+{% endblock %}
