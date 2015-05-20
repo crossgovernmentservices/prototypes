@@ -1,5 +1,7 @@
 # XGS Prototypes
 
+[![Build Status](https://travis-ci.org/crossgovernmentservices/xgs_prototypes.svg)](https://travis-ci.org/crossgovernmentservices/xgs_prototypes)
+
 Smoke and mirrors for XGS (Cross Government Services) prototypes.
 
 Supersedes **cgt_prototypes**.
