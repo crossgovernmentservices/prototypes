@@ -16,6 +16,6 @@ blueprint = Blueprint(
 
 @blueprint.route('/hub')
 def hub():
-    with open('/code/application/data/professions_listings.json') as data_file:
+    with open('application/data/professions_listings.json') as data_file:
         listings = json.load(data_file)
     return render_template('hub.html', listings=listings)

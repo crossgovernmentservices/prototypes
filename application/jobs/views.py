@@ -16,7 +16,7 @@ blueprint = Blueprint(
 
 @blueprint.route('/search_by_skill')
 def search_by_skill():
-    with open('/code/application/data/listings.json') as data_file:
+    with open('application/data/listings.json') as data_file:
         listings = json.load(data_file)
     return render_template('search_by_skill.html', listings=listings)
 
@@ -36,28 +36,28 @@ def description_backend_developer():
     return description_developer('backend')
 
 def description_developer(which):
-    with open('/code/application/data/dev_%s_jd.json' % which) as data_file:
+    with open('application/data/dev_%s_jd.json' % which) as data_file:
         job_description = json.load(data_file)
     return render_template('description.html', jd=job_description)
 
 
 @blueprint.route('/description_policy')
 def description_policy():
-    with open('/code/application/data/policy_jd.json') as data_file:
+    with open('application/data/policy_jd.json') as data_file:
         job_description = json.load(data_file)
     return render_template('description.html', jd=job_description)
 
 
 @blueprint.route('/description_general')
 def description_general():
-    with open('/code/application/data/general_jd.json') as data_file:
+    with open('application/data/general_jd.json') as data_file:
         job_description = json.load(data_file)
     return render_template('description.html', jd=job_description)
 
 
 @blueprint.route('/review')
 def review():
-    with open('/code/application/data/review_skills.json') as data_file:
+    with open('application/data/review_skills.json') as data_file:
         skills = json.load(data_file)
     return render_template('review.html', skills=skills)
 
@@ -69,9 +69,9 @@ def review_summary():
 
 @blueprint.route('/to_review')
 def to_review():
-    with open('/code/application/data/review_team.json') as data_file:
+    with open('application/data/review_team.json') as data_file:
         team = json.load(data_file)
-    with open('/code/application/data/review_others.json') as data_file:
+    with open('application/data/review_others.json') as data_file:
         others = json.load(data_file)
     return render_template('to_review.html', team=team, others=others)
 
