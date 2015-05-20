@@ -19,7 +19,7 @@
             </div>
           </div>
           <div class="column-third">
-            <div class="welcome__action__wrap"><a href="">upload cv</a></div>
+            <div class="welcome__action__wrap cv-upload-btn"><a href="">upload cv</a></div>
             <div class="welcome__action__wrap"><a href="">add linkedin</a></div>
           </div>
           <div class="column-third">
@@ -56,4 +56,10 @@
   </div>
 </main>
 
+{% endblock %}
+{% block body_end %}
+  {{ super() }}
+  {% assets "js_basic" %}
+    <script src="{{ ASSET_URL }}"></script>
+  {% endassets %}
 {% endblock %}
