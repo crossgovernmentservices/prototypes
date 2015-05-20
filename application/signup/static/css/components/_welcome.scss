@@ -1,0 +1,54 @@
+.welcome__wrap {
+  background: $light-blue;
+  padding: $gutter 0 $gutter-half;
+}
+.welcome {
+  @extend #content;
+  color: $page-colour;
+  position: relative;
+  padding-bottom: $gutter + $gutter-half;
+}
+
+.welcome__heading {
+  margin-top: 0;
+}
+
+.welcome__action__wrap {
+  background: $page-colour;
+  color: $text-colour;
+  padding: 5px;
+  opacity: 0.7;
+  text-align: center;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  a {
+    color: $text-colour;
+    text-decoration: none;
+  }
+}
+
+.welcome__action__wrap + .welcome__action__wrap {
+  margin-top: 5px;
+}
+
+.welcome__action__wrap img {
+  display: block;
+  width: $gutter + $gutter-half;
+  height: $gutter + $gutter-half;
+  margin: 5px auto 10px;
+}
+
+.welcome__skip {
+  position: absolute;
+  right: $gutter-half;
+  bottom: 0;
+  color: $page-colour;
+  text-decoration: none;
+
+  &:visited, &:hover {
+    color: $page-colour;
+  }
+}

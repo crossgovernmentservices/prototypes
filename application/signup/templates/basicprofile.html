@@ -3,6 +3,38 @@
 
 {% include "partials/nav.html" ignore missing %}
 
+<aside class="welcome__wrap">
+  <section class="welcome">
+    <h2 class="heading-large welcome__heading">Welcome to gov.uk</h2>
+    <div class="grid-row">
+      <div class="column-half">
+        <p class="lede">Your profile is not yet complete</p>
+      </div>
+      <div class="column-half">
+        <div class="grid-row">
+          <div class="column-third">
+            <div class="welcome__action__wrap">
+              <img src="/static/images/profile_pic.svg" alt="" />
+              <a href="">upload image</a>
+            </div>
+          </div>
+          <div class="column-third">
+            <div class="welcome__action__wrap"><a href="">upload cv</a></div>
+            <div class="welcome__action__wrap"><a href="">add linkedin</a></div>
+          </div>
+          <div class="column-third">
+            <div class="welcome__action__wrap">
+              <img src="/static/images/star_filled_grey.svg" alt="" />
+              <a href="">skills profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="welcome__skip" href="">skip &and;</a>
+  </section>
+</aside>
+
 <main id="content" role="main">
   <div class="grid-row">
     <div class="column-third">
@@ -11,15 +43,7 @@
       </section>
     </div>
     <div class="column-two-thirds">
-      <h1 class="heading-large">Welcome to your gov.uk profile</h1>
-      <p class="lede text">This is the one stop shop for your professional relationship with the government.</p>
-      <p class="text">At the moment all we know about is your name and email address. Why don't you do one of the following:</p>
-      <ul class="list-bullet">
-        <li><a href="/signup/basicprofile_jobs">Job application search</a></li>
-        <li><a href="">Update your details</a></li>
-        <li><a href="">Link your linkedin account</a></li>
-        <li><a href="">Tell us about your skills</a></li>
-      </ul>
+      {% include "partials/todo_list.html" ignore missing %}
 
       <section class="section">
         <h3 class="heading-medium">Associate Linkedin</h3>
