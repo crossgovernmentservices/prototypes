@@ -41,22 +41,14 @@
       <section class="container">
       {% include "partials/basicprofile.html" ignore missing %}
       </section>
+      <section>
+        {% include "partials/job-search-items.html" ignore missing %}
+      </section>
     </div>
     <div class="column-two-thirds">
       {% include "partials/todo_list.html" ignore missing %}
 
-      <section class="section">
-        <h3 class="heading-medium">Associate Linkedin</h3>
-      </section>
-
-      <section class="section">
-        <h3 class="heading-medium">Upload CV</h3>
-        <form>
-          <input type="file" class="form-control" />
-        </form>
-      </section>
-
-      <section class="section">
+      <section>
         {% include "partials/skills_component.html" ignore missing %}
       </section>
 

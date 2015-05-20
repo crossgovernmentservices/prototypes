@@ -137,3 +137,42 @@ $linkedin: #0077b5;
 button.btn--edit--dark {
   background: $grey-1;
 }
+.job-search-items {
+  margin: $gutter 0;
+}
+.job-search-item:first-of-type {
+  border-top: 1px solid $grey-3;
+}
+.job-search-item {
+  padding: 10px 0;
+  border-bottom: 1px solid $grey-3;
+}
+.job-search-item img {
+  width: 48px;
+}
+.job-search-item__link {
+  line-height: 50px;
+}
+.linkedin--associated--link,
+.linkedin--not-associated--link {
+  display: none;
+}
+.linkedin--associated .linkedin--associated--link,
+.linkedin--not-associated .linkedin--not-associated--link {
+  display: block;
+}
+.linkedin--logo {
+  display: block;
+}
+.cv-content {
+  display: none;
+}
+.cv-active {
+  .cv-content {
+    display: block;
+  }
+  .no-cv-content {
+    display: none;
+  }
+}
+
