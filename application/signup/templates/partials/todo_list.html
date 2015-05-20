@@ -1,0 +1,17 @@
+<section class="todo__widget">
+  <h2 class="heading-medium">To do list</h2>
+  <ul class="todo__list">
+
+    {% for todo in person.todos %}
+
+    <li class="todo__item grid-row">
+      <div class="column-quarter todo__cat__wrap">
+        <div class="todo__cat todo__cat--{{ todo.category }}"></div>
+      </div>
+      <div class="column-three-quarter todo__content"><a href="{{ todo.url }}">{{ todo.desc }}</a></div>
+    </li>
+
+    {% endfor %}
+
+  </ul>
+</section>

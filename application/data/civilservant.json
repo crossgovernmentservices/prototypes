@@ -4,5 +4,11 @@
   "emails": {
     "personal": "colmjude@gmail.com",
     "work": "colm.britton@digital.cabinet-office.gov.uk"
-  }
+  },
+  "todos": [
+    {"desc": "Health & safety awareness course is due", "category": "learning", "url": "/signup/csprofile_learning"},
+    {"desc": "Refresh objectives", "category": "perf", "url": "/signup/csprofile_perf/objectives"},
+    {"desc": "4 outstanding peer reviews", "category": "perf", "url": "/signup/csprofile_perf"},
+    {"desc": "Upload latest CV", "category": "jobs", "url": "/signup/csprofile_jobs"}
+  ]
 }

@@ -1,0 +1,61 @@
+.todo__widget {}
+.todo__list {}
+.todo__item {
+  min-height: $gutter;
+  padding: $gutter-half 0;
+  border-bottom: 1px dashed $grey-3;
+}
+.todo__cat__wrap {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.todo__cat {
+  @include circle($gutter);
+  background: $grey-2;
+  line-height: $gutter;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+}
+.todo__cat:after {
+  content: " ";
+  position: absolute;
+  top:0; left: 0;
+  line-height: $gutter;
+  color: $page-colour;
+  text-align: center;
+  width: $gutter;
+}
+.todo__cat--perf { 
+  background: $purple; 
+  &:after {
+    content: "P";
+  }
+}
+.todo__cat--learning { 
+  background: $pink; 
+  &:after {
+    content: "L";
+  }
+}
+.todo__cat--jobs {
+  background: $turquoise;
+  &:after {
+    content: "J";
+  }
+}
+.todo__content {
+  line-height: $gutter;
+  & a {
+    text-decoration: none;
+    color: $link-colour;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
