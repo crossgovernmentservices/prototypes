@@ -1,0 +1,88 @@
+{% extends "signup_layout.html" %}
+
+{% block head %}
+
+  {{ super() }}
+
+  {% assets "css_jobs_review" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-quarter">
+      {% include "partials/mini_jobs_profile.html" ignore missing %}
+      <section class="section">
+        <ul class="side-menu">
+          <li class="side-menu__item checklist__status checklist__status--done"><a href="/signup/csprofile_jobs">Personal info</a></li>
+          <li class="side-menu__item checklist__status checklist__status--done"><a href="/signup/csprofile_jobs/history">Upload CV</a></li>
+          <li class="side-menu__item checklist__status checklist__status--done"><a href="/signup/csprofile_jobs/apps">Employment history</a></li>
+          <li class="side-menu__item checklist__status checklist__status--incomplete"><a href="/signup/csprofile_jobs/alerts">Competencies</a></li>
+          <li class="side-menu__item checklist__status checklist__status--inprogress"><a href="/signup/csprofile_jobs/alerts">Equality & diversity</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="column-three-quarter">
+      <h1 class="heading-large">Application</h1>
+      <h2 class="heading-medium">Personal details</h2>
+
+      <section>
+        <ul>
+          <li class="grid-row data-item__wrap">
+            <div class="data-item">
+              <div class="column-quarter data-item__type">Full name</div>
+              <div class="column-half data-item__entry">Colm Britton</div>
+              <div class="column-quarter"><button class="data-item__edit">edit</button></div>
+            </div>
+          </li>
+
+          <li class="grid-row data-item__wrap">
+            <div class="data-item">
+              <div class="column-quarter data-item__type">Personal email</div>
+              <div class="column-half data-item__entry">colmjude@gmail.com</div>
+              <div class="column-quarter"><button class="data-item__edit">edit</button></div>
+            </div>
+          </li>
+
+          <li class="grid-row data-item__wrap">
+            <div class="data-item">
+              <div class="column-quarter data-item__type">Address</div>
+              <div class="column-half data-item__entry">
+              4 Greener House<br />
+              Garrick Road<br />
+              London<br />
+              SW6 6HG
+              </div>
+              <div class="column-quarter"><button class="data-item__edit">edit</button></div>
+            </div>
+          </li>
+
+          <li class="grid-row data-item__wrap">
+            <div class="data-item">
+              <div class="column-quarter data-item__type">Contact number</div>
+              <div class="column-half data-item__entry">07659503485</div>
+              <div class="column-quarter"><button class="data-item__edit">edit</button></div>
+            </div>
+          </li>
+
+        </ul>
+      </section>
+    </div>
+  </div>
+
+</main><!-- / #page-container -->
+{% endblock %}
+
+{% block body_end %}
+
+  {{ super() }}
+
+  {% assets "js_jobs_review" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+
+{% endblock %}

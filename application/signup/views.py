@@ -26,6 +26,10 @@ def basic():
 def googlelogin():
     return render_template("googlelogin.html")
 
+@blueprint.route('/application')
+def application():
+    return render_template('application.html')
+
 @blueprint.route('/basicprofile')
 def basicprofile():
     with open('application/data/noncivilservant.json') as data_file:

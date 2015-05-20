@@ -1,0 +1,28 @@
+.data-item__wrap:first-of-type .data-item {
+  border-top: 1px solid $grey-3;
+}
+.data-item {
+  @extend %contain-floats;
+  padding: 10px 0;
+  line-height: 1.5em;
+  margin: 0 $gutter-half;
+  border-bottom: 1px solid $grey-3;
+}
+.data-item__type {
+  font-weight: bold;
+}
+.data-item__entry {}
+button.data-item__edit {
+  background: $grey-2;
+  box-shadow: none;
+  line-height: 1.5em;
+  border: none;
+  display: block;
+  font-size: 16px;
+  color: $page-colour;
+  padding: 5px $gutter-half;
+
+  &:hover {
+    color: $text-colour;
+  }
+}

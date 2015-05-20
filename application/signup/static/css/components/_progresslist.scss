@@ -1,0 +1,36 @@
+$tick: "\2713";
+$dash: "\2014";
+
+.checklist__status {
+  position: relative;
+  padding-left: 45px;
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $gutter;
+    line-height: $gutter;
+    text-align: center;
+    @include circle($gutter);
+    background: $grey-2;
+  }
+}
+
+.checklist__status--done {
+  &:after {
+    content: $tick;
+  }
+}
+
+.checklist__status--incomplete {
+  &:after {
+    content: "\2717";
+  }
+}
+
+.checklist__status--inprogress {
+  &:after {
+    content: $dash;
+  }
+}
