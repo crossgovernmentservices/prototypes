@@ -3,6 +3,10 @@
   padding: $gutter 0 45px;
 }
 
+.component--top {
+  margin-top: $gutter-half;
+}
+
 .component--secondary {
   border-color: $grey-2;
   margin-top: 2*$gutter;
@@ -32,4 +36,14 @@
 }
 .component__body {
   
+}
+
+.component--finder {
+  background: $link-colour;
+  color: $page-colour;
+  padding: $gutter $gutter-half;
+
+  .component__head {
+    color: $page-colour;
+  }
 }

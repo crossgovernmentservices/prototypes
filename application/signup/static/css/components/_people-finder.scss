@@ -1,0 +1,27 @@
+.people-finder-search {
+  position: relative;
+  input.submit {
+    position: absolute;
+    right: 5px;
+    width: 40px;
+    height: 40px;
+    background: #0b0c0c url(/static/images/search-button-icon.png) no-repeat 2px 50%;
+    border: 1px solid #0b0c0c;
+    text-indent: -5000px;
+  }
+}
+.people-finder-input {
+  width: calc(100% - 37px);
+  padding: 7px;
+  border: none;
+}
+
+.people-finder-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 40px;
+  font-size: 16px;
+  color: $secondary-text-colour;
+  text-indent: $gutter-half;
+}

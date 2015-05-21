@@ -113,6 +113,20 @@
       $( elClass ).slideToggle();
     });
 
+    // -------
+    // for people finder
+    // -------
+    var $finderLabel = $(".people-finder-label");
+    $(".people-finder-input")
+      .on("focus", function() {
+        $finderLabel.hide();
+      })
+      .on("blur", function() {
+        if( $(this).val() === "") {
+          $finderLabel.show();
+        }
+      });
+
   });
 
 }(jQuery));
