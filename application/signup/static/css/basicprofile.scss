@@ -26,6 +26,7 @@
 @import 'components/progresslist';
 @import 'components/data-item';
 @import 'components/header-group';
+@import 'components/table';
 
 // global for all profile based pages
 #global-header-bar {
@@ -175,4 +176,6 @@ button.btn--edit--dark {
     display: none;
   }
 }
-
+.align-right {
+  text-align: right;
+}

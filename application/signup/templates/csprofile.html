@@ -14,7 +14,7 @@
       <section class="section">
         {% include "partials/profile/next-meeting.html" ignore missing %}
       </section>
-    </div>
+    </div><!-- end column-third -->
     <div class="column-two-thirds">
       {% include "partials/people_finder.html" ignore missing %}
       {% include "partials/add_services.html" ignore missing %}
@@ -22,7 +22,15 @@
       <section>
         {% include "partials/skills_component.html" ignore missing %}
       </section>
-    <div>
+    </div>
+  </div><!-- end column-two-thirds -->
+
+  <div class="grid-row">
+    <div class="column-third">
+      <section>
+        {% include "partials/profile/equip_component.html" ignore missing %}
+      </section>
+    </div>
   </div>
 </main>
 
