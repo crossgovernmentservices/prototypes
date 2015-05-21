@@ -31,3 +31,9 @@
     color: $text-colour;
   }
 }
+
+.side-menu__item--btn {
+  border-top: 3px solid $link-colour;
+  margin-top: $gutter;
+  padding: $gutter-half 0;
+}

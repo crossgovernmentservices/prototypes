@@ -82,6 +82,11 @@
   
 }
 
+.mini-profile__wrap {
+  margin-top: 45px;
+  padding-bottom: 18px;
+}
+
 .profile__status--reviewed::before {
   visibility: visible;
   content: "reviewed";
