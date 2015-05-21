@@ -85,10 +85,16 @@
   //border: 1px solid $grey-4;
   padding: 5px;
   //box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.1);
-
+  td {
+    border: none;
+  }
   td + td {
     padding-right: 0;
   }
+}
+.key-info__type {
+  color: $secondary-text-colour;
+  text-align: right;
 }
 
 .job-history__item {
@@ -189,4 +195,14 @@ button.btn--edit--dark {
 }
 .align-right {
   text-align: right;
+}
+
+.communities-list {
+  li {
+    padding: 0 $gutter-half 10px;
+  }
+}
+.community-type {
+  color: $secondary-text-colour;
+  margin-right: $gutter-half;
 }
