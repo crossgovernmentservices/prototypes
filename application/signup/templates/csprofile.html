@@ -10,22 +10,18 @@
       {% include "partials/basicprofile.html" ignore missing %}
       </section>
       {% include "partials/profile/key-info.html" ignore missing %}
-      {% include "partials/week_availability.html" ignore missing %}
-      <section class="section">
-        {% include "partials/profile/next-meeting.html" ignore missing %}
-      </section>
+      {% include "partials/profile/team_component.html" ignore missing %}
     </div><!-- end column-third -->
     <div class="column-two-thirds">
       {% include "partials/people_finder.html" ignore missing %}
+      <div class="grid-row">
+        <div class="column-half">{% include "partials/week_availability.html" ignore missing %}</div>
+        <div class="column-half">{% include "partials/profile/next-meeting.html" ignore missing %}</div>
+      </div>
       {% include "partials/todo_list.html" ignore missing %}
       <section>
         {% include "partials/skills_component.html" ignore missing %}
       </section>
-      {% for service in user_services %}
-        {% if service.data.id == "expenses" %}
-          {% include "partials/expenses_widget.html" ignore missing %}
-        {% endif %}
-      {% endfor %}
     </div><!-- end column-two-thirds -->
   </div>
 
@@ -37,7 +33,11 @@
     </div>
     <div class="column-two-thirds">
       <section>
-        {% include "partials/profile/team_component.html" ignore missing %}
+        {% for service in user_services %}
+          {% if service.data.id == "expenses" %}
+            {% include "partials/expenses_widget.html" ignore missing %}
+          {% endif %}
+        {% endfor %}
       </section>
     </div>
   </div>
