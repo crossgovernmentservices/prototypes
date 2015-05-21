@@ -3,6 +3,16 @@
   padding: $gutter 0 45px;
 }
 
+.component--secondary {
+  border-color: $grey-2;
+  margin-top: 2*$gutter;
+  opacity: 0.75;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
 .component__wrap {
   @extend .component;
   @extend %contain-floats;
