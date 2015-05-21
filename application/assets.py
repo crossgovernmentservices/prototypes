@@ -127,6 +127,20 @@ js_profile_jobs = Bundle(
     output='gen/js/jobs.js'
 )
 
+js_perf_review = Bundle(
+    'signup/js/d3.v3.min.js',
+    'signup/js/radar-chart.js',
+    'signup/js/review-summary.js',
+    filters='jsmin',
+    output='gen/js/perf-review.js'
+)
+css_perf_review = Bundle(
+    'signup/css/radar-chart.scss',
+    filters='scss',
+    output='gen/css/radar-chart.css',
+    depends="**/*.scss"
+)
+
 js_prototype_login = Bundle(
     'signup/js/prototype_login.js',
     filters='jsmin',
@@ -181,4 +195,7 @@ assets.register('js_profile_jobs', js_profile_jobs)
 assets.register('js_basic', js_basic)
 assets.register('js_your_apps', js_your_apps)
 assets.register('js_prototype_login', js_prototype_login)
+
+assets.register('css_perf_review', css_perf_review)
+assets.register('js_perf_review', js_perf_review)
 

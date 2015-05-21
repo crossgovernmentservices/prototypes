@@ -1,4 +1,15 @@
 {% extends "signup_layout.html" %}
+
+{% block head %}
+
+  {% assets "css_perf_review" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+  {{ super() }}
+
+{% endblock %}
+
 {% block content %}
 
 {% include "partials/nav.html" ignore missing %}
@@ -25,4 +36,11 @@
     </div>
 </main>
 
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  {% assets "js_perf_review" %}
+    <script src="{{ ASSET_URL }}"></script>
+  {% endassets %}
 {% endblock %}
