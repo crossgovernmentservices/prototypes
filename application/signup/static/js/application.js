@@ -1,10 +1,10 @@
 ;(function($) {
 
   $(function() {
-    $(".submit-app-btn").on("click", function() {
+    $(".submit-app-btn").on("click", function(e) {
       $(".app-submitted__wrap").slideDown('slow');
       $.post( "/jobs/submit_application" );
-      this.preventDefault();
+      e.preventDefault();
     });
 
     $(".settings__save").on("click", function(e) {
