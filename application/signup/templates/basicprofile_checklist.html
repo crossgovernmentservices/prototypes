@@ -9,6 +9,9 @@
       <section class="container">
       {% include "partials/basicprofile.html" ignore missing %}
       </section>
+      <section class="component component--single">
+        {% include "partials/job-offer.html" ignore missing %}
+      </section>
     </div>
     <div class="column-two-thirds">
       <h2 class="heading-medium">Pre joiners checklist</h2>
@@ -77,6 +80,12 @@
             </fieldset>
             <button class="button" type="submit">Submit choices</button>
           </form>
+        </div>
+      </details>
+      <details class="cl_item">
+        <summary class="cl_item__head cl_item__status">Create Civil Servant profile</summary>
+        <div class="cl_item__content">
+          <a href="/signup/csprofile" class="button">Create profile</a>
         </div>
       </details>
       <details class="cl_item">

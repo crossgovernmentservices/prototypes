@@ -15,7 +15,7 @@
   &:hover {
     background: $link-hover-colour;
     cursor: pointer;
-    border-bottom: 3px solid $link-colour;
+    //border-bottom: 3px solid $link-colour;
 
     a {
       color: $page-colour;
@@ -25,7 +25,7 @@
 
 .profile__nav__item--active {
   background: $link-hover-colour;
-  border-bottom: 3px solid $link-colour;
+  //border-bottom: 3px solid $link-colour;
   color: $page-colour;
   font-weight: bold;
 

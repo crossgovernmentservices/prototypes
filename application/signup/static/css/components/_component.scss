@@ -47,3 +47,13 @@
     color: $page-colour;
   }
 }
+
+.component--single {
+  margin-top: 2*$gutter;
+  padding-bottom: $gutter;
+  border-bottom: 3px solid $link-colour;
+
+  .component__body {
+    padding-left: $gutter-half;
+  }
+}
