@@ -16,10 +16,7 @@
 
 <main id="content" role="main">
   <section class="column-quarter">
-    <section>
-      <h5 class="heading-small">Colm Britton</h5>
-      <span>0 applications</span>
-    </section>
+    {% include "partials/basicprofile_jobs_profile.html" ignore missing %}
     <section class="section">
       {% include "partials/basic_jobs_menu.html" ignore missing %}
     </section>
@@ -30,4 +27,10 @@
   </section>
 </main>
 
+{% endblock %}
+{% block body_end %}
+  {{ super() }}
+  {% assets "js_your_apps" %}
+    <script src="{{ ASSET_URL }}"></script>
+  {% endassets %}
 {% endblock %}
