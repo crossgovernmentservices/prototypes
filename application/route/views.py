@@ -2,6 +2,7 @@ from flask import (
     Blueprint,
     render_template,
     redirect,
+    g,
 )
 import json
 from application.services.people import People
@@ -30,7 +31,6 @@ def services(service_id):
 
 @blueprint.route('/services/<service_id>/<action>')
 def services_grant_or_deny(service_id, action):
-    email = 'colm.britton@digital.cabinet-office.gov.uk'
     if action == 'grant':
         access = True
     else:
@@ -41,7 +41,7 @@ def services_grant_or_deny(service_id, action):
             'id': service_id
         }
     }
-    people.create_service(email, payload)
+    people.create_service(g.email, payload)
     if access:
         return redirect(get_service(service_id)['redirect'])
     else:
