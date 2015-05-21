@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+from flask import g
 
 
 class People(object):
@@ -14,31 +15,34 @@ class People(object):
     SERVICE_API = '%s/service' % URL
     NOTIFICATION_API = '%s/notification' % URL
 
-    def create_notification(self, email, message, transport='sms'):
+    def create_notification(self, message, transport='sms'):
         payload = {
             'message': message,
             'transport': transport
         }
-        return self._create(People.NOTIFICATION_API, email, payload)
+        return self._create(People.NOTIFICATION_API, payload)
 
-    def read_notification(self, email):
-        return self._read(People.NOTIFICATION_API, email)
+    def read_notification(self, ):
+        return self._read(People.NOTIFICATION_API)
 
-    def update_profile(self, email, **kwargs):
+    def change_name(self, name):
+        return self.update_profile(name=name)
+
+    def update_profile(self, **kwargs):
         # get existing proffile
-        profile = self.read_profile(email)
+        profile = self.read_profile()
 
         if profile:
             profile_data = profile['data']
             profile_data.update(**kwargs)
-            self._update(People.PROFILE_API, email, {'data': profile_data})
+            self._update(People.PROFILE_API, {'data': profile_data})
         else:
             # create a default profile
-            self._create(People.PROFILE_API, email, {'data': kwargs})
+            self._create(People.PROFILE_API, {'data': kwargs})
         
-    def read_profile(self, email):
+    def read_profile(self, ):
         """Assumes one profile entry"""
-        response = self._read(People.PROFILE_API, email)
+        response = self._read(People.PROFILE_API)
         if response.status_code // 100 == 2:
             resources = response.json()['resources']
             if len(resources) == 0:
@@ -48,10 +52,10 @@ class People(object):
         else:
             return None
 
-    def create_service(self, email, payload):
-        return self._create(People.SERVICE_API, email, payload)
+    def create_service(self, payload):
+        return self._create(People.SERVICE_API, payload)
 
-    def read_service(self, email):
+    def read_service(self, ):
         """Returns a 3-tuple of the form:
         (a, b, c)
 
@@ -69,7 +73,7 @@ class People(object):
         # the services the user has interacted with
         user_services = []
 
-        response = self._read(People.SERVICE_API, email)
+        response = self._read(People.SERVICE_API)
         if response.status_code // 100 == 2:
             user_services = response.json()['resources']
             for existing_service in services:
@@ -81,26 +85,26 @@ class People(object):
                     outstanding_services.append(existing_service)
         return services, user_services, outstanding_services
 
-    def _create(self, api, email, payload):
+    def _create(self, api, payload):
         data = json.dumps(payload)
         return requests.post(
             api,
             data=data,
-            auth=(email, People.TOKEN),
+            auth=(g.email, People.TOKEN),
             headers={'Content-type': 'application/json', 'Accept': 'application/json'})
 
-    def _read(self, api, email):
+    def _read(self, api, ):
         return requests.get(
             api,
-            auth=(email, People.TOKEN),
+            auth=(g.email, People.TOKEN),
             headers={'Accept': 'application/json'})
 
-    def _update(self, api, email, payload):
+    def _update(self, api, payload):
         data = json.dumps(payload)
         return requests.put(
             api,
             data=data,
-            auth=(email, People.TOKEN),
+            auth=(g.email, People.TOKEN),
             headers={'Content-type': 'application/json', 'Accept': 'application/json'})
 
 

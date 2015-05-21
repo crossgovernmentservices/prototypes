@@ -2,7 +2,6 @@
 from flask import (
     Blueprint,
     render_template,
-    g,
 )
 import json
 from application.services.people import People
@@ -76,7 +75,7 @@ def basicprofile_jobs_alerts():
 def csprofile():
     with open('application/data/civilservant.json') as data_file:
       person = json.load(data_file)
-    services, user_services, outstanding_services = people.read_service(g.email)
+    services, user_services, outstanding_services = people.read_service()
 
     return render_template(
         "csprofile.html",
@@ -145,5 +144,5 @@ def csprofile_jobs_apps():
 def csprofile_services():
     with open('application/data/services.json') as data_file:
       services_data = json.load(data_file)
-    services, user_services, outstanding_services = people.read_service(g.email)
+    services, user_services, outstanding_services = people.read_service()
     return render_template("csprofile_services.html", CivilServant=True, activeTab="services", services=services_data, user_services=user_services)

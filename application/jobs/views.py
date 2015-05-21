@@ -2,10 +2,10 @@
 from flask import (
     Blueprint,
     render_template,
-    g,
 )
 import json
 from application.services.people import People 
+import random
 
 
 people = People()
@@ -106,6 +106,6 @@ def contract():
 @blueprint.route('/submit_application', methods=['POST'])
 def submit_application():
 
-    people.create_notification(g.email, 'Your application has been accepted')
+    people.create_notification('Your application for job %i has been accepted.' %  random.randrange(2,10000))
 
     return 'OK', 200
