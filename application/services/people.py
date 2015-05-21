@@ -9,6 +9,7 @@ class People(object):
     """
 
     URL = os.environ.get('PEOPLE_PORT_3004_TCP', 'http://people-service/').replace('tcp','http')
+    TOKEN = os.environ.get('PEOPLE_API_TOKEN', 'hunter2')  # http://bash.org/?244321
     PROFILE_API = '%s/profile' % URL
     SERVICE_API = '%s/service' % URL
     NOTIFICATION_API = '%s/notification' % URL
@@ -23,11 +24,29 @@ class People(object):
     def read_notification(self, email):
         return self._read(People.NOTIFICATION_API, email)
 
-    def create_profile(self, email, payload):
-        return self._create(People.PROFILE_API, email, payload)
+    def update_profile(self, email, **kwargs):
+        # get existing proffile
+        profile = self.read_profile(email)
 
+        if profile:
+            profile_data = profile['data']
+            profile_data.update(**kwargs)
+            self._update(People.PROFILE_API, email, {'data': profile_data})
+        else:
+            # create a default profile
+            self._create(People.PROFILE_API, email, {'data': kwargs})
+        
     def read_profile(self, email):
-        return self._read(People.PROFILE_API, email)
+        """Assumes one profile entry"""
+        response = self._read(People.PROFILE_API, email)
+        if response.status_code // 100 == 2:
+            resources = response.json()['resources']
+            if len(resources) == 0:
+                return None
+            else:
+                return resources[0]
+        else:
+            return None
 
     def create_service(self, email, payload):
         return self._create(People.SERVICE_API, email, payload)
@@ -64,21 +83,26 @@ class People(object):
 
     def _create(self, api, email, payload):
         data = json.dumps(payload)
-        r = requests.post(
+        return requests.post(
             api,
             data=data,
-            auth=(email, 'hunter2'),
+            auth=(email, People.TOKEN),
             headers={'Content-type': 'application/json', 'Accept': 'application/json'})
-        self._maybe_create_user(r, email)
-        return r
 
     def _read(self, api, email):
-        r = requests.get(
+        return requests.get(
             api,
-            auth=(email, 'hunter2'),
+            auth=(email, People.TOKEN),
             headers={'Accept': 'application/json'})
-        self._maybe_create_user(r, email)
-        return r
+
+    def _update(self, api, email, payload):
+        data = json.dumps(payload)
+        return requests.put(
+            api,
+            data=data,
+            auth=(email, People.TOKEN),
+            headers={'Content-type': 'application/json', 'Accept': 'application/json'})
+
 
     def create_user(self, email):
         data = json.dumps({'email': email})
@@ -86,10 +110,3 @@ class People(object):
             '%s/session' % People.URL,
             data=data,
             headers={'Content-type': 'application/json', 'Accept': 'text/plain'})
-
-
-    # just some show&tell hackery to automatically
-    # create users if they don't exist
-    def _maybe_create_user(self, response, email):
-        if response.status_code // 100 != 2:
-            self.create_user(email)
