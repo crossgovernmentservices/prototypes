@@ -30,7 +30,7 @@ def services(service_id):
 
 @blueprint.route('/services/<service_id>/<action>')
 def services_grant_or_deny(service_id, action):
-    email = 'juan.uys@digital.cabinet-office.gov.uk'
+    email = 'colm.britton@digital.cabinet-office.gov.uk'
     if action == 'grant':
         access = True
     else:

@@ -1,0 +1,47 @@
+{% extends "signup_layout.html" %}
+
+{% block head %}
+
+  {{ super() }}
+
+  {% assets "css_login" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <a href="/" class="example-back-link">Back to the cross government tools' prototypes</a>
+
+  <form class="prototype-login__form" action="">
+    <div class="form-group">
+      <label class="form-label-bold" for="email">Email</label>
+      <input type="text" class="form-control" id="email">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label-bold" for="password">Password</label>
+      <input type="text" class="form-control" id="password">
+    </div>
+
+    <!-- Primary buttons, secondary links -->
+    <div class="form-group">
+      <button type="submit" class="button">Login</button>
+      <ul>
+        <li><a href="/">Back</a></li>
+      </ul>
+    </div>
+    <p class="success">Successful log in</p>
+  </form>
+
+</main><!-- / #page-container -->
+{% endblock %}
+
+{% block body_end %}
+  {{ super() }}
+  {% assets "js_prototype_login" %}
+    <script src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+{% endblock %}

@@ -126,6 +126,12 @@ js_profile_jobs = Bundle(
     output='gen/js/jobs.js'
 )
 
+js_prototype_login = Bundle(
+    'signup/js/prototype_login.js',
+    filters='jsmin',
+    output='gen/js/prototype_login.js'
+)
+
 css_login = Bundle(
     'signup/css/login.scss',
     filters='scss',
@@ -173,3 +179,5 @@ assets.register('css_login', css_login)
 assets.register('js_profile_jobs', js_profile_jobs)
 assets.register('js_basic', js_basic)
 assets.register('js_your_apps', js_your_apps)
+assets.register('js_prototype_login', js_prototype_login)
+
