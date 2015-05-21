@@ -8,7 +8,7 @@ class People(object):
 
     """
 
-    URL = os.environ.get('PEOPLE_PORT_3004_TCP').replace('tcp','http')
+    URL = os.environ.get('PEOPLE_PORT_3004_TCP', 'http://people-service/').replace('tcp','http')
     PROFILE_API = '%s/profile' % URL
     SERVICE_API = '%s/service' % URL
 
