@@ -43,3 +43,19 @@ a.settings-btn:visited {
     display: block;
   }
 }
+.settings-msg__success {
+  display: none;
+  color: $live-colour;
+}
+
+.settings__save__wrap {
+  @extend %contain-floats;
+}
+.settings__save,
+.settings-msg__success {
+  float: left;
+}
+.settings-msg__success {
+  margin-left: $gutter-half;
+  line-height: 34px;
+}
