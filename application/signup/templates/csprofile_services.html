@@ -14,6 +14,10 @@
         {{ build_service_item(service) }}
       {% endfor %}
 
+      {% for service in user_services %}
+        {{ build_service_item(service.data) }}
+      {% endfor %}
+
     </ul>
   </section>
 </main>

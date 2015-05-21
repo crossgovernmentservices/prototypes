@@ -144,5 +144,6 @@ def csprofile_jobs_apps():
 @blueprint.route('/csprofile_services')
 def csprofile_services():
     with open('application/data/services.json') as data_file:
-      services = json.load(data_file)
-    return render_template("csprofile_services.html", CivilServant=True, activeTab="services", services=services)
+      services_data = json.load(data_file)
+    services, user_services, outstanding_services = people.read_service(g.email)
+    return render_template("csprofile_services.html", CivilServant=True, activeTab="services", services=services_data, user_services=user_services)

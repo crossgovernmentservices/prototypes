@@ -34,7 +34,7 @@
   {
     "id": "expenses",
     "name": "Expenses",
-    "desc": "For expensing things",
+    "desc": "The expenses service uses your payroll details to determine when you'll get paid. It also adds to your expenses record",
     "url": "/route/services/expenses",
     "redirect": "/being_a_civil_servant/addreceipt",
     "scopes": ["your expenses details", "your banking details", "your profile details"]

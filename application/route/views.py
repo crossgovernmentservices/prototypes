@@ -5,6 +5,7 @@ from flask import (
     g,
 )
 import json
+import datetime
 from application.services.people import People
 
 people = People()
@@ -35,10 +36,14 @@ def services_grant_or_deny(service_id, action):
         access = True
     else:
         access = False
+    today = datetime.date.today()
     payload = {
         'has_access': access,
         'data': {
-            'id': service_id
+            'id': service_id,
+            'desc': get_service(service_id)['desc'],
+            'approval_date': today.strftime('%a %d %b %Y'),
+            'permissions': 'read and write'
         }
     }
     people.create_service(g.email, payload)
