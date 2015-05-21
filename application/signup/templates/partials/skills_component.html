@@ -15,7 +15,7 @@
   <li class="skill" data-skill="Open source">Open source</li>
 </ul>
 {% endif %}
-<div class="skills__extra__wrap skills__extra--no-linkedin">
+<div class="skills__extra__wrap {% if not person.cs %}skills__extra--no-linkedin{% endif %}">
   <div class="skills__extra__head">
     <h4 class="heading-small">Additional skills</h4>
     <button class="skills__extra__btn">+</button>
