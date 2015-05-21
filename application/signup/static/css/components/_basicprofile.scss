@@ -10,6 +10,8 @@
   position: absolute;
   top: -1*$gutter;
   left: $gutter-half;
+  width: 100px; height: 100px;
+  overflow: hidden;
 }
 .basicprofile__content__items {
   padding-left: 100px + $gutter;

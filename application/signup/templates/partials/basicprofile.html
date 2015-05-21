@@ -1,6 +1,6 @@
 <div class="basicprofile">
   <div class="basicprofile__content">
-    <img src="http://placehold.it/100x100" class="basicprofile__pic">
+    <img src="{% if person.profile_pic is defined %}{{person.profile_pic}}{% else %}http://placehold.it/100x100{% endif %}" class="basicprofile__pic">
     <div class="basicprofile__content__items">
       <h3 class="heading-small basicprofile__name">{{ person.name }}</h3>
       {% if person.cs %}

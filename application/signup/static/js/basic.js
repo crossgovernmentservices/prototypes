@@ -24,6 +24,7 @@
       }, 2000);
     });
 
+    var pic_src = "/static/images/colm-britton.jpg";
     $linkedinBtn.on("click", function(e) {
       e.preventDefault();
       var $linkedinItem = $("[data-item-type='linkedin']");
@@ -31,6 +32,7 @@
       window.setTimeout(function() {
         swapClasses($linkedinItem, "linkedin--associating", "linkedin--associated");
         $(".skills__extra__wrap").removeClass("skills__extra--no-linkedin");
+        $(".basicprofile__pic").attr("src", pic_src);
       }, 2000);
     });
 

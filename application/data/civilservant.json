@@ -5,6 +5,7 @@
     "personal": "colmjude@gmail.com",
     "work": "colm.britton@digital.cabinet-office.gov.uk"
   },
+  "profile_pic": "/static/images/colm-britton.jpg",
   "todos": [
     {"desc": "Health & safety awareness course is due", "category": "learning", "url": "/signup/csprofile_learning"},
     {"desc": "Refresh objectives", "category": "perf", "url": "/signup/csprofile_perf/objectives"},
