@@ -66,13 +66,16 @@ class People(object):
         self._maybe_create_user(r, email)
         return r
 
+    def create_user(self, email):
+        data = json.dumps({'email': email})
+        requests.post(
+            '%s/session' % People.URL,
+            data=data,
+            headers={'Content-type': 'application/json', 'Accept': 'text/plain'})
+
 
     # just some show&tell hackery to automatically
     # create users if they don't exist
     def _maybe_create_user(self, response, email):
         if response.status_code // 100 != 2:
-            data = json.dumps({'email': email})
-            requests.post(
-                '%s/session' % People.URL,
-                data=data,
-                headers={'Content-type': 'application/json', 'Accept': 'text/plain'})
+            self.create_user(email)
