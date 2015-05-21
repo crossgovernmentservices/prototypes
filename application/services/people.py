@@ -36,6 +36,9 @@ class People(object):
         # the services the user hasn't granted/denied yet
         outstanding_services = []
 
+        # the services the user has interacted with
+        user_services = []
+
         response = self._read(People.SERVICE_API, email)
         if response.status_code // 100 == 2:
             user_services = response.json()['resources']
