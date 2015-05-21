@@ -35,10 +35,12 @@ class People(object):
         if profile:
             profile_data = profile['data']
             profile_data.update(**kwargs)
-            self._update(People.PROFILE_API, {'data': profile_data})
+            profile['data'] = profile_data
+            print('PROFILE: %s' % profile)
+            return self._update(People.PROFILE_API, profile['id'], profile)
         else:
             # create a default profile
-            self._create(People.PROFILE_API, {'data': kwargs})
+            return self._create(People.PROFILE_API, {'data': kwargs})
         
     def read_profile(self, ):
         """Assumes one profile entry"""
@@ -99,10 +101,10 @@ class People(object):
             auth=(g.email, People.TOKEN),
             headers={'Accept': 'application/json'})
 
-    def _update(self, api, payload):
+    def _update(self, api, id, payload):
         data = json.dumps(payload)
         return requests.put(
-            api,
+            '%s/%i' % (api, id),
             data=data,
             auth=(g.email, People.TOKEN),
             headers={'Content-type': 'application/json', 'Accept': 'application/json'})

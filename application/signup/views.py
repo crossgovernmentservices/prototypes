@@ -2,6 +2,8 @@
 from flask import (
     Blueprint,
     render_template,
+    request,
+    jsonify,
 )
 import json
 from application.services.people import People
@@ -146,3 +148,8 @@ def csprofile_services():
       services_data = json.load(data_file)
     services, user_services, outstanding_services = people.read_service()
     return render_template("csprofile_services.html", CivilServant=True, activeTab="services", services=services_data, user_services=user_services)
+
+@blueprint.route('/profile', methods=['POST'])
+def profile():
+    response = people.update_profile(**request.form)
+    return jsonify({'msg': 'see status code'}), response.status_code
