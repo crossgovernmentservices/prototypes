@@ -83,7 +83,8 @@ def csprofile():
         CivilServant=True,
         activeTab="you",
         person=person,
-        services=outstanding_services)
+        services=outstanding_services,
+        user_services=user_services)
 
 @blueprint.route('/csprofile_more')
 def csprofile_more():

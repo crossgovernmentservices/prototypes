@@ -21,8 +21,13 @@
       <section>
         {% include "partials/skills_component.html" ignore missing %}
       </section>
-    </div>
-  </div><!-- end column-two-thirds -->
+      {% for service in user_services %}
+        {% if service.data.id == "expenses" %}
+          {% include "partials/expenses_widget.html" ignore missing %}
+        {% endif %}
+      {% endfor %}
+    </div><!-- end column-two-thirds -->
+  </div>
 
   <div class="grid-row">
     <div class="column-third">
