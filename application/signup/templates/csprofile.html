@@ -10,19 +10,30 @@
       <section class="container">
       {% include "partials/basicprofile.html" ignore missing %}
       </section>
-      <section class="component component--clear">{% include "partials/profile/key-info.html" ignore missing %}</section>
-      <section class="component">{% include "partials/profile/team_component.html" ignore missing %}</section>
-      <section class="component">{% include "partials/profile/communities.html" ignore missing %}</section>
+      <section class="component component--clear">
+        {% include "partials/profile/key-info.html" ignore missing %}
+      </section>
+      <section class="component">
+        {% include "partials/profile/team_component.html" ignore missing %}
+      </section>
+      <section class="component">
+        {% include "partials/profile/communities.html" ignore missing %}
+      </section>
     </div><!-- end column-third -->
 
     <div class="column-two-thirds">
       {% include "partials/people_finder.html" ignore missing %}
       <div class="grid-row">
-        <div class="column-half">{% include "partials/week_availability.html" ignore missing %}</div>
-        <div class="column-half">{% include "partials/profile/next-meeting.html" ignore missing %}</div>
+        <section class="component__wrap">
+          <h4 class="heading-medium component__head">Availability</h4>
+          <div class="column-half component--inner">{% include "partials/week_availability.html" ignore missing %}</div>
+          <div class="column-half component--inner">{% include "partials/profile/next-meeting.html" ignore missing %}</div>
+        </section>
       </div>
-      {% include "partials/todo_list.html" ignore missing %}
-      <section>
+      <section class="component">
+        {% include "partials/todo_list.html" ignore missing %}
+      </section>
+      <section class="component">
         {% include "partials/skills_component.html" ignore missing %}
       </section>
     </div><!-- end column-two-thirds -->

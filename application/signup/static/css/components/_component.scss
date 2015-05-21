@@ -3,8 +3,18 @@
   padding: $gutter 0 45px;
 }
 
+.component__wrap {
+  @extend .component;
+  @extend %contain-floats;
+  margin: 0 $gutter-half;
+}
+
 .component--clear {
   border: none;
+}
+
+.component--inner {
+  padding-bottom: $gutter-half;
 }
 
 .component__head {

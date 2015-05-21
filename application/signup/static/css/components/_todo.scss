@@ -1,6 +1,7 @@
 .todo__widget {}
 .todo__list {}
 .todo__item {
+  @extend %contain-floats;
   min-height: $gutter;
   padding: $gutter-half 0;
   border-bottom: 1px dashed $grey-3;

@@ -1,21 +1,23 @@
-<h3 class="heading-medium">Skills profile</h3>
+<h3 class="heading-medium component__head">Skills profile</h3>
 {% if person.cs %}
-<h4 class="heading-small">Skills associated to role</h4>
-<ul class="jd__assoc-skills">
-  <li class="skill" data-skill="Agile">Agile</li>
-  <li class="skill" data-skill="Javascript">Javascript</li>
-  <li class="skill" data-skill="User needs">User needs</li>
-  <li class="skill" data-skill="HTML">HTML</li>
-  <li class="skill" data-skill="CSS">CSS</li>
-  <li class="skill" data-skill="Problem solving">Problem solving</li>
-  <li class="skill" data-skill="Digital services">Digital services</li>
-  <li class="skill" data-skill="User centred design">User centred design</li>
-  <li class="skill" data-skill="Web security">Web security</li>
-  <li class="skill" data-skill="Open standards">Open standards</li>
-  <li class="skill" data-skill="Open source">Open source</li>
-</ul>
+<section class="component--inner">
+  <h4 class="heading-small">Skills associated to role</h4>
+  <ul class="jd__assoc-skills">
+    <li class="skill" data-skill="Agile">Agile</li>
+    <li class="skill" data-skill="Javascript">Javascript</li>
+    <li class="skill" data-skill="User needs">User needs</li>
+    <li class="skill" data-skill="HTML">HTML</li>
+    <li class="skill" data-skill="CSS">CSS</li>
+    <li class="skill" data-skill="Problem solving">Problem solving</li>
+    <li class="skill" data-skill="Digital services">Digital services</li>
+    <li class="skill" data-skill="User centred design">User centred design</li>
+    <li class="skill" data-skill="Web security">Web security</li>
+    <li class="skill" data-skill="Open standards">Open standards</li>
+    <li class="skill" data-skill="Open source">Open source</li>
+  </ul>
+</section>
 {% endif %}
-<div class="skills__extra__wrap {% if not person.cs %}skills__extra--no-linkedin{% endif %}">
+<div class="skills__extra__wrap component--inner {% if not person.cs %}skills__extra--no-linkedin{% endif %}">
   <div class="skills__extra__head">
     <h4 class="heading-small">Additional skills</h4>
     <button class="skills__extra__btn">+</button>
