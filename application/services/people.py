@@ -34,9 +34,13 @@ class People(object):
 
         if profile:
             profile_data = profile['data']
-            profile_data.update(**kwargs)
+            for key, value in kwargs.items():
+                if len(value) == 1:
+                    profile_data[key] = value[0]
+                else:
+                    profile_data[key] = value
+            #profile_data.update(**kwargs)
             profile['data'] = profile_data
-            print('PROFILE: %s' % profile)
             return self._update(People.PROFILE_API, profile['id'], profile)
         else:
             # create a default profile
