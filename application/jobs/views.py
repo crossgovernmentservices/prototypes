@@ -2,9 +2,13 @@
 from flask import (
     Blueprint,
     render_template,
+    g,
 )
 import json
+from application.services.people import People 
 
+
+people = People()
 
 blueprint = Blueprint(
     'jobs',
@@ -98,3 +102,10 @@ def email_referred():
 @blueprint.route('/contract')
 def contract():
     return render_template('contract.html')
+
+@blueprint.route('/submit_application', methods=['POST'])
+def submit_application():
+
+    people.create_notification(g.email, 'Your application has been accepted')
+
+    return 'OK', 200

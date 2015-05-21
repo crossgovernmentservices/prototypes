@@ -11,6 +11,17 @@ class People(object):
     URL = os.environ.get('PEOPLE_PORT_3004_TCP', 'http://people-service/').replace('tcp','http')
     PROFILE_API = '%s/profile' % URL
     SERVICE_API = '%s/service' % URL
+    NOTIFICATION_API = '%s/notification' % URL
+
+    def create_notification(self, email, message, transport='sms'):
+        payload = {
+            'message': message,
+            'transport': transport
+        }
+        return self._create(People.NOTIFICATION_API, email, payload)
+
+    def read_notification(self, email):
+        return self._read(People.NOTIFICATION_API, email)
 
     def create_profile(self, email, payload):
         return self._create(People.PROFILE_API, email, payload)
