@@ -64,6 +64,7 @@ js_jobs_review = Bundle(
     'jobs/js/radar-chart.js',
     'jobs/js/review-summary.js',
     'jobs/js/details.polyfill.js',
+    'signup/js/application.js',
     filters='jsmin',
     output='gen/js/jobs_review.js'
 )

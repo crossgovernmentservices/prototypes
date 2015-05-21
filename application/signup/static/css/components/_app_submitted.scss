@@ -1,0 +1,20 @@
+.app-submitted__wrap {
+  background: $turquoise;
+  color: $page-colour;
+  display: none;
+}
+.app-submitted {
+  @extend #content;
+  padding: $gutter 0;
+
+  .app-submitted__heading {
+    margin-top: 0;
+  }
+  p {
+    font-size: 19px;
+  }
+  a {
+    color: $page-colour;
+  }
+}
+
