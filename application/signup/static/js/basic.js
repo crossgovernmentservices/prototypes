@@ -11,6 +11,12 @@
     var $cvInput = $("#cv-upload");
     var $cvUploadBtn = $(".cv-upload-btn");
     var $linkedinBtn = $(".linkedin-upload-btn");
+    var $welcomeEl = $(".welcome__wrap");
+
+    $(".welcome__skip").on("click", function(e) {
+      e.preventDefault();
+      $welcomeEl.slideUp();
+    });
 
     $cvUploadBtn.on("click", function(e) {
       $cvInput.trigger("click");
