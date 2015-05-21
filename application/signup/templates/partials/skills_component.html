@@ -15,17 +15,25 @@
   <li class="skill" data-skill="Open source">Open source</li>
 </ul>
 {% endif %}
-<div class="skills__extra__head">
-  <h4 class="heading-small">Additional skills</h4>
-  <button class="skills__extra__btn">+</button>
+<div class="skills__extra__wrap skills__extra--no-linkedin">
+  <div class="skills__extra__head">
+    <h4 class="heading-small">Additional skills</h4>
+    <button class="skills__extra__btn">+</button>
+  </div>
+  <ul class="skills__additional">
+    <li class="skill" data-skill="Agile">Python</li>
+    <li class="skill" data-skill="Javascript">Business analysis</li>
+    <li class="skill" data-skill="User needs">Stakeholder management</li>
+    <li class="skill" data-skill="HTML">Content design</li>
+    <li class="skill" data-skill="CSS">Graphic design</li>
+  </ul>
+  {% if not person.cs %}
+  <div class="no__skills">
+    <p>not started</p>
+  </div>
+  {% endif %}
 </div>
-<ul class="skills__additional">
-  <li class="skill" data-skill="Agile">Python</li>
-  <li class="skill" data-skill="Javascript">Business analysis</li>
-  <li class="skill" data-skill="User needs">Stakeholder management</li>
-  <li class="skill" data-skill="HTML">Content design</li>
-  <li class="skill" data-skill="CSS">Graphic design</li>
-</ul>
+
 <div class="skills__extra">
   <label class="form-label" for="other-skills">Add skill/s</label>
   <input class="form-control" type="text" id="other-skills"/>

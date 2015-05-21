@@ -56,3 +56,25 @@
     display: block;
   }
 }
+
+.skills__extra--no-linkedin {
+  .skills__additional {
+    display: none;
+  }
+  .no__skills {
+    display: block;
+  }
+}
+
+.no__skills {
+  display: none;
+  color: $grey-2;
+  border: 1px dashed $grey-2;
+  text-align: center;
+  padding: $gutter-half;
+  margin: $gutter-half;
+
+  p {
+    margin: 0;
+  }
+}

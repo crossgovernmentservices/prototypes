@@ -156,12 +156,21 @@ button.btn--edit--dark {
 .job-search-item__link {
   line-height: 50px;
 }
+.linkedin--associating__loader {
+  color: $linkedin;
+  line-height: 50px;
+  img {
+    margin-right: $gutter-half;
+  }
+}
 .linkedin--associated--link,
+.linkedin--associating__loader,
 .linkedin--not-associated--link {
   display: none;
 }
+.linkedin--associating .linkedin--associating__loader,
 .linkedin--associated .linkedin--associated--link,
-.linkedin--not-associated .linkedin--not-associated--link {
+.linkedin--associated-not .linkedin--not-associated--link {
   display: block;
 }
 .linkedin--logo {
