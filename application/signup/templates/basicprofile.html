@@ -41,14 +41,16 @@
       <section class="container">
       {% include "partials/basicprofile.html" ignore missing %}
       </section>
-      <section>
+      <section class="component component--clear">
         {% include "partials/job-search-items.html" ignore missing %}
       </section>
     </div>
     <div class="column-two-thirds">
-      {% include "partials/todo_list.html" ignore missing %}
+      <section class="component component--top">
+        {% include "partials/todo_list.html" ignore missing %}
+      </section>
 
-      <section>
+      <section class="component">
         {% include "partials/skills_component.html" ignore missing %}
       </section>
 
