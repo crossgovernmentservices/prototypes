@@ -5,14 +5,16 @@
 
 <main id="content" role="main">
   <div class="grid-row">
+
     <div class="column-third">
       <section class="container">
       {% include "partials/basicprofile.html" ignore missing %}
       </section>
-      {% include "partials/profile/key-info.html" ignore missing %}
-      {% include "partials/profile/team_component.html" ignore missing %}
-      {% include "partials/profile/communities.html" ignore missing %}
+      <section class="component component--clear">{% include "partials/profile/key-info.html" ignore missing %}</section>
+      <section class="component">{% include "partials/profile/team_component.html" ignore missing %}</section>
+      <section class="component">{% include "partials/profile/communities.html" ignore missing %}</section>
     </div><!-- end column-third -->
+
     <div class="column-two-thirds">
       {% include "partials/people_finder.html" ignore missing %}
       <div class="grid-row">
