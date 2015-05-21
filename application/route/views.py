@@ -15,21 +15,21 @@ blueprint = Blueprint(
     static_folder='static',
     template_folder='templates')
 
-def get_service(name):
+def get_service(service_id):
     with open('application/data/facts/services.json') as data_file:
       services = json.load(data_file)
     service = None
     for srv in services:
-        if srv['id'] == name:
+        if srv['id'] == service_id:
             service = srv
     return service
 
-@blueprint.route('/services/<name>')
-def services(name):
-    return render_template('data_request.html', service=get_service(name))
+@blueprint.route('/services/<service_id>')
+def services(service_id):
+    return render_template('data_request.html', service=get_service(service_id))
 
-@blueprint.route('/services/<name>/<action>')
-def services_grant_or_deny(name, action):
+@blueprint.route('/services/<service_id>/<action>')
+def services_grant_or_deny(service_id, action):
     email = 'juan.uys@digital.cabinet-office.gov.uk'
     if action == 'grant':
         access = True
@@ -38,11 +38,11 @@ def services_grant_or_deny(name, action):
     payload = {
         'has_access': access,
         'data': {
-            'name': name
+            'id': service_id
         }
     }
     people.create_service(email, payload)
     if access:
-        return redirect(get_service(name)['redirect'])
+        return redirect(get_service(service_id)['redirect'])
     else:
         return redirect('/signup/csprofile')

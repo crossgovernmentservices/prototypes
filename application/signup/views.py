@@ -4,7 +4,10 @@ from flask import (
     render_template,
 )
 import json
+from application.services.people import People
 
+
+people = People()
 
 blueprint = Blueprint(
     'signup',
@@ -68,8 +71,8 @@ def basicprofile_jobs_alerts():
 def csprofile():
     with open('application/data/civilservant.json') as data_file:
       person = json.load(data_file)
-    with open('application/data/facts/services.json') as data_file:
-      services = json.load(data_file)
+    services, user_services, outstanding_services = people.read_service('juan.uys@digital.cabinet-office.gov.uk')
+
     return render_template(
         "csprofile.html",
         CivilServant=True,
