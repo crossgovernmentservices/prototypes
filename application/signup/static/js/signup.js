@@ -104,6 +104,15 @@
       $extraSkills.toggleClass("active");
     });
 
+    // -------
+    // for services component
+    // -------
+    $(".component-expand-btn").on("click", function(e) {
+      e.preventDefault();
+      var elClass = $(this).data("to-expand");
+      $( elClass ).slideToggle();
+    });
+
   });
 
 }(jQuery));

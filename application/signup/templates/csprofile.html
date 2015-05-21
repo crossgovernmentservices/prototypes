@@ -17,7 +17,6 @@
     </div><!-- end column-third -->
     <div class="column-two-thirds">
       {% include "partials/people_finder.html" ignore missing %}
-      {% include "partials/add_services.html" ignore missing %}
       {% include "partials/todo_list.html" ignore missing %}
       <section>
         {% include "partials/skills_component.html" ignore missing %}
@@ -37,6 +36,8 @@
       </section>
     </div>
   </div>
+
+  {% include "partials/add_services.html" ignore missing %}
 </main>
 
 {% endblock %}

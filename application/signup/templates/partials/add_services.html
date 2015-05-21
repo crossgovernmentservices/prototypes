@@ -1,10 +1,15 @@
 {% if services is defined %}
-  <h2 class="heading-medium">Add more services</h2>
-
-  {% for service in services %}
-  <a href="{{ service.url }}" class="add_widget">
-    <p>add {{ service.name }} service</p>
-  </a>
-  {% endfor %}
-
+  <header class="component__head">
+    <h2 class="component__heading heading-medium">Add more services</h2>
+    <button data-to-expand=".services-list" class="component-expand-btn">+</button>
+  </header>
+  <ul class="services-list services-list--closed">
+    {% for service in services %}
+    <li class="services-list__item">
+      <a href="{{ service.url }}" class="add_widget">
+        <p>add {{ service.name }} service</p>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
 {% endif %}
