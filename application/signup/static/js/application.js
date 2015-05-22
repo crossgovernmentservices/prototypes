@@ -43,6 +43,22 @@
           data: JSON.stringify(data)
         });
       }
+
+      // this is hacky
+      if( $container.hasClass("data-item__entry--email") ) {
+        var data = {
+          email: {
+            personal: $this.val()
+          }
+        };
+        $.ajax({
+          type: 'POST',
+          url: '/profile/',
+          contentType: 'application/json; charset=utf-8',
+          dataType: 'json',
+          data: JSON.stringify(data)
+        });
+      }
     };
   });
 

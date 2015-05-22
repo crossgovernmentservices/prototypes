@@ -8,7 +8,13 @@
   };
 
   var updateProfileData = function(data) {
-    $.post( "/profile/", data);
+    $.ajax({
+      type: 'POST',
+      url: '/profile/',
+      contentType: 'application/json; charset=utf-8',
+      dataType: 'json',
+      data: JSON.stringify(data)
+    });
   };
 
   $(function() {
@@ -31,7 +37,7 @@
       var $item = $(this).parents(".job-search-item");
       window.setTimeout(function() {
         $item.addClass("cv-active");
-        updateProfileData({ cv: true });
+        updateProfileData({ cv: 'true' });
       }, 2000);
     });
 
@@ -44,6 +50,12 @@
         swapClasses($linkedinItem, "linkedin--associating", "linkedin--associated");
         $(".skills__extra__wrap").removeClass("skills__extra--no-linkedin");
         $(".basicprofile__pic").attr("src", pic_src);
+        var data = {
+          integrations: {
+              linkedin: 'true'
+          }
+        };
+        updateProfileData(data);
         updateProfileData({ profile_pic: pic_src });
       }, 2000);
     });

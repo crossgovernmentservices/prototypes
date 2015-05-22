@@ -34,7 +34,10 @@ class People(object):
     def create_default_profile(self):
         profile = {
             'name': 'Colm Britton',
-            'email.personal': g.email,
+            'email': {
+                'personal': g.email,
+                'work': ''
+            },
             'profile_pic': 'http://placehold.it/100x100',
             'tel': '01234567890',
             'integrations': {
