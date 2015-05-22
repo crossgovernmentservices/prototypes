@@ -37,7 +37,7 @@
       var $item = $(this).parents(".job-search-item");
       window.setTimeout(function() {
         $item.addClass("cv-active");
-        updateProfileData({ cv: 'true' });
+        updateProfileData({ cv: true });
       }, 2000);
     });
 
@@ -52,7 +52,7 @@
         $(".basicprofile__pic").attr("src", pic_src);
         var data = {
           integrations: {
-              linkedin: 'true'
+              linkedin: true
           }
         };
         updateProfileData(data);
