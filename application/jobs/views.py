@@ -107,5 +107,5 @@ def contract():
 @blueprint.route('/submit_application', methods=['POST'])
 def submit_application():
 
-    response = people.create_notification('Your application for job %i has been accepted.' %  random.randrange(2,10000))
+    response = people.create_notification('Your GOV.UK application for Front-end developer (#%i) has been successful.' %  random.randrange(14400000,14500000))
     return jsonify(response.json()), response.status_code
