@@ -15,18 +15,30 @@
     });
 
     $(".data-item__edit").on("click", function() {
-      var $item = $(this).parents(".data-item").find(".data-item__entry");
+      var $item = $(this).parent().siblings(".data-item__entry");
       var current_val = $item.text();
-      $item
-        .text("")
-        .append( $( document.createElement("input") ).addClass("form-control data-item__edit__input").val(current_val).on("change", saveChange) );
+          $item
+            .text("")
+            .append( $( document.createElement("input") ).addClass("form-control data-item__edit__input").val(current_val).on("change", saveChange) );
     });
 
+    var replaceText = function($el, txt) {
+      $el.empty().text(txt);
+    };
+
     var saveChange = function() {
-      var name = $(this).val();
-      var data = {};
-      data[ $(this).parent().data("key") ] = name;
-      $.post( "/signup/profile", data );
+      var $this = $(this);
+      var $container = $this.parent();
+
+      if( $container.data("key") ) {
+        var val = $this.val();
+        var data = {};
+
+        data[ $this.parent().data("key") ] = val;
+        $.post( "/signup/profile", data, function() {
+          replaceText($this.parent(), val);
+        });
+      }
     };
   });
 

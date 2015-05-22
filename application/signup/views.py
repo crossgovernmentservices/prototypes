@@ -33,7 +33,8 @@ def googlelogin():
 
 @blueprint.route('/application')
 def application():
-    return render_template('application.html')
+    profile = people.read_profile()
+    return render_template('application.html', profile=profile)
 
 @blueprint.route('/prototype_login')
 def prototype_login():
