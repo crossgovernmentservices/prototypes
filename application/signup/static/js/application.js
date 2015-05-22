@@ -35,8 +35,12 @@
         var data = {};
 
         data[ $this.parent().data("key") ] = val;
-        $.post( "/profile/", data, function() {
-          replaceText($this.parent(), val);
+        $.ajax({
+          type: 'POST',
+          url: '/profile/',
+          contentType: 'application/json; charset=utf-8',
+          dataType: 'json',
+          data: JSON.stringify(data)
         });
       }
     };

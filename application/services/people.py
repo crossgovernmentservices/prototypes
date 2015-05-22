@@ -59,23 +59,19 @@ class People(object):
         }
         return self.create_profile(profile)
 
-    def update_profile(self, **kwargs):
+    def update_profile(self, payload):
         # get existing proffile
         profile = self.read_profile()
 
         if profile:
             profile_data = profile['data']
-            for key, value in kwargs.items():
-                if len(value) == 1:
-                    profile_data[key] = value[0]
-                else:
-                    profile_data[key] = value
-            #profile_data.update(**kwargs)
+            profile_data.update(payload)
             profile['data'] = profile_data
+
             return self._update(People.PROFILE_API, profile['id'], profile)
         else:
             # create a default profile
-            return self._create(People.PROFILE_API, {'data': kwargs})
+            return self._create(People.PROFILE_API, {'data': payload})
         
     def read_profile(self, ):
         """Assumes one profile entry"""

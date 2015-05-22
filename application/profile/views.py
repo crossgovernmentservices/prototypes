@@ -22,7 +22,7 @@ blueprint = Blueprint(
 
 @blueprint.route('/', methods=['POST'])
 def profile():
-    response = people.update_profile(**request.form)
+    response = people.update_profile(request.get_json())
     return jsonify({'msg': 'see status code'}), response.status_code
 
 @blueprint.route('/magic')
