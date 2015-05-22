@@ -2,6 +2,7 @@
 from flask import (
     Blueprint,
     render_template,
+    jsonify,
 )
 import json
 from application.services.people import People 
@@ -106,6 +107,5 @@ def contract():
 @blueprint.route('/submit_application', methods=['POST'])
 def submit_application():
 
-    people.create_notification('Your application for job %i has been accepted.' %  random.randrange(2,10000))
-
-    return 'OK', 200
+    response = people.create_notification('Your application for job %i has been accepted.' %  random.randrange(2,10000))
+    return jsonify(response.json()), response.status_code

@@ -36,3 +36,7 @@ def magic(action=None):
             people.create_default_profile()
 
     return render_template('magic.html', session=session)
+
+@blueprint.route('/whoami')
+def whoami():
+    return jsonify({'email': g.email}), 200
