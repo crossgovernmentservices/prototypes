@@ -84,7 +84,11 @@ class People(object):
             if len(resources) == 0:
                 return None
             else:
-                return resources[-1]
+                resource = resources[0]
+                for res in resources:
+                    if res['id'] > resource['id']:
+                        resource = res
+                return resource
         else:
             return None
 
