@@ -63,7 +63,8 @@ def basicprofile():
 def basicprofile_checklist():
     with open('application/data/noncivilservant.json') as data_file:
       person = json.load(data_file)
-    return render_template("basicprofile_checklist.html", activeTab="you", person=person)
+    profile = people.read_profile(g.email)
+    return render_template("basicprofile_checklist.html", activeTab="you", person=person, profile=profile)
 
 @blueprint.route('/basicprofile_jobs')
 def basicprofile_jobs():
@@ -84,6 +85,7 @@ def csprofile():
     with open('application/data/civilservant.json') as data_file:
       person = json.load(data_file)
     services, user_services, outstanding_services = people.read_service(g.email)
+    profile = people.read_profile(g.email)
 
     return render_template(
         "csprofile.html",
@@ -91,7 +93,8 @@ def csprofile():
         activeTab="you",
         person=person,
         services=outstanding_services,
-        user_services=user_services)
+        user_services=user_services,
+        profile=profile)
 
 @blueprint.route('/csprofile_more')
 def csprofile_more():
