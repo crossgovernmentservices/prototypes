@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block head %}
+
+  {{ super() }}
+
+  {% assets "profile/css/main.scss",
+      filters="scss", output="gen/css/profile.css" %}
+      <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+<h1>Hello {{ session.email }}</h1>
+<p><a href="./magic/reset">reset my profile</a></p>
+</main>
+{% endblock %}

@@ -35,7 +35,7 @@
         var data = {};
 
         data[ $this.parent().data("key") ] = val;
-        $.post( "/signup/profile", data, function() {
+        $.post( "/profile/", data, function() {
           replaceText($this.parent(), val);
         });
       }

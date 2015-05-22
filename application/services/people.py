@@ -28,6 +28,35 @@ class People(object):
     def change_name(self, name):
         return self.update_profile(name=name)
 
+    def create_profile(self, profile):
+        return self._create(People.PROFILE_API, {'data': profile})
+
+    def create_default_profile(self):
+        profile = {
+            'name': 'Colm Britton',
+            'email.personal': g.email,
+            'profile_pic': 'http://placehold.it/100x100',
+            'tel': '01234567890',
+            'integrations.linkedin': False,
+            'cv': False,
+            'is_civil_servant': False,
+            'skills': [
+                'Python',
+                'Business analysis',
+                'Stakeholder management',
+                'Content design',
+                'Graphics design'
+            ],
+            'role': 'TODO role_id',
+            'team': 'Cross Government Tools',
+            'area': 'GDS',
+            'location': 'Aviation House, Kingsway, London',
+            'profession': 'Digital',
+            'function': 'Technology',
+            'organisation': 'Cabinet Office'
+        }
+        return self.create_profile(profile)
+
     def update_profile(self, **kwargs):
         # get existing proffile
         profile = self.read_profile()
@@ -54,7 +83,7 @@ class People(object):
             if len(resources) == 0:
                 return None
             else:
-                return resources[0]
+                return resources[-1]
         else:
             return None
 
