@@ -63,7 +63,7 @@ class People(object):
 
     def update_profile(self, email, payload):
         # get existing proffile
-        profile = self.read_profile()
+        profile = self.read_profile(email)
 
         if profile:
             profile_data = profile['data']
