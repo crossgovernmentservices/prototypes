@@ -52,7 +52,13 @@ def application_competenciesy():
 def basicprofile():
     with open('application/data/noncivilservant.json') as data_file:
       person = json.load(data_file)
-    return render_template("basicprofile.html", activeTab="you", person=person)
+    profile = people.read_profile()
+
+    return render_template(
+        "basicprofile.html",
+        activeTab="you",
+        person=person,
+        profile=profile)
 
 @blueprint.route('/basicprofile/checklist')
 def basicprofile_checklist():

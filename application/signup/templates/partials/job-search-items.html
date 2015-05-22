@@ -1,5 +1,5 @@
 <ul class="job-search-items">
-  <li class="job-search-item">
+  <li class="job-search-item {% if profile.data.cv %}cv-active{% endif %}">
     <div class="no-cv-content">
       <label for="cv-upload" class="form-label">Upload CV</label>
       <input type="file" class="cv-upoad" id="cv-upload" />
@@ -11,7 +11,8 @@
       </div>
     <div>
   </li>
-  <li class="job-search-item linkedin--associated-not" data-item-type="linkedin">
+
+  <li class="job-search-item linkedin--associated{% if not profile.data.integrations.linkedin %}-not{% endif %}" data-item-type="linkedin">
     <div class="grid-row">
       <div class="column-quarter"><img src="/static/images/linkedin.png" alt="" class="linkedin--logo" /></div>
       <div class="column-three-quarter">

@@ -40,3 +40,10 @@ def magic(action=None):
 @blueprint.route('/whoami')
 def whoami():
     return jsonify({'email': g.email}), 200
+
+@blueprint.route('/print')
+def basicprofile():
+    profile = people.read_profile()
+
+    return jsonify(profile), 200
+

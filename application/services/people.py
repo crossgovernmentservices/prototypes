@@ -37,7 +37,9 @@ class People(object):
             'email.personal': g.email,
             'profile_pic': 'http://placehold.it/100x100',
             'tel': '01234567890',
-            'integrations.linkedin': False,
+            'integrations': {
+                'linkedin': False
+            },
             'cv': False,
             'is_civil_servant': False,
             'skills': [

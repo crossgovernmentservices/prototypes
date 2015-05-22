@@ -7,6 +7,10 @@
       .addClass(add);
   };
 
+  var updateProfileData = function(data) {
+    $.post( "/profile/", data);
+  };
+
   $(function() {
     var $cvInput = $("#cv-upload");
     var $cvUploadBtn = $(".cv-upload-btn");
@@ -27,6 +31,7 @@
       var $item = $(this).parents(".job-search-item");
       window.setTimeout(function() {
         $item.addClass("cv-active");
+        updateProfileData({ cv: true });
       }, 2000);
     });
 
@@ -39,6 +44,7 @@
         swapClasses($linkedinItem, "linkedin--associating", "linkedin--associated");
         $(".skills__extra__wrap").removeClass("skills__extra--no-linkedin");
         $(".basicprofile__pic").attr("src", pic_src);
+        updateProfileData({ profile_pic: pic_src });
       }, 2000);
     });
 
