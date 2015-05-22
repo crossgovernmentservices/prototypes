@@ -2,6 +2,7 @@ from flask import (
     Blueprint,
     render_template,
     redirect,
+    g,
 )
 import json
 import datetime
@@ -46,7 +47,7 @@ def services_grant_or_deny(service_id, action):
             'permissions': 'read and write'
         }
     }
-    people.create_service(payload)
+    people.create_service(g.email, payload)
     if access:
         return redirect(get_service(service_id)['redirect'])
     else:

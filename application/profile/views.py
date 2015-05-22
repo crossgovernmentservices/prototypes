@@ -22,7 +22,7 @@ blueprint = Blueprint(
 
 @blueprint.route('/', methods=['POST'])
 def profile():
-    response = people.update_profile(request.get_json())
+    response = people.update_profile(g.email, request.get_json())
     return jsonify({'msg': 'see status code'}), response.status_code
 
 @blueprint.route('/magic')
@@ -33,7 +33,7 @@ def magic(action=None):
     }
     if action:
         if action == 'reset':
-            people.create_default_profile()
+            people.create_default_profile(g.email)
 
     return render_template('magic.html', session=session)
 
@@ -43,7 +43,7 @@ def whoami():
 
 @blueprint.route('/print')
 def basicprofile():
-    profile = people.read_profile()
+    profile = people.read_profile(g.email)
 
     return jsonify(profile), 200
 

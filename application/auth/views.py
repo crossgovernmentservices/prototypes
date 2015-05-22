@@ -17,4 +17,5 @@ blueprint = Blueprint(
 def prototype_set_user():
     email = request.form['email']
     people.create_user(email)
+    people.create_default_profile(email)
     return 'OK', 200 

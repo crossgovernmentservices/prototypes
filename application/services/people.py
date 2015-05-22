@@ -1,7 +1,6 @@
 import requests
 import json
 import os
-from flask import g
 
 
 class People(object):
@@ -15,27 +14,27 @@ class People(object):
     SERVICE_API = '%s/service' % URL
     NOTIFICATION_API = '%s/notification' % URL
 
-    def create_notification(self, message, transport='sms'):
+    def create_notification(self, email, message, transport='sms'):
         payload = {
             'message': message,
             'transport': transport
         }
-        return self._create(People.NOTIFICATION_API, payload)
+        return self._create(People.NOTIFICATION_API, email, payload)
 
-    def read_notification(self, ):
-        return self._read(People.NOTIFICATION_API)
+    def read_notification(self, email):
+        return self._read(People.NOTIFICATION_API, email)
 
     def change_name(self, name):
         return self.update_profile(name=name)
 
-    def create_profile(self, profile):
-        return self._create(People.PROFILE_API, {'data': profile})
+    def create_profile(self, email, profile):
+        return self._create(People.PROFILE_API, email, {'data': profile})
 
-    def create_default_profile(self):
+    def create_default_profile(self, email):
         profile = {
             'name': 'Colm Britton',
             'email': {
-                'personal': g.email,
+                'personal': email,
                 'work': ''
             },
             'profile_pic': 'http://placehold.it/100x100',
@@ -60,9 +59,9 @@ class People(object):
             'function': 'Technology',
             'organisation': 'Cabinet Office'
         }
-        return self.create_profile(profile)
+        return self.create_profile(email, profile)
 
-    def update_profile(self, payload):
+    def update_profile(self, email, payload):
         # get existing proffile
         profile = self.read_profile()
 
@@ -71,14 +70,14 @@ class People(object):
             profile_data.update(payload)
             profile['data'] = profile_data
 
-            return self._update(People.PROFILE_API, profile['id'], profile)
+            return self._update(People.PROFILE_API, email, profile['id'], profile)
         else:
             # create a default profile
-            return self._create(People.PROFILE_API, {'data': payload})
+            return self._create(People.PROFILE_API, email, {'data': payload})
         
-    def read_profile(self, ):
+    def read_profile(self, email):
         """Assumes one profile entry"""
-        response = self._read(People.PROFILE_API)
+        response = self._read(People.PROFILE_API, email)
         if response.status_code // 100 == 2:
             resources = response.json()['resources']
             if len(resources) == 0:
@@ -92,10 +91,10 @@ class People(object):
         else:
             return None
 
-    def create_service(self, payload):
-        return self._create(People.SERVICE_API, payload)
+    def create_service(self, email, payload):
+        return self._create(People.SERVICE_API, email, payload)
 
-    def read_service(self, ):
+    def read_service(self, email):
         """Returns a 3-tuple of the form:
         (a, b, c)
 
@@ -113,7 +112,7 @@ class People(object):
         # the services the user has interacted with
         user_services = []
 
-        response = self._read(People.SERVICE_API)
+        response = self._read(People.SERVICE_API, email)
         if response.status_code // 100 == 2:
             user_services = response.json()['resources']
             for existing_service in services:
@@ -125,26 +124,26 @@ class People(object):
                     outstanding_services.append(existing_service)
         return services, user_services, outstanding_services
 
-    def _create(self, api, payload):
+    def _create(self, api, email, payload):
         data = json.dumps(payload)
         return requests.post(
             api,
             data=data,
-            auth=(g.email, People.TOKEN),
+            auth=(email, People.TOKEN),
             headers={'Content-type': 'application/json', 'Accept': 'application/json'})
 
-    def _read(self, api, ):
+    def _read(self, api, email):
         return requests.get(
             api,
-            auth=(g.email, People.TOKEN),
+            auth=(email, People.TOKEN),
             headers={'Accept': 'application/json'})
 
-    def _update(self, api, id, payload):
+    def _update(self, api, email, id, payload):
         data = json.dumps(payload)
         return requests.put(
             '%s/%i' % (api, id),
             data=data,
-            auth=(g.email, People.TOKEN),
+            auth=(email, People.TOKEN),
             headers={'Content-type': 'application/json', 'Accept': 'application/json'})
 
 

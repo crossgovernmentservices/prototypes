@@ -2,8 +2,7 @@
 from flask import (
     Blueprint,
     render_template,
-    request,
-    jsonify,
+    g,
 )
 import json
 from application.services.people import People
@@ -33,7 +32,7 @@ def googlelogin():
 
 @blueprint.route('/application')
 def application():
-    profile = people.read_profile()
+    profile = people.read_profile(g.email)
     return render_template('application.html', profile=profile)
 
 @blueprint.route('/prototype_login')
@@ -52,7 +51,7 @@ def application_competenciesy():
 def basicprofile():
     with open('application/data/noncivilservant.json') as data_file:
       person = json.load(data_file)
-    profile = people.read_profile()
+    profile = people.read_profile(g.email)
 
     return render_template(
         "basicprofile.html",
@@ -84,7 +83,7 @@ def basicprofile_jobs_alerts():
 def csprofile():
     with open('application/data/civilservant.json') as data_file:
       person = json.load(data_file)
-    services, user_services, outstanding_services = people.read_service()
+    services, user_services, outstanding_services = people.read_service(g.email)
 
     return render_template(
         "csprofile.html",
@@ -153,5 +152,5 @@ def csprofile_jobs_apps():
 def csprofile_services():
     with open('application/data/services.json') as data_file:
       services_data = json.load(data_file)
-    services, user_services, outstanding_services = people.read_service()
+    services, user_services, outstanding_services = people.read_service(g.email)
     return render_template("csprofile_services.html", CivilServant=True, activeTab="services", services=services_data, user_services=user_services)

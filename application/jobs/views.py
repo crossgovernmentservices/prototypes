@@ -3,6 +3,7 @@ from flask import (
     Blueprint,
     render_template,
     jsonify,
+    g,
 )
 import json
 from application.services.people import People 
@@ -107,5 +108,5 @@ def contract():
 @blueprint.route('/submit_application', methods=['POST'])
 def submit_application():
 
-    response = people.create_notification('Your GOV.UK application for Front-end developer (#%i) has been successful.' %  random.randrange(14400000,14500000))
+    response = people.create_notification(g.email, 'Your GOV.UK application for Front-end developer (#%i) has been successful.' %  random.randrange(14400000,14500000))
     return jsonify(response.json()), response.status_code
