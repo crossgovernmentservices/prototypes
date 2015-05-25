@@ -5,7 +5,7 @@
 
   <li class="todo__item">
     <div class="column-quarter todo__cat__wrap">
-      <div class="todo__cat todo__cat--{{ todo.category }}"></div>
+      <div class="todo__cat todo__cat--{{ todo.category }}" title="CS {{ todo.category|capitalize }}"></div>
     </div>
     <div class="column-three-quarter todo__content"><a href="{{ todo.url }}">{{ todo.desc }}</a></div>
   </li>
