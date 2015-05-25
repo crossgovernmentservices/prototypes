@@ -5,7 +5,7 @@
     "personal": "colmjude@gmail.com"
   },
   "todos": [
-    {"desc": "Go back to your job search", "category": "jobs", "url": "/signup/basicprofile_jobs"},
+    {"desc": "Update your GOV.UK profile", "category": "jobs", "url": "/signup/basicprofile_jobs"},
     {"desc": "Edit associated skills", "category": "jobs", "url": ""}
   ]
 }

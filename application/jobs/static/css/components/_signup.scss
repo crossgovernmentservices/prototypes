@@ -6,6 +6,7 @@
   top: 0;
   z-index: 1;
   display: none;
+  box-shadow: 0px 2px 10px rgba(11,12,12,0.4);
 }
 .signup {
   @extend #content;
@@ -37,9 +38,13 @@
 }
 
 .signup__form {
+  font-size: 19px;
   h2 {
     margin-top: $gutter;
   }
+}
+.form-label {
+  font-weight: bold;
 }
 
 .signup__btn {

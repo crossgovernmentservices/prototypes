@@ -1,12 +1,23 @@
 .welcome__wrap {
   background: $light-blue;
   padding: $gutter 0 $gutter-half;
+
+  p {
+    font-size: 19px;
+  }
 }
 .welcome {
   @extend #content;
   color: $page-colour;
   position: relative;
   padding-bottom: $gutter + $gutter-half;
+
+  a {
+    color: $page-colour;
+    &:hover {
+      color: $page-colour;
+    }
+  }
 }
 
 .welcome__heading {
