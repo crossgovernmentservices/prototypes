@@ -1,0 +1,19 @@
+.secondary--btn {
+  background: $grey-2;
+  box-shadow: none;
+  line-height: 1.5em;
+  border: none;
+  display: inline-block;
+  font-size: 16px;
+  color: $page-colour;
+  padding: 5px $gutter-half;
+  text-decoration: none;
+
+  &:visited {
+    color: $page-colour;
+  }
+
+  &:hover {
+    color: $text-colour;
+  }
+}

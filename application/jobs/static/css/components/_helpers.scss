@@ -1,0 +1,15 @@
+%inline__dl {
+  dt, dd {
+    display: inline;
+  }
+  dt {
+    font-weight: 600;
+    margin-right: $gutter-half;
+  }
+}
+
+@mixin circle($dimension) {
+  width: $dimension;
+  height: $dimension;
+  border-radius: 50%;
+}

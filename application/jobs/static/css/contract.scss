@@ -3,17 +3,21 @@
 // still include it here for access to SASS variables.
 @import '../../../static/css/govuk';
 
+@import 'components/helpers';
 @import 'components/back_link';
 @import 'components/search';
 @import 'components/skills';
 @import 'components/sections';
 @import 'components/search-results';
 @import 'components/jds';
+@import 'components/buttons';
 
 $gutter-third: $gutter/3;
 
+
 .switch {
   position: relative;
+  margin-bottom: $gutter;
 }
 
 .switch__label {
@@ -57,16 +61,50 @@ $gutter-third: $gutter/3;
   line-height: 2*$gutter;
 }
 
+.switch__checkbox__label--on {
+  .switch__label--on {
+    display: inline;
+  }
+  .switch__label--off {
+    display: none;
+  }
+}
+.switch__label--on {
+  display: none;
+}
+
+$tick: "\2713";
+
+.switch__label--on {
+  position: relative;
+  padding-right: 45px;
+
+  &:after {
+    content: $tick;
+    position: absolute;
+    top: -3px;
+    right: 0;
+    width: $gutter;
+    line-height: $gutter;
+    text-align: center;
+    @include circle($gutter);
+    background: $link-hover-colour;
+    color: $page-colour;
+  }
+}
+
 .contract {
   background: #ededed url(/static/images/crest-bookmark-grey.png) no-repeat right 15px top;
   background-size: 80px;
-  opacity: 0.8;
+  opacity: 0.7;
   padding: $gutter-half;
 }
 
 .contract--signed {
   background: #ededed url(/static/images/crest-bookmark-blue.png) no-repeat right 15px top;
   opacity: 1;
+  border-top: 3px solid $link-hover-colour;
+  border-bottom: 3px solid $link-hover-colour;
 }
 
 .contract__summary dt {

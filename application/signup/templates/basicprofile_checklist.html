@@ -28,7 +28,7 @@
         </div>
       </details>
       <details class="cl_item">
-        <summary class="cl_item__head cl_item__status cl_item__status--in-progress">Contract</summary>
+        <summary class="cl_item__head cl_item__status cl_item__status--{% if profile.data.contract_signed %}complete{% else %}in-progress{% endif %}">Contract</summary>
         <div class="cl_item__content">
           <p class="text">Your contract is ready for you to review and sign.</p>
           <p class="text">Any queries or issues please contact <a href="">david.mann@digital.cabinet-office.gov.uk</a></p>
