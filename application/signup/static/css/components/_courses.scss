@@ -78,3 +78,15 @@
 .stage__status--complete:after {
   background: $pink;
 }
+
+.course__search {
+  background: $link-colour;
+  color: $page-colour;
+  padding-bottom: 45px;
+
+  .form-hint {
+    margin-top: 20px;
+    color: $page-colour;
+    font-size: 16px;
+  }
+}
