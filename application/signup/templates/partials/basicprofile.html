@@ -9,5 +9,17 @@
       <p class="basicprofile__email"><a href="">{{ person.emails.personal }}</a></p>
       {% endif %}
     </div>
+    {% if person.cs %}
+    <section class="key-info__wrap">
+      <table>
+        <tbody>
+          <tr>
+            <td class="key-info__type">tel:</td>
+            <td><a href="tel:{{ profile.data.tel }}">{{ profile.data.tel }}</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </seciton>
+    {% endif %}
   </div>
 </div>
