@@ -1,0 +1,135 @@
+{% extends "professions_layout.html" %}
+{% block content %}
+<main id="content" role="main">
+
+  <a href="/signup/csprofile" class="example-back-link">Back to your profile</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <header class="community-header">
+        <h1 class="heading-xlarge">Government Digital Profession</h1>
+        <p class="lede">We support civil servants who work in, or are involved with, embedding the professional digital culture across government</p>
+      </header>
+
+      <section class="section">
+        <h2 class="heading-medium">Key dates</h2>
+        <ul>
+          <li class="event">
+            <div class="column-quarter event__date">Today</div>
+            <div class="column-three-quarters event__details">
+              <div class="event__details__heading">Performance reviews</div>
+              <div class="event__details__secondary">Please ensure all peer reviews are complete</div>
+            </div>
+          </li>
+
+          <li class="event">
+            <div class="column-quarter event__date"><span>13</span>May</div>
+            <div class="column-three-quarters event__details">
+              <div class="event__details__heading">ES6 Harmony release</div>
+              <div class="event__details__secondary">6th version of the Javascript spec is set to move from working draft to recommendation</div>
+            </div>
+          </li>
+
+          <li class="event">
+            <div class="column-quarter event__date"><span>18</span>May</div>
+            <div class="column-three-quarters event__details">
+              <div class="event__details__heading">Digital skills audit</div>
+              <div class="event__details__secondary">We are auditing digital capability across government, please encourage your colleagues to take part</div>
+            </div>
+          </li>
+        </ul>
+
+        <a href="" class="event__save">Save to iCal / Outlook / Google&nbsp;calendar</a>
+      </section>
+
+      <section class="section">
+        <h2 class="heading-medium">There are 38 open vacancies</h2>
+        <ul class="jd__results">
+
+        {% for listing in listings %}
+          <li class="jd__listing jd__listing--small">
+            <div class="jd__reference">
+              <span>#{{ listing.ref }}</span>
+              <div class="jd__save">
+                <a href="" class="button">Apply now</a>
+              </div>
+            </div>
+
+            <h3 class="jd__role">{{ listing.role }}</h3>
+            <p class="jd__title--department">{{ listing.department }}</p>
+            <p class="jd__closing-date">{{ listing.closing }}</p>
+            <span class="jd__readmore"><a href="">read more</a></span>
+
+          </li>
+        {% endfor %}
+
+        </ul>
+
+        <p class="jd_results__more"><a href="">-- see more vacancies --</a></p>
+      </section>
+
+      <section class="section">
+        <h2 class="heading-medium">Your learning</h2>
+        <div class="column-third learning-section">
+          <a href=""><img src="/professions/static/images/mentor.jpg" class="learning-section__img" alt="" />
+          <p>Great mentors are vital for your development. Let us help connect you with mentors in your area.</p></a>
+        </div>
+        <div class="column-two-thirds learning-section learning__courses">
+          <a href=""><img src="/professions/static/images/learning_path.png" class="learning-section__img" alt="" /></a>
+        </div>
+      </section>
+    </div>
+
+    <div class="column-third">
+      <h2 class="heading-large">Find people in your profession</h2>
+
+      <form action="" class="people-search-form">
+        <p class="form-hint">Search by name or keyword</p>
+        <input type="text" list="data-people" id="people_search" />
+        <datalist id="data-people">
+          <option value="Alyson Fielding">Alyson Fielding</option>
+          <option value="Angela Collins-Rees">Angela Collins-Rees</option>
+          <option value="Colm Britton">Colm Britton</option>
+          <option value="Elisse Jones">Elisse Jones</option>
+          <option value="Dave Hearsey">Dave Hearsey</option>
+          <option value="Dave Mann">Dave Mann</option>
+          <option value="Juan Uys">Juan Uys</option>
+          <option value="Jim Williams">Jim Williams</option>
+          <option value="Katya Lakshtanova">Katya Lakshtanova</option>
+          <option value="Neha Datt">Neha Datt</option>
+        </datalist>
+      </form>
+
+      <!-- needs to be on one line for :empty pseudo class to work -->
+      <section class="section people-search-results"></section>
+      <section class="section">
+        <h2 class="heading-medium">Your Profession</h2>
+        <div class="data">
+          <h2 class="bold-xlarge">12k</h2>
+          <p class="bold-xsmall">active members</p>
+        </div>
+        <div class="data">
+          <p class="data__narrative">across</p>
+          <h2 class="bold-xlarge">26</h2>
+          <p class="bold-xsmall">locations in the UK</p>
+        </div>
+        <div class="data data__skills">
+          <p class="bold-small">Top <span class="bold-xlarge">5</span> skills</p>
+          <ul class="list-number">
+            <li>Open source</li>
+            <li>Digital services</li>
+            <li>HTML</li>
+            <li>Python</li>
+            <li>Javascript</li>
+          </ul>
+        </div>
+        <a class="link__out" href="">break these numbers down further</a>
+      </section>
+    </div>
+
+  </div>
+
+
+
+</main><!-- / #page-container -->
+{% endblock %}

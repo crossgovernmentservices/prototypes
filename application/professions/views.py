@@ -19,3 +19,9 @@ def hub():
     with open('application/data/professions_listings.json') as data_file:
         listings = json.load(data_file)
     return render_template('hub.html', listings=listings)
+
+@blueprint.route('/tech_hub')
+def tech_hub():
+    with open('application/data/digital_listings.json') as data_file:
+        listings = json.load(data_file)
+    return render_template('tech_hub.html', listings=listings)
