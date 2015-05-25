@@ -17,7 +17,7 @@
   </ul>
 </section>
 {% endif %}
-<div class="skills__extra__wrap component--inner {% if not person.cs %}skills__extra--no-linkedin{% endif %}">
+<div class="skills__extra__wrap component--inner {% if not person.cs and not profile.data.integrations.linkedin %}skills__extra--no-linkedin{% endif %}">
   <div class="skills__extra__head">
     <h4 class="heading-small">Additional skills</h4>
     <button class="skills__extra__btn">+</button>

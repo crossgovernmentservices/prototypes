@@ -38,6 +38,10 @@
   a {
     color: $text-colour;
     text-decoration: none;
+
+    &:hover {
+      color: $text-colour;
+    }
   }
 }
 
