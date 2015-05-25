@@ -67,8 +67,8 @@
 .profile__status {
   position: relative;
 
-  &::before {
-    visibility: hidden;
+  &:before {
+    content: "to review";
     font-size: 14px;
     text-transform: uppercase;
     color: $page-colour;
@@ -78,6 +78,7 @@
     line-height: 1em;
     padding: 5px 5px 2px;
     font-weight: 600;
+    background: $grey-2;
   }
   
 }
@@ -88,13 +89,11 @@
 }
 
 .profile__status--reviewed::before {
-  visibility: visible;
   content: "reviewed";
   background: $button-colour;
 }
 
 .profile__status--draft::before {
-  visibility: visible;
   content: "draft";
   background: $beta-colour;
 }

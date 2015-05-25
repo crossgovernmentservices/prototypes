@@ -14,7 +14,42 @@
       </section>
     </div>
     <div class="column-three-quarter">
-      <h1 class="heading-large">Performance</h1>
+
+      <header class="profile--include">
+        <h1 class="form-title heading-large">
+        To review
+        </h1>
+
+        <p class="lede">Please review each of the following people</p>
+
+      </header>
+
+      <section class="review__section">
+        <h2 class="heading-medium">Your team</h2>
+
+        <div class="grid-row review__section__todo">
+          {% for user in team %}
+            <div class="column-half">
+              {% include 'partials/review_profile.html' %}
+            </div>
+          {% endfor %}
+        </div>
+
+      </section>
+
+      <section class="review__section">
+        <h2 class="heading-medium">Other requests</h2>
+
+        <div class="grid-row review__section__todo">
+          {% for user in others %}
+            <div class="column-half">
+              {% include 'partials/review_profile.html' %}
+            </div>
+          {% endfor %}
+        </div>
+
+      </section>
+
     </div>
 </main>
 

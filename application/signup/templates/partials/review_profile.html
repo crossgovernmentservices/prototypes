@@ -1,5 +1,5 @@
-<div class="profile profile__status profile__status--{% if user is defined %}{{user.status}}{% endif %}">
-  {% if user is defined and user.profile_pic is defined %}
+<div class="profile profile__status profile__status--{{user.status}}">
+  {% if user.profile_pic is defined %}
     <img src="{{ user.profile_pic }}" class="profile__pic">
   {% else %}
     <img src="http://placehold.it/100x100" class="profile__pic">
@@ -29,8 +29,7 @@
       </li>
       <li>
         <ul>
-          <li><a href="">view job description</a></li>
-          <li class="profile--review"><a href="">perform review</a></li>
+          <li class=""><a href="/jobs/review">perform review</a></li>
         </ul>
       </li>
     </ul>

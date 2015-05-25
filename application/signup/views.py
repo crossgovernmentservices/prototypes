@@ -118,7 +118,11 @@ def csprofile_learning_record():
 # CS Profile - PERFORMANCE
 @blueprint.route('/csprofile_perf')
 def csprofile_perf():
-    return render_template("csprofile_perf.html", CivilServant=True, activeTab="performance", activeMenu="home")
+    with open('application/data/review_team.json') as data_file:
+      team = json.load(data_file)
+    with open('application/data/review_others.json') as data_file:
+      others = json.load(data_file)
+    return render_template("csprofile_perf.html", CivilServant=True, activeTab="performance", activeMenu="home", team=team, others=others)
 
 @blueprint.route('/csprofile_perf/objectives')
 def csprofile_perf_obj():
