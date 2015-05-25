@@ -16,6 +16,7 @@
 
     $(".data-item__edit").on("click", function() {
       var $item = $(this).parent().siblings(".data-item__entry");
+      // should consider adding an onblur event too
       var current_val = $item.text();
           $item
             .text("")
@@ -26,37 +27,38 @@
       $el.empty().text(txt);
     };
 
+    var sendData = function(data, successCb) {
+      $.ajax({
+        type: 'POST',
+        url: '/profile/',
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        data: JSON.stringify(data),
+        success: successCb
+      });
+    };
+
     var saveChange = function() {
       var $this = $(this);
       var $container = $this.parent();
+      var val = $this.val();
+      var data = {};
 
       if( $container.data("key") ) {
-        var val = $this.val();
-        var data = {};
 
-        data[ $this.parent().data("key") ] = val;
-        $.ajax({
-          type: 'POST',
-          url: '/profile/',
-          contentType: 'application/json; charset=utf-8',
-          dataType: 'json',
-          data: JSON.stringify(data)
-        });
-      }
+        // this is hacky
+        if( $container.hasClass("data-item__entry--email") ) {
+          data = {
+            email: {
+              personal: val
+            }
+          };
+        } else {
+          data[ $this.parent().data("key") ] = val;
+        }
 
-      // this is hacky
-      if( $container.hasClass("data-item__entry--email") ) {
-        var data = {
-          email: {
-            personal: $this.val()
-          }
-        };
-        $.ajax({
-          type: 'POST',
-          url: '/profile/',
-          contentType: 'application/json; charset=utf-8',
-          dataType: 'json',
-          data: JSON.stringify(data)
+        sendData(data, function() {
+            replaceText($container, val);
         });
       }
     };
