@@ -3,6 +3,10 @@
   padding: $gutter-half;
 }
 
+.service__name::first-letter {
+  text-transform: uppercase;
+}
+
 .service__item__meta {
   margin-bottom: 0;
 }
