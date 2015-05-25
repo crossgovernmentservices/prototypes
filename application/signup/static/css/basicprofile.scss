@@ -31,6 +31,7 @@
 @import 'components/app_submitted';
 @import 'components/component';
 @import 'components/people-finder';
+@import 'components/buttons';
 
 // global for all profile based pages
 #global-header-bar {
@@ -207,4 +208,10 @@ button.btn--edit--dark {
 .community-type {
   color: $secondary-text-colour;
   margin-right: $gutter-half;
+}
+
+.expenses__totals {
+  margin-top: 10px;
+  border-top: 1px solid $grey-2;
+  padding-top: 10px;
 }

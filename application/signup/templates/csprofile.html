@@ -41,17 +41,17 @@
 
   <div class="grid-row">
     <div class="column-third">
-      <section>
-        {% include "partials/profile/equip_component.html" ignore missing %}
-      </section>
-    </div>
-    <div class="column-two-thirds">
-      <section>
+      <section class="component">
         {% for service in user_services %}
           {% if service.data.id == "expenses" %}
             {% include "partials/expenses_widget.html" ignore missing %}
           {% endif %}
         {% endfor %}
+      </section>
+    </div>
+    <div class="column-two-thirds">
+      <section class="component">
+        {% include "partials/profile/equip_component.html" ignore missing %}
       </section>
     </div>
   </div>
