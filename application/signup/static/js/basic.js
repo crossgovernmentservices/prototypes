@@ -53,10 +53,11 @@
         var data = {
           integrations: {
               linkedin: true
-          }
+          },
+          profile_pic: pic_src
         };
         updateProfileData(data);
-        updateProfileData({ profile_pic: pic_src });
+        //updateProfileData({ profile_pic: pic_src });
       }, 2000);
     });
 
