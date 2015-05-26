@@ -1,5 +1,5 @@
 [
-  {"name": "Joe Bloggs", "role": "Product manager", "team": "Cross government tools", "profile_pic": "/static/images/profiles/jake.jpg", "status": "reviewed"},
+  {"name": "Joe Bloggs", "role": "Product manager", "team": "Cross government tools", "profile_pic": "/static/images/profiles/jake.jpg", "status": "toreview"},
   {"name": "Claire Bloggs", "role": "Delivery manager", "team": "Cross government tools", "status": "reviewed", "profile_pic": "/static/images/profiles/candice.jpg", "status": "reviewed"},
-  {"name": "Nick Neville", "role": "User researcher", "team": "Cross government tools", "status": "draft", "profile_pic": "/static/images/profiles/nick.jpg", "status": "completed"}
+  {"name": "Nick Neville", "role": "User researcher", "team": "Cross government tools", "status": "draft", "profile_pic": "/static/images/profiles/nick.jpg", "status": "reviewed"}
 ]
