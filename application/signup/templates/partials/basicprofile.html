@@ -1,12 +1,12 @@
-<div class="basicprofile">
+<div class="basicprofile" itemscope itemtype="http://schema.org/Person">
   <div class="basicprofile__content">
-    <img src="{% if profile.data.profile_pic is defined %}{{profile.data.profile_pic}}{% else %}http://placehold.it/100x100{% endif %}" class="basicprofile__pic">
+    <img src="{% if profile.data.profile_pic is defined %}{{profile.data.profile_pic}}{% else %}http://placehold.it/100x100{% endif %}" class="basicprofile__pic" itemprop="image">
     <div class="basicprofile__content__items">
-      <h3 class="heading-small basicprofile__name">{{ person.name }}</h3>
+      <h3 class="heading-small basicprofile__name" itemprop="name">{{ person.name }}</h3>
       {% if person.cs %}
-      <p class="basicprofile__email"><a href="">{{ person.emails.work }}</a></p>
+      <p class="basicprofile__email"><a href="mailto:{{ person.emails.work }}" itemprop="email">{{ person.emails.work }}</a></p>
       {% else %}
-      <p class="basicprofile__email"><a href="">{{ person.emails.personal }}</a></p>
+      <p class="basicprofile__email"><a href="mailto:{{ person.emails.personal }}" itemprop="email">{{ person.emails.personal }}</a></p>
       {% endif %}
     </div>
     {% if person.cs %}
@@ -15,7 +15,7 @@
         <tbody>
           <tr>
             <td class="key-info__type">tel:</td>
-            <td><a href="tel:{{ profile.data.tel }}">{{ profile.data.tel }}</a></td>
+            <td><a itemprop="telephone" href="tel:{{ profile.data.tel }}">{{ profile.data.tel }}</a></td>
           </tr>
         </tbody>
       </table>
