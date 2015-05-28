@@ -20,3 +20,6 @@ cache = Cache()
 
 from .asset_locator import AssetLocator
 asset_locator = AssetLocator()
+
+from flask_basicauth import BasicAuth
+basic_auth = BasicAuth()

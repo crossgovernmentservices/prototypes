@@ -1,6 +1,6 @@
 FROM python:3.4
 RUN apt-get update -qq && apt-get -y install rubygems unzip ruby-dev
-RUN gem install sass bundler rake
+RUN gem install sass:3.2.9 bundler rake
 
 # separate requirements space to prevent things like 'src'
 # from popping up when pip finds stuff on Github, for instance.
