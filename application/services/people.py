@@ -14,12 +14,16 @@ class People(object):
     SERVICE_API = '%s/service' % URL
     NOTIFICATION_API = '%s/notification' % URL
 
-    def create_notification(self, email, message, transport='sms'):
-        payload = {
-            'message': message,
-            'transport': transport
-        }
-        return self._create(People.NOTIFICATION_API, email, payload)
+    def create_notification(self, email, message):
+        # TODO load user preferred transports
+
+        for transport in ['sms', 'email']:
+            payload = {
+                'message': message,
+                'transport': 'email'
+            }
+            self._create(People.NOTIFICATION_API, email, payload)
+        return 'OK', 200
 
     def read_notification(self, email):
         return self._read(People.NOTIFICATION_API, email)

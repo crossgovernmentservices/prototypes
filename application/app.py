@@ -15,6 +15,7 @@ from application.extensions import (
     login_manager,
     migrate,
     asset_locator,
+    basic_auth,
 )
 from application import (
     profile,
@@ -26,7 +27,7 @@ from application import (
     user,
     jobs,
     professions,
-    signup
+    signup,
 )
 
 
@@ -52,6 +53,7 @@ def register_extensions(app):
     login_manager.init_app(app)
     migrate.init_app(app, db)
     asset_locator.init_app(app)
+    basic_auth.init_app(app)
     return None
 
 
