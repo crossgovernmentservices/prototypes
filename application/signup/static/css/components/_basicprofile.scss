@@ -23,5 +23,5 @@
 }
 
 .basicprofile__email {
-  font-size: 14px;
+  @include core-14();
 }
