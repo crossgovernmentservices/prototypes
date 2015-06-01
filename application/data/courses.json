@@ -1,13 +1,53 @@
 {
   "mandatory": [
-    {"name": "Health & safety awareness" , "date": "Today", "status": "not-started"},
-    {"name": "Confirmation bias", "date": "5th Jun", "status": "completed"},
-    {"name": "Fire safety", "date": "23rd Jun", "status": "not-started"},
-    {"name": "Freedom of information", "date": "10th Oct", "status": "not-started"}
+    { "name": "Health & safety awareness",
+      "date": "Today",
+      "status": "not-started",
+      "vevent": {
+        "categories": "EDUCATION", "uname": "mand1", "dateISO": "20150601"
+      }
+    },
+    { "name": "Confirmation bias",
+      "date": "5th Jun",
+      "status": "completed",
+      "vevent": {
+        "categories": "EDUCATION", "uname": "mand2", "dateISO": "20150605"
+      }
+    },
+    { "name": "Fire safety",
+      "date": "23rd Jun",
+      "status": "not-started",
+      "vevent": {
+        "categories": "EDUCATION", "uname": "mand3", "dateISO": "20150623"
+      }
+    },
+    { "name": "Freedom of information",
+      "date": "10th Oct",
+      "status": "not-started",
+      "vevent": {
+        "categories": "EDUCATION", "uname": "mand4", "dateISO": "20151010"
+      }
+    }
   ],
   "personal": [
-    {"name": "SCRUM Master" , "date": "28th May", "status": "booked"},
-    {"name": "Creative JS" , "date": "Online", "status": "started"}
+    { "name": "SCRUM Master",
+      "date": "28th June",
+      "status": "booked",
+      "vevent": {
+        "categories": "EDUCATION", "uname": "scrum", "dateISO": "20150628"
+      }
+    },
+    { "name": "Creative JS", 
+      "date": "Online", 
+      "status": "started"
+    },
+    { "name": "Presentation skills",
+      "date": "1st July",
+      "status": "booked",
+      "vevent": {
+        "categories": "EDUCATION", "uname": "preskills", "dateISO": "20150701"
+      }
+    }
   ],
   "completed": [
     {"name": "SCRUM Practitioner", "date": "28/05/2014", "type": "offline", "score": "pass", "expiry": "-"},

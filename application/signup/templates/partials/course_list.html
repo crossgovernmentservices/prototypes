@@ -1,9 +1,17 @@
 {% macro build_course_item(course) %}
 
+{% if course.vevent is defined %}
+<li class="course-list__item vevent" data-ical-event="{{ course.vevent.uname }}" itemscope itemtype="http://microformats.org/profile/hcalendar#vevent">
+  <span class="visuallyhidden categories" itemprop="categories">{{ course.vevent.categories }}</span>
+  <div class="column-quarter course__date dstart" itemprop="dtstart" title="{{ course.vevent.dateISO }}">{{ course.date }}</div>
+  <div class="column-three-quarter course-list__item__title course__status course__status--{{ course.status }} summary" itemprop="summary">{{ course.name }}</div>
+</li>
+{% else %}
 <li class="course-list__item">
   <div class="column-quarter course__date">{{ course.date }}</div>
   <div class="column-three-quarter course-list__item__title course__status course__status--{{ course.status }}">{{ course.name }}</div>
 </li>
+{% endif %}
 
 {% endmacro %}
 
