@@ -161,3 +161,7 @@ def csprofile_services():
       services_data = json.load(data_file)
     services, user_services, outstanding_services = people.read_service(g.email)
     return render_template("csprofile_services.html", CivilServant=True, activeTab="services", services=services_data, user_services=user_services)
+
+@blueprint.route('/ical-test')
+def test_apps():
+    return render_template("ical-test.html")

@@ -104,6 +104,7 @@ css_signup = Bundle(
 )
 
 js_signup = Bundle(
+    'signup/js/jquery.ical-links.js',
     'signup/js/signup.js',
     filters='jsmin',
     output='gen/js/signup.js'
