@@ -4,6 +4,7 @@
 @import '../../../static/css/govuk';
 
 @import 'components/helpers';
+@import 'components/buttons';
 @import 'components/profile';
 @import 'components/basicprofile';
 @import 'components/services';
@@ -31,7 +32,6 @@
 @import 'components/app_submitted';
 @import 'components/component';
 @import 'components/people-finder';
-@import 'components/buttons';
 
 // global for all profile based pages
 #global-header-bar {

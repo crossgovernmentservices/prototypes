@@ -1,20 +1,24 @@
-.secondary--btn {
-  background: $grey-2;
+@mixin btn($background, $colour, $hover-colour, $fontsize) {
+  background: $background;
   box-shadow: none;
-  line-height: 1.5em;
   border: none;
-  display: inline-block;
-  font-size: 16px;
-  color: $page-colour;
+  font-size: $fontsize;
+  color: $colour;
   padding: 5px $gutter-half;
   text-decoration: none;
 
   &:visited {
-    color: $page-colour;
+    color: $colour;
   }
 
   &:hover {
-    color: $text-colour;
     cursor: pointer;
+    color: $hover-colour;
   }
+}
+
+.secondary--btn {
+  line-height: 1.5em;
+  display: inline-block;
+  @include btn($grey-2, $page-colour, $text-colour, 16px);
 }

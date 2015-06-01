@@ -15,16 +15,7 @@
 
 button.data-item__edit,
 button.btn--edit {
-  background: $grey-2;
-  box-shadow: none;
   line-height: 1.5em;
-  border: none;
   display: block;
-  font-size: 16px;
-  color: $page-colour;
-  padding: 5px $gutter-half;
-
-  &:hover {
-    color: $text-colour;
-  }
+  @include btn($grey-2, $page-colour, $text-colour, 16px);
 }
