@@ -1,0 +1,45 @@
+{% extends "signup_layout.html" %}
+
+{% block head %}
+
+  {{ super() }}
+
+  {% assets "css_login" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-half">
+      <section class="component">
+        <div class="component--inner vevent" data-ical-event="test" itemscope itemtype="http://microformats.org/profile/hcalendar#vevent">{% include "partials/profile/next-meeting.html" ignore missing %}</div>
+      </section>
+    </div>
+
+    <div class="column-half">
+      <section class="component">
+        <div class="component--inner vevent" data-ical-event="event2" itemscope itemtype="http://microformats.org/profile/hcalendar#vevent">
+          <div class="grid-row next-meeting">
+            <div class="column-third next-meeting__map"><img src="/static/images/location_pin.svg" alt="" /></div>
+            <div class="column-two-thirds next-meeting__details__wrap">
+              <ul class="next-meeting__details">
+                <li><h3 class="next-meeting__heading">Next meeting</h3></li>
+                <li class="next-meeting__name summary" itemprop="summary">Team retro</li>
+                <li class="location" itemprop="location">3rd floor</li>
+                <li><abbr class="dtstart" itemprop="dtstart" title="20150610T150000">3pm</abbr></li>
+                <li class="hidden"><abbr class="dtend" itemprop="dtend" title="20150610T160000">4pm</abbr></li>
+              </ul>
+            </div>
+          </div>
+          <a href="" class="ical-link" data-ical-nodes="test event2">ical link</a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+</main><!-- / #page-container -->
+{% endblock %}
