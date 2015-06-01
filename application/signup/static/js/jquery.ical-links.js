@@ -7,7 +7,7 @@
         separator: " "
       };
 
-  var content = [
+  var content_head = [
         "BEGIN:VCALENDAR",
         "VERSION:2.0",
         "PRODID:HTML"
@@ -25,6 +25,7 @@
     this._defaults = defaults;
     this._name = pluginName;
     this.eventnodes = [];
+    this.icalContent = [].concat(content_head);
 
     this.init();
   }
@@ -50,21 +51,21 @@
       }
     });
 
-    var full_content = content.concat(content_end);
+    var full_content = plugin.icalContent.concat(content_end);
     $link.attr("href", 'data:text/calendar;component=vevent,' + encodeURI(full_content.join("\r\n")))
   };
 
   Plugin.prototype.fetchVEventProperties = function ($vevent) {
     var plugin = this;
 
-    content.push("BEGIN:VEVENT");
-    content.push( plugin.creationDate() );
+    plugin.icalContent.push("BEGIN:VEVENT");
+    plugin.icalContent.push( plugin.creationDate() );
 
     $vevent.find("[itemprop]").each(function(ind, el) {
-      content.push( plugin.addItemProp($(el)) );
+      plugin.icalContent.push( plugin.addItemProp($(el)) );
     });
 
-    content.push("END:VEVENT");
+    plugin.icalContent.push("END:VEVENT");
   };
 
   Plugin.prototype.addItemProp = function ($el) {
