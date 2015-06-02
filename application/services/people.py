@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+import collections
 
 
 class People(object):
@@ -71,7 +72,7 @@ class People(object):
 
         if profile:
             profile_data = profile['data']
-            profile_data.update(payload)
+            profile_data = self._recursive_update(profile_data, payload)
             profile['data'] = profile_data
 
             return self._update(People.PROFILE_API, email, profile['id'], profile)
@@ -157,3 +158,12 @@ class People(object):
             '%s/session' % People.URL,
             data=data,
             headers={'Content-type': 'application/json', 'Accept': 'text/plain'})
+
+    def _recursive_update(self, d, u):
+        for k, v in u.items():
+            if isinstance(v, collections.Mapping):
+                r = self._recursive_update(d.get(k, {}), v)
+                d[k] = r
+            else:
+                d[k] = u[k]
+        return d
