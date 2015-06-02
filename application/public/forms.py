@@ -1,12 +1,22 @@
 from flask_wtf import Form
-from wtforms import TextField, PasswordField
-from wtforms.validators import DataRequired
+from wtforms import TextField
+from wtforms.validators import DataRequired, Email
+from application.services.people import People
+from .model import User
 
-from application.user.models import User
+
+people = People()
 
 class LoginForm(Form):
-    username = TextField('Username', validators=[DataRequired()])
-    password = PasswordField('Password', validators=[DataRequired()])
+    """A login form which only cares about the presence of a
+    valid email address.
+    Set the email, and create the user's profile.
+    Yes - the login form creates the user's profile.
+    This is only bells & whistles, after all.
+
+    """
+
+    email = TextField('Email', validators=[DataRequired(), Email()])
 
     def __init__(self, *args, **kwargs):
         super(LoginForm, self).__init__(*args, **kwargs)
@@ -17,16 +27,11 @@ class LoginForm(Form):
         if not initial_validation:
             return False
 
-        self.user = User.query.filter_by(username=self.username.data).first()
-        if not self.user:
-            self.username.errors.append('Unknown username')
-            return False
+        email = self.email.data
+        self.user = User(email)
 
-        if not self.user.check_password(self.password.data):
-            self.password.errors.append('Invalid password')
-            return False
+        people.create_user(email)
+        if not people.read_profile(email):
+            people.create_default_profile(email)
 
-        if not self.user.active:
-            self.username.errors.append('User not activated')
-            return False
         return True

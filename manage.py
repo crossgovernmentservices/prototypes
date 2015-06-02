@@ -7,7 +7,6 @@ from flask_script import Manager, Shell, Server
 from flask_migrate import MigrateCommand
 
 from application.app import create_app
-from application.user.models import User
 from application.settings import DevConfig, ProdConfig
 from application.database import db
 
@@ -23,9 +22,9 @@ manager = Manager(app)
 
 def _make_context():
     """Return context dict for a shell session so you can access
-    app, db, and the User model by default.
+    app, db by default.
     """
-    return {'app': app, 'db': db, 'User': User}
+    return {'app': app, 'db': db}
 
 @manager.command
 def test():

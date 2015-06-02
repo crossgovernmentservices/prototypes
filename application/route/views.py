@@ -2,11 +2,12 @@ from flask import (
     Blueprint,
     render_template,
     redirect,
-    g,
 )
 import json
 import datetime
 from application.services.people import People
+from flask_login import login_required, current_user
+
 
 people = People()
 
@@ -31,6 +32,7 @@ def services(service_id):
     return render_template('data_request.html', service=get_service(service_id))
 
 @blueprint.route('/services/<service_id>/<action>')
+@login_required
 def services_grant_or_deny(service_id, action):
     if action == 'grant':
         access = True
@@ -47,7 +49,7 @@ def services_grant_or_deny(service_id, action):
             'permissions': 'read and write'
         }
     }
-    people.create_service(g.email, payload)
+    people.create_service(current_user.email, payload)
     if access:
         return redirect(get_service(service_id)['redirect'])
     else:

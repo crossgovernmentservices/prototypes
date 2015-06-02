@@ -46,13 +46,14 @@
 
     $(".signup__btn").on("click", function(e) {
       e.preventDefault();
-      var openedWindow = window.open('googlelogin',
+      var openedWindow = window.open('/signup/googlelogin',
                                   'signing into google',
                                   'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=300,height=300');
       window.setTimeout(function() {
         openedWindow.close();
         // do next now logged in thing here...
         $("body").addClass("loggedin");
+        $("#loginForm").submit();
       }, 4000);
       return false;
     });

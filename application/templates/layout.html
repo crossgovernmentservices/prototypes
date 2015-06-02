@@ -37,7 +37,17 @@ information regarding the template.
 
 {% endblock %}
 
-{% block inside_header %}<a href="/">xgts</a>{% endblock %}
+{% block inside_header %}
+  <span style="font-size:large;">
+  <a style="color:#eee;" href="/">
+    Prototypes
+  </a>
+
+  {% if current_user and current_user.is_authenticated() %}
+    | <a style="color:#eee;" href="{{ url_for('public.logout') }}">Sign out {{ current_user.email }}</a>
+  {% endif %}
+</span>
+{% endblock %}
 
 {% block body_end %}
 

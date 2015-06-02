@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block head %}
+
+  {{ super() }}
+
+  {% assets "css_signup" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+  {% assets "css_login" %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <a href="/" class="example-back-link">Back to the cross government tools' prototypes</a>
+
+{% if current_user and current_user.is_authenticated() %}
+  <p>Logged in as {{ current_user.email }}</p>
+  <p><a href="{{ url_for('public.logout') }}">Sign out</a></p>
+{% elif form %}
+
+<p>Use any email address below.</p>
+<p>If a profile for this email address already exists, it will be used. Otherwise, a default profile will be created.</p>
+
+  <form class="creation__form" id="loginForm" method="POST" role="login">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      <label class="form-label-bold" for="email">Email</label>
+      {{ form.email(placeholder="Email", class_="form-control signup__input") }}
+    </div>
+
+    <!-- Primary buttons, secondary links -->
+    <div class="form-group">
+      <button type="submit" class="button signup__btn">
+        <span data-provider="default" class="signup__btn__content--active">Create profile</span>
+        <span data-provider="google">Create using Google account</span>
+        <span data-provider="facebook">Create using Facebook account</span>
+      </button>
+      <ul>
+        <li><a href="/">Back</a></li>
+      </ul>
+    </div>
+  </form>
+
+
+
+{% endif %}
+
+</main>
+
+{% endblock %}
+{% block body_end %}
+
+  {{ super() }}
+
+  {% assets "js_signup" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+  {% endassets %}
+
+{% endblock %}

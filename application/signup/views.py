@@ -2,10 +2,10 @@
 from flask import (
     Blueprint,
     render_template,
-    g,
 )
 import json
 from application.services.people import People
+from flask_login import login_required, current_user
 
 
 people = People()
@@ -31,8 +31,9 @@ def googlelogin():
     return render_template("googlelogin.html")
 
 @blueprint.route('/application')
+@login_required
 def application():
-    profile = people.read_profile(g.email)
+    profile = people.read_profile(current_user.email)
     return render_template('application.html', profile=profile)
 
 @blueprint.route('/prototype_login')
@@ -48,10 +49,11 @@ def application_competenciesy():
     return render_template('application_competencies.html')
 
 @blueprint.route('/basicprofile')
+@login_required
 def basicprofile():
     with open('application/data/noncivilservant.json') as data_file:
       person = json.load(data_file)
-    profile = people.read_profile(g.email)
+    profile = people.read_profile(current_user.email)
 
     return render_template(
         "basicprofile.html",
@@ -60,10 +62,11 @@ def basicprofile():
         profile=profile)
 
 @blueprint.route('/basicprofile/checklist')
+@login_required
 def basicprofile_checklist():
     with open('application/data/noncivilservant.json') as data_file:
       person = json.load(data_file)
-    profile = people.read_profile(g.email)
+    profile = people.read_profile(current_user.email)
     return render_template("basicprofile_checklist.html", activeTab="you", person=person, profile=profile)
 
 @blueprint.route('/basicprofile_jobs')
@@ -81,11 +84,12 @@ def basicprofile_jobs_alerts():
     return render_template("basicprofile_jobs_alerts.html", activeTab="jobs", activeMenu="alerts")
 
 @blueprint.route('/csprofile')
+@login_required
 def csprofile():
     with open('application/data/civilservant.json') as data_file:
       person = json.load(data_file)
-    services, user_services, outstanding_services = people.read_service(g.email)
-    profile = people.read_profile(g.email)
+    services, user_services, outstanding_services = people.read_service(current_user.email)
+    profile = people.read_profile(current_user.email)
 
     return render_template(
         "csprofile.html",
@@ -156,10 +160,11 @@ def csprofile_jobs_apps():
     return render_template("csprofile_jobs_apps.html", CivilServant=True, activeTab="jobs", activeMenu="apps")
 
 @blueprint.route('/csprofile_services')
+@login_required
 def csprofile_services():
     with open('application/data/services.json') as data_file:
       services_data = json.load(data_file)
-    services, user_services, outstanding_services = people.read_service(g.email)
+    services, user_services, outstanding_services = people.read_service(current_user.email)
     return render_template("csprofile_services.html", CivilServant=True, activeTab="services", services=services_data, user_services=user_services)
 
 @blueprint.route('/ical-test')
