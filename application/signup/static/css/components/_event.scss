@@ -27,9 +27,6 @@
   display: block;
   font-size: 16px;
   text-align: right;
-  color: $link-colour;
 
-  &:visited {
-    color: $link-colour;
-  }
+  @include link($visited-colour: $link-colour);
 }

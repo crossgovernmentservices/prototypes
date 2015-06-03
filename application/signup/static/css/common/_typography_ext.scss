@@ -1,9 +1,33 @@
+@mixin link($colour: $link-colour, $hover-colour: $link-hover-colour, $visited-colour: $link-visited-colour, $decoration: none, $hover-decoration: underline) {
+  color: $link-colour;
+  text-decoration: $decoration;
+
+  &:visited {
+    color: $visited-colour;
+  }
+
+  &:hover {
+    color: $hover-colour;
+    text-decoration: $hover-decoration;
+  }
+}
+
+// silent default link classes
+// to use with @extend
+%a {
+  @include link();
+}
+%a-underline {
+  @include link($decoration: underline);
+}
+
 .bold-xxsmall {
   @include bold-14();
 }
 
 .foot-link {
   font-size: 16px;
+  @extend %a-underline;
 }
 
 // for areas with a grey subheading
