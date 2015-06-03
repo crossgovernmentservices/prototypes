@@ -5,6 +5,8 @@
 
 // import scss common to all stylesheets
 @import 'common/helpers';
+@import 'common/global';
+@import 'common/typography_ext';
 @import 'common/layout_ext';
 
 @import 'components/buttons';
@@ -41,18 +43,6 @@
   display: none;
 }
 
-.bold-xxsmall {
-  @include bold-14();
-}
-
-.temp {
-  height: 330px;
-}
-
-.form {
-  @extend %contain-floats;
-}
-
 // for sections containing widgets
 .container {
   margin-top: $gutter-half;
@@ -69,10 +59,6 @@
 .info__item {
   font-weight: bolder;
   text-align: right;
-}
-
-.foot-link {
-  font-size: 16px;
 }
 
 .key-info__wrap {
