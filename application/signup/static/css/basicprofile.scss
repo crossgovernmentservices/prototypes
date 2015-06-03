@@ -3,7 +3,10 @@
 // still include it here for access to SASS variables.
 @import '../../../static/css/govuk';
 
-@import 'components/helpers';
+// import scss common to all stylesheets
+@import 'common/helpers';
+@import 'common/layout_ext';
+
 @import 'components/buttons';
 @import 'components/profile';
 @import 'components/basicprofile';
@@ -36,18 +39,6 @@
 // global for all profile based pages
 #global-header-bar {
   display: none;
-}
-
-.column-three-quarter {
-  @include grid-column(3/4);
-}
-
-.column-eighth {
-  @include grid-column(1/8);
-}
-
-.column-twelfth {
-  @include grid-column(1/12);
 }
 
 .bold-xxsmall {

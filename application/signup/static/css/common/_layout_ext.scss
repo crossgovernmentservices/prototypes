@@ -1,0 +1,13 @@
+// use govuk .grid-column to add
+// more column sizes
+.column-three-quarter {
+  @include grid-column(3/4);
+}
+
+.column-eighth {
+  @include grid-column(1/8);
+}
+
+.column-twelfth {
+  @include grid-column(1/12);
+}
