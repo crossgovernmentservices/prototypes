@@ -5,3 +5,19 @@
 .foot-link {
   font-size: 16px;
 }
+
+// for areas with a grey subheading
+// and normal heading
+.header-group {
+  margin: 45px 0;
+
+  .post-sub-heading {
+    margin-top: 0;
+  }
+}
+.sub-heading {
+  font-size: 36px;
+  line-height: 40px;
+  color: $secondary-text-colour;
+  font-weight: normal;
+}
