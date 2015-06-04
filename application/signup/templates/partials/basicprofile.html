@@ -3,11 +3,7 @@
     <img src="{% if profile.data.profile_pic is defined %}{{profile.data.profile_pic}}{% else %}http://placehold.it/100x100{% endif %}" class="basicprofile__pic" itemprop="image">
     <div class="basicprofile__content__items">
       <h3 class="heading-small basicprofile__name" itemprop="name">{{ person.name }}</h3>
-      {% if person.cs %}
-      <p class="basicprofile__email"><a href="mailto:{{ person.emails.work }}" itemprop="email">{{ person.emails.work }}</a></p>
-      {% else %}
-      <p class="basicprofile__email"><a href="mailto:{{ person.emails.personal }}" itemprop="email">{{ person.emails.personal }}</a></p>
-      {% endif %}
+      <p class="basicprofile__email"><a href="mailto:{{ profile.data.email.personal }}" itemprop="email">{{ profile.data.email.personal }}</a></p>
       {% if profile.data.locations is defined %}
       <p class="basicprofile__email" itemprop="name">
       <a href="{{ profile.data.locations.office.url }}">my location</a>
