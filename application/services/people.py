@@ -21,7 +21,7 @@ class People(object):
         for transport in ['sms', 'email']:
             payload = {
                 'message': message,
-                'transport': 'email'
+                'transport': transport
             }
             self._create(People.NOTIFICATION_API, email, payload)
         return 'OK', 200
