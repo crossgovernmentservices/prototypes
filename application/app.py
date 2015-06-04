@@ -16,6 +16,7 @@ from application.extensions import (
     basic_auth,
 )
 from application import (
+    locations,
     profile,
     auth,
     route,
@@ -54,6 +55,7 @@ def register_extensions(app):
 
 
 def register_blueprints(app):
+    app.register_blueprint(locations.views.blueprint)
     app.register_blueprint(profile.views.blueprint)
     app.register_blueprint(auth.views.blueprint)
     app.register_blueprint(route.views.blueprint)

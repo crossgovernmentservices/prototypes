@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block head %}
+
+  {{ super() }}
+
+  {% assets "locations/css/main.scss",
+      filters="scss", output="gen/css/locations.css" %}
+      <link rel="stylesheet" href="{{ ASSET_URL }}">
+  {% endassets %}
+
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  <h1>Hello from locations!</h1>
+  <p>For routes, see application/locations/views.py</p>
+  <p class="welcome_orange">For CSS, see application/locations/static/css/main.scss</p>
+  <p>This template lives at application/locations/templates/hello.html</p>
+</main>
+{% endblock %}

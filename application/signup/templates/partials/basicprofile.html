@@ -8,6 +8,11 @@
       {% else %}
       <p class="basicprofile__email"><a href="mailto:{{ person.emails.personal }}" itemprop="email">{{ person.emails.personal }}</a></p>
       {% endif %}
+      {% if profile.data.locations is defined %}
+      <p class="basicprofile__email" itemprop="name">
+      <a href="{{ profile.data.locations.office.url }}">my location</a>
+      </p>
+      {% endif %}
     </div>
     {% if person.cs %}
     <section class="key-info__wrap">
@@ -19,7 +24,7 @@
           </tr>
         </tbody>
       </table>
-    </seciton>
+    </section>
     {% endif %}
   </div>
 </div>

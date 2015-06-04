@@ -2,8 +2,10 @@
 from flask import (
     Blueprint,
     render_template,
+    request,
 )
 import json
+import os
 from application.services.people import People
 from flask_login import login_required, current_user
 
@@ -54,12 +56,14 @@ def basicprofile():
     with open('application/data/noncivilservant.json') as data_file:
       person = json.load(data_file)
     profile = people.read_profile(current_user.email)
-
+    back = 'http://%s/locations/my/office' % request.host
+    locations_url = 'http://%s/?postback=%s' % (os.environ.get('LOCATIONS_FRONTEND'), back)
     return render_template(
         "basicprofile.html",
         activeTab="you",
         person=person,
-        profile=profile)
+        profile=profile,
+        locations_url=locations_url)
 
 @blueprint.route('/basicprofile/checklist')
 @login_required

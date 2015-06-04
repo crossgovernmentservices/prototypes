@@ -12,6 +12,7 @@ class Config(object):
     BASIC_AUTH_FORCE = os.environ.get('BASIC_AUTH_FORCE')
     BASIC_AUTH_USERNAME = os.environ.get('BASIC_AUTH_USERNAME')
     BASIC_AUTH_PASSWORD = os.environ.get('BASIC_AUTH_PASSWORD')
+    LOCATIONS_FRONTEND = os.environ.get('LOCATIONS_FRONTEND')
 
 
 class ProdConfig(Config):
