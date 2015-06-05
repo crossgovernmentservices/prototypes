@@ -21,7 +21,11 @@
       <h4 class="heading-small">Associated skills</h4>
       <ul class="jd__assoc-skills">
         {% for skill in listing.skills %}
-        <li class="skill" data-skill="{{ skill }}">{{ skill }}</li>
+        <li class="skill" data-skill="{{ skill }}">
+          <a href="?q={{ skill }}">
+            {{ skill }}
+          </a>
+        </li>
         {% endfor %}
       </ul>
       <a href="" class="button">Apply now</a>

@@ -8,7 +8,7 @@
 
   <a href="/" class="example-back-link">Back to the cross government tools' prototypes</a>
 
-  <form class="search__form" action="">
+  <form class="search__form" method="GET">
 
     <h1 class="form-title heading-xlarge">
       Search vacancies
@@ -16,7 +16,7 @@
 
     <div class="form-group">
       <p class="form-hint">Search by keyword or reference number</p>
-      <input type="text" class="form-control search_input" id="jd_search">
+      <input type="text" class="form-control search_input" id="q" name="q" value="{{ request.args.get('q') }}">
     </div>
 
     <details>

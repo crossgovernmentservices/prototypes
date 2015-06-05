@@ -6,7 +6,7 @@
 
   // on DOM ready
   $(function() {
-    var $searchInput = $("#jd_search"),
+    var $searchInput = $("#q"),
         $jdResults = $(".jd__results"),
         $skillItems = $(".skill"),
         $searchResultsNum = $(".search-results__number span");
@@ -29,8 +29,7 @@
     };
 
     var updateSkillSearch = function(skill) {
-      // update hash and encode
-      window.location.hash = encodeURIComponent(skill);
+      console.log('skill', skill);
       // update input & display results
       $jdResults.find(".jd__listing").hide();
       displaySkillSearchResults(skill);
@@ -40,16 +39,7 @@
       displaySkillSearchResults(hash);
     }
 
-    // bind events
-    $skillItems.on('click', function(e) {
-      updateSkillSearch($(this).data('skill'));
-    });
-
-    $searchInput.on('change', function() {
-      updateSkillSearch($(this).val());
-    }).parents("form").on('submit', function(e) {
-      e.preventDefault();
-    });
+    updateSkillSearch($searchInput.val());
 
     $(".signup__close").on("click", function(e) {
       $(".signup__wrap").slideUp();
