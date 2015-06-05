@@ -1,0 +1,28 @@
+{% if current_user and current_user.is_authenticated() %}
+  <p>Logged in as {{ current_user.email }}</p>
+  <p><a href="{{ url_for('public.logout') }}">Sign out</a></p>
+{% elif form %}
+
+  <form class="signup__form" id="loginForm" method="POST" role="login" action="/login">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      <label class="form-label-bold" for="email">Email</label>
+      {{ form.email(placeholder="Email", class_="form-control signup__input") }}
+    </div>
+
+    <!-- Primary buttons, secondary links -->
+    <div class="form-group">
+      <button type="submit" class="button signup__btn">
+        <span data-provider="default" class="signup__btn__content--active">Create profile</span>
+        <span data-provider="google">Create using Google account</span>
+        <span data-provider="facebook">Create using Facebook account</span>
+      </button>
+      {% if dismiss is defined %}
+      <ul>
+        <li><a class="signup__close" href="/">{{ dismiss }}</a></li>
+      </ul>
+      {% endif %}
+    </div>
+  </form>
+
+{% endif %}

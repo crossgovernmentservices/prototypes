@@ -38,7 +38,9 @@ def login():
             login_user(form.user)
             flash("You are logged in.", 'success')
             # TODO validate request.args.get("next")
-            redirect_url = request.args.get("next") or url_for(".login")
+            redirect_url = request.args.get("next") or \
+                request.referrer or \
+                url_for(".login")
             return redirect(redirect_url)
         else:
             flash_errors(form)

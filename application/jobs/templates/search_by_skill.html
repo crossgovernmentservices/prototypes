@@ -32,3 +32,24 @@
 
 </main><!-- / #page-container -->
 {% endblock %}
+
+{% block body_end %}
+
+  {{ super() }}
+
+  <script type="application/javascript">
+  ;(function($) {
+
+    // on DOM ready
+    $(function() {
+      $(".jd__save").on('click', function() {
+        {% if current_user.is_authenticated() %}
+          $(this).toggleClass( 'saved' );
+        {% else %}
+          $(".signup__wrap").slideDown();
+        {% endif %}
+      });
+    });
+  }(jQuery));
+  </script>
+{% endblock %}

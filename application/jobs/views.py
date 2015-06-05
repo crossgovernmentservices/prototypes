@@ -3,11 +3,14 @@ from flask import (
     Blueprint,
     render_template,
     jsonify,
+    request,
 )
 import json
 from application.services.people import People 
 import random
 from flask_login import login_required, current_user
+from application.public.forms import LoginForm
+
 
 
 people = People()
@@ -24,7 +27,12 @@ blueprint = Blueprint(
 def search_by_skill():
     with open('application/data/listings.json') as data_file:
         listings = json.load(data_file)
-    return render_template('search_by_skill.html', listings=listings)
+    form = LoginForm(request.form)
+    return render_template(
+        'search_by_skill.html',
+        listings=listings,
+        form=form,
+        dismiss='Close')
 
 
 @blueprint.route('/your_apps')
