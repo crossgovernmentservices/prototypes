@@ -1,6 +1,6 @@
 # XGS Prototypes
 
-[![Build Status](https://travis-ci.org/crossgovernmentservices/xgs_prototypes.svg)](https://travis-ci.org/crossgovernmentservices/xgs_prototypes)
+[![Build Status](https://travis-ci.org/crossgovernmentservices/prototypes.svg)](https://travis-ci.org/crossgovernmentservices/prototypes)
 
 Smoke and mirrors for XGS (Cross Government Services) prototypes.
 
@@ -18,7 +18,7 @@ Quickly add a new blueprint with ```./scripts/blueprint```
 
     heroku run python manage.py shell
     # -or-
-    docker-compose run xgsprototypes python manage.py shell
+    docker-compose run prototypes python manage.py shell
     # then, interact with the app:
     app.test_client().get('/signup/basicprofile')
 
