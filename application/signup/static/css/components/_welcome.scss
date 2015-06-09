@@ -62,8 +62,25 @@
   bottom: 0;
   color: $page-colour;
   text-decoration: none;
+  padding-right: 1em;
+  opacity: 0.7;
 
   &:visited, &:hover {
     color: $page-colour;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0.2em;
+    border-top: (0.4em * 0.866) dotted transparent;
+    border-right: 0.4em solid transparent;
+    border-bottom: 0.5em dotted $page-colour;
+    border-left: 0.4em solid transparent;
   }
 }
