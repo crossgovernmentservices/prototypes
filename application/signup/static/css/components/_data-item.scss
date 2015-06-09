@@ -13,9 +13,6 @@
 }
 .data-item__entry {}
 
-button.data-item__edit,
-button.btn--edit {
-  line-height: 1.5em;
-  display: block;
-  @include btn($grey-2, $page-colour, $text-colour, 16px);
+button.data-item__edit {
+  @extend .btn--edit;
 }

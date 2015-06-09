@@ -3,7 +3,12 @@
 // still include it here for access to SASS variables.
 @import '../../../static/css/govuk';
 
-@import 'components/helpers';
+// import scss common to all stylesheets
+@import 'common/helpers';
+@import 'common/global';
+@import 'common/typography_ext';
+@import 'common/layout_ext';
+
 @import 'components/buttons';
 @import 'components/profile';
 @import 'components/basicprofile';
@@ -26,7 +31,6 @@
 @import 'components/next-meeting';
 @import 'components/progresslist';
 @import 'components/data-item';
-@import 'components/header-group';
 @import 'components/table';
 @import 'components/people';
 @import 'components/app_submitted';
@@ -36,30 +40,6 @@
 // global for all profile based pages
 #global-header-bar {
   display: none;
-}
-
-.column-three-quarter {
-  @include grid-column(3/4);
-}
-
-.column-eighth {
-  @include grid-column(1/8);
-}
-
-.column-twelfth {
-  @include grid-column(1/12);
-}
-
-.bold-xxsmall {
-  @include bold-14();
-}
-
-.temp {
-  height: 330px;
-}
-
-.form {
-  @extend %contain-floats;
 }
 
 // for sections containing widgets
@@ -78,10 +58,6 @@
 .info__item {
   font-weight: bolder;
   text-align: right;
-}
-
-.foot-link {
-  font-size: 16px;
 }
 
 .key-info__wrap {
@@ -143,12 +119,7 @@ $linkedin: #0077b5;
 .app__section {
   margin-bottom: $gutter;
 }
-.btn--right {
-  float: right;
-}
-button.btn--edit--dark {
-  background: $grey-1;
-}
+
 .job-search-items {
   margin: $gutter 0;
 }

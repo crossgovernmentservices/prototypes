@@ -22,3 +22,17 @@
   display: inline-block;
   @include btn($grey-2, $page-colour, $text-colour, 16px);
 }
+
+.btn--edit {
+  line-height: 1.5em;
+  display: block;
+  @include btn($grey-2, $page-colour, $text-colour, 16px);
+}
+
+.btn--edit--dark {
+  background: $grey-1;
+}
+
+.btn--right {
+  float: right;
+}
