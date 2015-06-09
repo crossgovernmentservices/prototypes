@@ -1,7 +1,5 @@
 .PHONY: all test coverage coveralls flake8 dist clean
 
-include scripts/govuk-assets-flask/Makefile
-
 all:	flake8 test coverage
 
 test:
