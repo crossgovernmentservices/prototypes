@@ -1,4 +1,7 @@
-;(function() {
+;(function($) {
+
+  $(function() {
+
     // for the settings section
     $(".settings-btn").on("click", function(e) {
       $(this).blur();
