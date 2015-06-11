@@ -7,6 +7,7 @@ from flask import (
     flash,
     url_for,
     redirect,
+    jsonify,
 )
 from flask.ext.login import login_user, login_required, logout_user
 
@@ -52,3 +53,8 @@ def logout():
     logout_user()
     flash('You are logged out.', 'info')
     return redirect(url_for('.login'))
+
+@blueprint.route('/health')
+def health():
+    # TODO ping other services 
+    return jsonify({'msg': 'success', 'status_code': 200}), 200
