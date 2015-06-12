@@ -1,5 +1,5 @@
 @mixin link($colour: $link-colour, $hover-colour: $link-hover-colour, $visited-colour: $link-visited-colour, $decoration: none, $hover-decoration: underline) {
-  color: $link-colour;
+  color: $colour;
   text-decoration: $decoration;
 
   &:visited {

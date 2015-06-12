@@ -1,0 +1,115 @@
+// ------------------------------------------------
+// silent banner class
+%banner__wrap {
+  background: $light-blue;
+  padding: $gutter-half 0;
+  color: $page-colour;
+
+  p {
+    font-size: 19px;
+  }
+}
+
+%banner__content {
+  @extend #content;
+  padding: $gutter 0;
+
+  a {
+    color: $page-colour;
+
+    &:hover {
+      color: $page-colour;
+    }
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+%banner__heading {
+  margin-top: 0;
+}
+
+// ------------------------------------------------
+// application banner
+// used for banner displayed when app is submitted
+.app-submitted__wrap {
+  background: $turquoise;
+  display: none;
+  @extend %banner__wrap;
+}
+.app-submitted {
+  @extend %banner__content;
+
+  .app-submitted__heading {
+    @extend %banner__heading;
+  }
+}
+
+// ------------------------------------------------
+// welcome banner
+// used on the basic profile
+.welcome__wrap {
+  @extend %banner__wrap;
+}
+.welcome {
+  position: relative;
+  @extend %banner__content;
+
+  .welcome__heading {
+    @extend %banner__heading;
+  }
+}
+
+.welcome__action__wrap {
+  background: $page-colour;
+  color: $text-colour;
+  padding: 5px;
+  opacity: 0.7;
+  text-align: center;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  a {
+    @include link($colour: $text-colour, $hover-colour: $text-colour, $visited-colour: $text-colour);
+  }
+}
+
+.welcome__action__wrap + .welcome__action__wrap {
+  margin-top: 5px;
+}
+
+.welcome__action__wrap img {
+  display: block;
+  width: $gutter + $gutter-half;
+  height: $gutter + $gutter-half;
+  margin: 5px auto 10px;
+}
+
+.welcome__skip {
+  position: absolute;
+  right: $gutter-half;
+  bottom: 0;
+  padding-right: 1em;
+  opacity: 0.7;
+
+  @include link($colour: $page-colour, $hover-colour: $page-colour, $visited-colour: $page-colour);
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0.2em;
+    border-top: (0.4em * 0.866) dotted transparent;
+    border-right: 0.4em solid transparent;
+    border-bottom: 0.5em dotted $page-colour;
+    border-left: 0.4em solid transparent;
+  }
+}

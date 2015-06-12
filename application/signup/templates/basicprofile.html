@@ -26,6 +26,9 @@
             {% if not profile.data.integrations.linkedin %}
             <div class="welcome__action__wrap linkedin-upload-btn"><a href="">add linkedin</a></div>
             {% endif %}
+            {% if profile.data.locations is not defined %}
+            <div class="welcome__action__wrap"><a href="{{ locations_url }}">your location</a></div>
+            {% endif %}
           </div>
           <div class="column-third">
             <div class="welcome__action__wrap">
@@ -34,13 +37,6 @@
             </div>
           </div>
         </div>
-        {% if profile.data.locations is not defined %}
-        <div class="grid-row">
-           <div class="column-third">
-             <div class="welcome__action__wrap"><a href="{{ locations_url }}">your location</a></div>
-           </div>
-        </div>
-        {% endif %}
       </div>
     </div>
     <a class="welcome__skip" href="">close</a>
