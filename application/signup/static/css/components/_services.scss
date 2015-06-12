@@ -1,29 +1,13 @@
 .service__item {
   border-bottom: 1px dotted $panel-colour;
   padding: $gutter-half;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .service__name::first-letter {
   text-transform: uppercase;
 }
 
-.service__item__meta {
-  margin-bottom: 0;
-}
-
-.secondary {
-  color: $secondary-text-colour;
-  font-size: 16px;
-
-  span {
-    display: block;
-  }
-}
-
-.revoke__btn {
-  margin-top: em(25, 20);
-
-  @include media(tablet) {
-    margin-top: em(45, 24);
-  }
-}

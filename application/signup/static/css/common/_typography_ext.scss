@@ -45,3 +45,12 @@
   color: $secondary-text-colour;
   font-weight: normal;
 }
+
+.secondary {
+  color: $secondary-text-colour;
+  font-size: 16px;
+
+  span {
+    display: block;
+  }
+}
