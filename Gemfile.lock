@@ -1,1 +1,10 @@
-# fake Gemfile for Heroku
+GEM
+  remote: https://rubygems.org/
+  specs:
+    sass (3.2.9)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  sass (= 3.2.9)
