@@ -20,3 +20,7 @@
 .review__section {
   @extend .section;
 }
+
+main .section__head {
+  margin-top: $gutter-half;
+}

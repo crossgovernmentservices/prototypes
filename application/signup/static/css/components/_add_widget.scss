@@ -1,24 +1,3 @@
-.component__head {
-  
-}
-.component__heading {
-  display: inline;
-}
-.component-expand-btn {
-  @include circle($gutter);
-  background: $link-colour;
-  color: $page-colour;
-  border: none;
-  font-size: 24px;
-  line-height: $gutter;
-  margin-left: $gutter-half;
-
-  &:hover {
-    cursor: pointer;
-    background: $link-hover-colour;
-  }
-}
-
 .services-list {
   
 }

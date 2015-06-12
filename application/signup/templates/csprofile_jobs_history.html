@@ -6,15 +6,13 @@
 <main id="content" role="main">
   <div class="grid-row">
     <div class="column-quarter">
-      <section class="container">
-        {% include "partials/jobs_profile.html" ignore missing %}
-      </section>
-      <section class="container section">
+      {% include "partials/jobs_profile.html" ignore missing %}
+      <nav class="section">
         {% include "partials/jobs_menu.html" ignore missing %}
-      </section>
+      </nav>
     </div>
     <div class="column-three-quarter">
-      <h1 class="heading-large">Past roles</h1>
+      <h1 class="heading-large section__head">Past roles</h1>
       <ul class="section">
 
         <li class="past-role">

@@ -6,17 +6,15 @@
 <main id="content" role="main">
   <div class="grid-row">
     <div class="column-quarter">
-      <section class="container">
-        {% include "partials/perf_profile.html" ignore missing %}
-      </section>
-      <section class="container section">
+      {% include "partials/perf_profile.html" ignore missing %}
+      <nav class="section">
         {% include "partials/perf_menu.html" ignore missing %}
-      </section>
+      </nav>
     </div>
     <div class="column-three-quarter">
 
       <header class="profile--include">
-        <h1 class="form-title heading-large">
+        <h1 class="form-title heading-large section__head">
         To review
         </h1>
 

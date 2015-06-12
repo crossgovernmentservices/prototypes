@@ -42,9 +42,9 @@
   display: none;
 }
 
-// for sections containing widgets
-.container {
-  margin-top: $gutter-half;
+.profile__nav + main,
+.welcome__wrap + main {
+  padding-top: $gutter;
 }
 
 .skill {

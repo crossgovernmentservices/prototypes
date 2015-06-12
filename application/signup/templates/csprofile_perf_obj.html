@@ -6,15 +6,13 @@
 <main id="content" role="main">
   <div class="grid-row">
     <div class="column-quarter">
-      <section class="container">
-        {% include "partials/perf_profile.html" ignore missing %}
-      </section>
-      <section class="container section">
+      {% include "partials/perf_profile.html" ignore missing %}
+      <nav class="section">
         {% include "partials/perf_menu.html" ignore missing %}
-      </section>
+      </nav>
     </div>
     <div class="column-three-quarter">
-      <h1 class="heading-large">Objectives</h1>
+      <h1 class="heading-large section__head">Objectives</h1>
       <ul class="objectives">
         <li class="objective">
           <h3 class="heading-medium objective__heading">Objective 1</h3>
