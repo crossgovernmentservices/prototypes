@@ -46,23 +46,13 @@
   padding-top: $gutter;
 }
 
-.skill {
-  display: inline-block;
-  padding: 0.25em 0.5em;
-  margin-right: $gutter-half;
-  margin-bottom: $gutter-half;
-  border: 1px solid $panel-colour;
-}
-
 .info__item {
   font-weight: bolder;
   text-align: right;
 }
 
 .key-info__wrap {
-  //border: 1px solid $grey-4;
   padding: 5px;
-  //box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.1);
   td {
     border: none;
   }

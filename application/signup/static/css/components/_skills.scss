@@ -1,9 +1,13 @@
-.skills-list li {
+.skill {
   display: inline-block;
   padding: 0.25em 0.5em;
   margin-right: $gutter-half;
   margin-bottom: $gutter-half;
   border: 1px solid $panel-colour;
+}
+
+.skills-list li {
+  @extend .skill;
 
   &:hover {
     cursor: pointer;
