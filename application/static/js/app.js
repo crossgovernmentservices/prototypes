@@ -46,25 +46,32 @@
       checkProvider(e.target.value);
     });
 
+    var submitLogin = function() {
+      $("body").removeClass("notloggedin").addClass("loggedin");
+      $("#loginForm").submit();
+    };
+
     $(".signup__btn").on("click", function(e) {
       e.preventDefault();
-      var openedWindow = window.open('/signup/googlelogin',
-                                  'signing into google',
-                                  'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=300,height=300');
-      window.setTimeout(function() {
-        openedWindow.close();
-        // do next now logged in thing here...
-        $(".signup__wrap").slideUp("fast", function() {
-          //$(".signup__success__wrap").slideDown('slow');
-        });
-        $("body").removeClass("notloggedin").addClass("loggedin");
-        $("#loginForm").submit();
-      }, 4000);
+      // only mock google login if gmail address
+      if ( gmailFlag ) {
+        // create new window to open
+        var openedWindow = window.open('/signup/googlelogin',
+                                    'signing into google',
+                                    'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=300,height=300');
+        // close window after 400ms
+        window.setTimeout(function() {
+          openedWindow.close();
+          // do next now logged in thing here...
+          $(".signup__wrap").slideUp("fast");
+          submitLogin();
+        }, 4000);
+      } else {
+        submitLogin();
+      }
       return false;
     });
 
   });
-
-
 
 }).call(this, jQuery, window);
