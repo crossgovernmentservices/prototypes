@@ -64,6 +64,11 @@ class People(object):
             'function': 'Technology',
             'organisation': 'Cabinet Office'
         }
+        # reset services
+        ig1, services, ig2 = self.read_service(email)
+        for service in services:
+            self.delete_service(email, service['id'])
+
         return self.create_profile(email, profile)
 
     def update_profile(self, email, payload):
@@ -129,6 +134,9 @@ class People(object):
                     outstanding_services.append(existing_service)
         return services, user_services, outstanding_services
 
+    def delete_service(self, email, id):
+        return self._delete(People.SERVICE_API, email, id)
+
     def _create(self, api, email, payload):
         data = json.dumps(payload)
         return requests.post(
@@ -148,6 +156,12 @@ class People(object):
         return requests.put(
             '%s/%i' % (api, id),
             data=data,
+            auth=(email, People.TOKEN),
+            headers={'Content-type': 'application/json', 'Accept': 'application/json'})
+
+    def _delete(self, api, email, id):
+        return requests.delete(
+            '%s/%i' % (api, id),
             auth=(email, People.TOKEN),
             headers={'Content-type': 'application/json', 'Accept': 'application/json'})
 
