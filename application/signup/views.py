@@ -171,6 +171,10 @@ def csprofile_services():
     services, user_services, outstanding_services = people.read_service(current_user.email)
     return render_template("csprofile_services.html", CivilServant=True, activeTab="services", services=services_data, user_services=user_services)
 
+@blueprint.route('/hr_dashboard')
+def hr_dashboard():
+    return render_template('hr_dashboard.html')
+
 @blueprint.route('/ical-test')
 def test_apps():
     return render_template("ical-test.html")
