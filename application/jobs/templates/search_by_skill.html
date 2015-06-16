@@ -4,7 +4,7 @@
 
 {% include "includes/signup.html" ignore missing %}
 
-<main id="content" role="main">
+<main id="content" role="main" class="{% if current_user.is_authenticated() %}loggedin{% endif %}">
 
   <a href="/" class="example-back-link">Back to the cross government tools' prototypes</a>
 
@@ -42,6 +42,9 @@
 
     // on DOM ready
     $(function() {
+      if( $("#content").hasClass("loggedin") ) {
+        $(".signup__success__wrap").slideDown('slow');
+      };
       $(".jd__save").on('click', function() {
         {% if current_user.is_authenticated() %}
           $(this).toggleClass( 'saved' );

@@ -16,8 +16,10 @@
   };
 
   $(function() {
+    var gmailFlag = false;
     // should this just return the value of the provider??
     var checkProvider = function(email) {
+      gmailFlag = ( email.indexOf("gmail") !== -1 ) ? true:false;
       providers.forEach(function(prov, ind, arr) {
         if( email !== "" && email.indexOf(prov.identifier) >= 0 ) {
           $sBtn.removeClassPrefix("signup__btn--");
@@ -40,7 +42,7 @@
     var $sInput = $(".signup__input");
     var $sBtn = $(".signup__btn");
 
-    $sInput.on("keyup", function(e) {
+    $sInput.on("change keyup", function(e) {
       checkProvider(e.target.value);
     });
 
@@ -53,7 +55,7 @@
         openedWindow.close();
         // do next now logged in thing here...
         $(".signup__wrap").slideUp("fast", function() {
-          $(".signup__success__wrap").slideDown('slow');
+          //$(".signup__success__wrap").slideDown('slow');
         });
         $("body").removeClass("notloggedin").addClass("loggedin");
         $("#loginForm").submit();
