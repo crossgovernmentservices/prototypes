@@ -102,11 +102,24 @@ css_signup = Bundle(
     depends=['**/*.scss', 'signup/css/**/*.scss']
 )
 
+css_hr = Bundle(
+    'signup/css/hr.scss',
+    filters='scss',
+    output='gen/css/hr.css',
+    depends=['**/*.scss', 'signup/css/**/*.scss']
+)
+
 js_signup = Bundle(
     'signup/js/main.js',
     'signup/js/jquery.ical-links.js',
     filters='jsmin',
     output='gen/js/signup.js'
+)
+
+js_hr = Bundle(
+    'signup/js/hr.js',
+    filters='jsmin',
+    output='gen/js/hr.js'
 )
 
 js_basic = Bundle(
@@ -188,6 +201,9 @@ assets.register('js_professions', js_professions)
 
 assets.register('css_signup', css_signup)
 assets.register('js_signup', js_signup)
+
+assets.register('css_hr', css_hr)
+assets.register('js_hr', js_hr)
 
 assets.register('css_oauth', css_oauth)
 assets.register('css_login', css_login)
