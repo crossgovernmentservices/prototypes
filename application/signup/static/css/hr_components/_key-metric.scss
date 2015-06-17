@@ -1,0 +1,27 @@
+.key-metric {
+  text-align: center;
+  padding: $gutter $gutter-half;
+}
+
+.key-metric__name {
+  margin: 0;
+  font-size: 19px;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
+.key-metric__value {
+  font-size: 48px;
+  line-height: 1em;
+}
+
+.key-metric__name,
+.key-metric__value {
+  margin-bottom: $gutter-half;
+}
+
+.key-metric__more {
+  font-size: 16px;
+  $stc: $secondary-text-colour;
+  @include link($colour: $stc, $hover-colour: $stc, $visited-colour: $stc);
+}

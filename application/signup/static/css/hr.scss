@@ -10,6 +10,7 @@
 @import 'common/layout_ext';
 
 @import 'hr_components/component';
+@import 'hr_components/key-metric';
 
 body {
   background: $grey-4;
@@ -22,30 +23,28 @@ body {
   box-shadow:0 1px 2px #aaa;
 }
 
-.key-metric {
-  text-align: center;
-  padding: $gutter $gutter-half;
-}
-
-.key-metric__name {
+.grid-row--no-margin {
   margin: 0;
-  font-size: 19px;
-  font-weight: lighter;
-  text-transform: uppercase;
 }
 
-.key-metric__value {
-  font-size: 48px;
-  line-height: 1em;
-}
+.side-menu {
+  li {
+    margin: 0 (-$gutter-half);
+    padding: $gutter-half;
 
-.key-metric__name,
-.key-metric__value {
-  margin-bottom: $gutter-half;
-}
+    a {
+      height: 100%;
+      display: block;
+      $tc: $text-colour;
+      @include link($colour: $tc, $hover-colour: $tc, $visited-colour: $tc, $hover-decoration: none);
+    }
 
-.key-metric__more {
-  font-size: 16px;
-  $stc: $secondary-text-colour;
-  @include link($colour: $stc, $hover-colour: $stc, $visited-colour: $stc);
+    &:hover {
+      background: $light-blue;
+
+      a {
+        color: $page-colour;
+      }
+    }
+  }
 }
