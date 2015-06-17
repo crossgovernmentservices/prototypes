@@ -1,0 +1,51 @@
+// See assets.py
+// Even though govuk.css is built for all views, we
+// still include it here for access to SASS variables.
+@import '../../../static/css/govuk';
+
+// import scss common to all stylesheets
+@import 'common/helpers';
+@import 'common/global';
+@import 'common/typography_ext';
+@import 'common/layout_ext';
+
+@import 'hr_components/component';
+
+body {
+  background: $grey-4;
+}
+
+.breadcrumb {
+  background: $page-colour;
+  padding: $gutter-half;
+  margin: $gutter 0;
+  box-shadow:0 1px 2px #aaa;
+}
+
+.key-metric {
+  text-align: center;
+  padding: $gutter $gutter-half;
+}
+
+.key-metric__name {
+  margin: 0;
+  font-size: 19px;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
+.key-metric__value {
+  font-size: 48px;
+  line-height: 1em;
+}
+
+.key-metric__name,
+.key-metric__value {
+  margin-bottom: $gutter-half;
+}
+
+.key-metric__more {
+  font-size: 16px;
+  $stc: $secondary-text-colour;
+  @include link($colour: $stc, $hover-colour: $stc, $visited-colour: $stc);
+}
