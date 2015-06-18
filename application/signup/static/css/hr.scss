@@ -16,6 +16,18 @@ body {
   background: $grey-4;
 }
 
+.dashboard__grouping {
+  padding: $gutter-half;
+  margin-bottom: $gutter;
+  h3 {
+    margin: 0;
+  }
+  & > h3:first-child {
+    margin-bottom: $gutter-half;
+    font-weight: lighter;
+  }
+}
+
 .breadcrumb {
   background: $page-colour;
   padding: $gutter-half;
