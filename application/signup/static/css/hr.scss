@@ -28,6 +28,29 @@ body {
   }
 }
 
+.metric__group {
+  padding: $gutter-half 0;
+}
+.metric {
+  text-align: center;
+  border-right: 1px solid $grey-3;
+
+  h3 {
+    font-weight: normal;
+  }
+
+  &:last-child {
+    border: none;
+  }
+}
+
+.metric__value {
+  display: block;
+  font-size: 32px;
+  padding: 25px 0;
+  font-weight: bolder;
+}
+
 .breadcrumb {
   background: $page-colour;
   padding: $gutter-half;
