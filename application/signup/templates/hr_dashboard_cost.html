@@ -1,0 +1,22 @@
+{% extends "hr_layout.html" %}
+{% block content %}
+
+<main id="content">
+
+  {% include "hr_partials/breadcrumb.html" ignore missing %}
+
+  {% include "hr_partials/key-metrics.html" ignore missing %}
+
+  <div class="grid-row">
+    <div class="column-quarter">
+      {% include "hr_partials/side-menu.html" ignore missing %}
+    </div>
+
+    <div class="column-three-quarter">
+      <div class="component"></div>
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}

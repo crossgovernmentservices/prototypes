@@ -175,6 +175,14 @@ def csprofile_services():
 def hr_dashboard():
     return render_template('hr_dashboard.html', page="people")
 
+@blueprint.route('/hr_dashboard_cost')
+def hr_dashboard_cost():
+    return render_template('hr_dashboard_cost.html', page="cost")
+
+@blueprint.route('/hr_dashboard_capability')
+def hr_dashboard_capability():
+    return render_template('hr_dashboard_capability.html')
+
 @blueprint.route('/ical-test')
 def test_apps():
     return render_template("ical-test.html")
