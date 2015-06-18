@@ -173,7 +173,7 @@ def csprofile_services():
 
 @blueprint.route('/hr_dashboard')
 def hr_dashboard():
-    return render_template('hr_dashboard.html')
+    return render_template('hr_dashboard.html', page="people")
 
 @blueprint.route('/ical-test')
 def test_apps():

@@ -1,7 +1,17 @@
 <div class="component ">
   <ul class="side-menu">
-    <li><a href="">People</a></li>
-    <li><a href="">Cost</a></li>
-    <li><a href="">Capability</a></li>
+    {% if page == "people" %}
+    <li class="side-menu__item side-menu__item--active"><a href="">People</a></li>
+    <li class="side-menu__item"><a href="">Cost</a></li>
+    <li class="side-menu__item"><a href="">Capability</a></li>
+    {% elif page == "cost" %}
+    <li class="side-menu__item"><a href="">People</a></li>
+    <li class="side-menu__item side-menu__item--active"><a href="">Cost</a></li>
+    <li class="side-menu__item"><a href="">Capability</a></li>
+    {% else %}
+    <li class="side-menu__item"><a href="">People</a></li>
+    <li class="side-menu__item"><a href="">Cost</a></li>
+    <li class="side-menu__item side-menu__item--active"><a href="">Capability</a></li>
+    {% endif %}
   </ul>
 </div>

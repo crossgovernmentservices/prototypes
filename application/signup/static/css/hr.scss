@@ -28,7 +28,7 @@ body {
 }
 
 .side-menu {
-  li {
+  .side-menu__item {
     margin: 0;
     padding: $gutter-half;
 
@@ -39,12 +39,22 @@ body {
       @include link($colour: $tc, $hover-colour: $tc, $visited-colour: $tc, $hover-decoration: none);
     }
 
+    .side-menu__item--active,
     &:hover {
       background: $light-blue;
 
       a {
         color: $page-colour;
       }
+    }
+  }
+  .side-menu__item--active {
+    background: $light-blue;
+
+    a {
+      color: $page-colour;
+
+      &:visited { color: $page-colour; }
     }
   }
 }
