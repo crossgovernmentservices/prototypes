@@ -21,6 +21,10 @@
   @include link($decoration: underline);
 }
 
+a {
+  @extend %a;
+}
+
 .bold-xxsmall {
   @include bold-14();
 }
