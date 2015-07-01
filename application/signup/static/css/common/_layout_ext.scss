@@ -11,3 +11,22 @@
 .column-twelfth {
   @include grid-column(1/12);
 }
+
+@mixin grid-column-static($width, $float: left) {
+  float: $float;
+  width: percentage($width);
+
+  @include ie-lte(7){
+    width: (($site-width + $gutter) * $width) - $gutter;
+  }
+
+  padding: 0 $gutter-half;
+  @include box-sizing(border-box);
+}
+
+.column-third--static {
+  @include grid-column-static( 1/3 );
+}
+.column-two-thirds--static {
+  @include grid-column-static( 2/3 );
+}
