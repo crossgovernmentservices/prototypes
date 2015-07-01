@@ -30,3 +30,9 @@
 .column-two-thirds--static {
   @include grid-column-static( 2/3 );
 }
+.column-quarter--static {
+  @include grid-column-static( 1/4 );
+}
+.column-three-quarter--static {
+  @include grid-column-static( 3/4 );
+}

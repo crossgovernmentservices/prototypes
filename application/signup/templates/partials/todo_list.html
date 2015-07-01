@@ -4,10 +4,10 @@
   {% for todo in person.todos %}
 
   <li class="todo__item">
-    <div class="column-quarter todo__cat__wrap">
+    <div class="column-quarter--static todo__cat__wrap">
       <div class="todo__cat todo__cat--{{ todo.category }}" title="CS {{ todo.category|capitalize }}"></div>
     </div>
-    <div class="column-three-quarter todo__content"><a href="{{ todo.url }}">{{ todo.desc }}</a></div>
+    <div class="column-three-quarter--static todo__content"><a href="{{ todo.url }}">{{ todo.desc }}</a></div>
   </li>
 
   {% endfor %}
