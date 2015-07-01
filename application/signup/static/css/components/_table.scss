@@ -1,4 +1,22 @@
+.table--borderless {
+  tr:nth-child(even) {
+    background: $highlight-colour;
+  }
+  td {
+    font-size: 16px;
+    border-bottom: none;
+  }
+  td:first-child {
+    padding-left: $gutter-half;
+  }
+}
+
 .cell--center {
   padding-right: 0;
   text-align: center;
+}
+
+// ugly
+table td.cell--highlight {
+  font-weight: bolder;
 }
