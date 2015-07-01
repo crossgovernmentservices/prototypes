@@ -24,6 +24,9 @@
   @include box-sizing(border-box);
 }
 
+.column-half--static {
+  @include grid-column-static( 1/2 );
+}
 .column-third--static {
   @include grid-column-static( 1/3 );
 }

@@ -45,6 +45,10 @@
   padding-top: $gutter;
 }
 
+table + .grid-row {
+  margin-top: $gutter-half;
+}
+
 .key-info__wrap {
   padding: 5px;
   td {
