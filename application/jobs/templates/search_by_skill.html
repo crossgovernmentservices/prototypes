@@ -41,10 +41,17 @@
   ;(function($) {
 
     // on DOM ready
+
+    // not nice to mix jinja logic and js logic
+    // TO DO: clean up
     $(function() {
+      {% with success_msg = get_flashed_messages(category_filter=["success"]) %}
+      {% if success_msg %}
       if( $("#content").hasClass("loggedin") ) {
         $(".signup__success__wrap").slideDown('slow');
       };
+      {% endif %}
+      {% endwith %}
       $(".jd__save").on('click', function() {
         {% if current_user.is_authenticated() %}
           $(this).toggleClass( 'saved' );
