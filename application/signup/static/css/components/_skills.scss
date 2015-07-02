@@ -29,11 +29,24 @@
   }
 }
 
+.jd__assoc-skills .skill {
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    color: $page-colour;
+  }
+}
+
 .jd__assoc-skills .skill--highlighted {
   background: $link-hover-colour;
-  color: $page-colour;
   border-color: $link-hover-colour;
+
+  a {
+    color: $page-colour;
+  }
 }
+
 .skills__extra__head {
   margin-bottom: 0.25em;
   h4 {
