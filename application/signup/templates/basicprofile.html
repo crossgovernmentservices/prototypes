@@ -3,45 +3,7 @@
 
 {% include "partials/nav.html" ignore missing %}
 
-<aside class="welcome__wrap">
-  <section class="welcome">
-    <h2 class="heading-large welcome__heading">Welcome to GOV.UK</h2>
-    <div class="grid-row">
-      <div class="column-half">
-        <p class="lede">Your profile is incomplete.</p>
-        <p>A completed profile helps us match you to jobs in the Civil Service.</p>
-        <p><a class="activity-link" href="/signup/basicprofile_jobs">Back to job search</a></p>
-      </div>
-      <div class="column-half">
-        <div class="grid-row">
-          <div class="column-third">
-            <div class="welcome__action__wrap">
-              <img src="/static/images/profile_pic.svg" alt="" />
-              <a href="">upload image</a>
-            </div>
-          </div>
-          <div class="column-third">
-            <div class="welcome__action__wrap cv-upload-btn"><a href="">upload cv</a></div>
-
-            {% if not profile.data.integrations.linkedin %}
-            <div class="welcome__action__wrap linkedin-upload-btn"><a href="">add linkedin</a></div>
-            {% endif %}
-            {% if profile.data.locations is not defined %}
-            <div class="welcome__action__wrap"><a href="{{ locations_url }}">your location</a></div>
-            {% endif %}
-          </div>
-          <div class="column-third">
-            <div class="welcome__action__wrap">
-              <img src="/static/images/star_filled_grey.svg" alt="" />
-              <a href="">skills profile</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <a class="welcome__skip" href="">close</a>
-  </section>
-</aside>
+{% include "partials/welcome_banner.html" ignore missing %}
 
 <main id="content" role="main">
   <div class="grid-row">
