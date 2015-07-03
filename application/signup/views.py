@@ -3,6 +3,7 @@ from flask import (
     Blueprint,
     render_template,
     request,
+    current_app,
 )
 import json
 import os
@@ -71,7 +72,19 @@ def basicprofile_checklist():
     with open('application/data/noncivilservant.json') as data_file:
       person = json.load(data_file)
     profile = people.read_profile(current_user.email)
-    return render_template("basicprofile_checklist.html", activeTab="you", person=person, profile=profile)
+    services, user_services, outstanding_services = people.read_service(current_user.email)
+
+    building_security_granted = False
+
+    for service in user_services:
+      building_security_granted = True if ( service['data']['id'] == "buildingsecurity" ) else False
+
+    return render_template(
+        "basicprofile_checklist.html",
+        activeTab="you",
+        person=person,
+        profile=profile,
+        building_security_granted=building_security_granted)
 
 @blueprint.route('/basicprofile_jobs')
 def basicprofile_jobs():

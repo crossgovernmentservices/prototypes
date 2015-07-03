@@ -15,7 +15,9 @@
       {% endfor %}
 
       {% for service in user_services %}
+        {% if service.has_access %}
         {{ build_service_item(service.data) }}
+        {% endif %}
       {% endfor %}
 
     </ul>

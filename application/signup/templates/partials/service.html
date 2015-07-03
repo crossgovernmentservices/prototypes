@@ -2,7 +2,7 @@
 
 <li class="grid-row service__item">
   <div class="column-three-quarter">
-    <h3 class="heading-small service__name">{{ service.id }}</h3>
+    <h3 class="heading-small service__name">{{ service.id|replace("_", " ")|capitalize }}</h3>
     <p class="text">{{ service.desc }}</p>
     <p class="secondary">
       <span>Permissions: {{ service.permissions }}</span>

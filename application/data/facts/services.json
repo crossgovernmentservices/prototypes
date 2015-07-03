@@ -8,7 +8,7 @@
     "scopes": ["your payroll details", "your banking details", "your profile details"]
   },
   {
-    "id": "jobalerts",
+    "id": "job_alerts",
     "name": "Job alerts",
     "desc": "Job alerts",
     "url": "/route/services/jobalerts",
@@ -16,12 +16,12 @@
     "scopes": ["your profile details"]
   },
   {
-    "id": "buildingsecurity",
+    "id": "building_security",
     "name": "Building security",
-    "desc": "The building security team uses some of your personal data to print passes",
+    "desc": "The building security team will use your personal data to print passes required to access buildings",
     "url": "/route/services/buildingsecurity",
-    "redirect": "/todo",
-    "scopes": ["your profile details"]
+    "redirect": "/signup/basicprofile/checklist",
+    "scopes": ["your name", "your profile pic", "your start date"]
   },
   {
     "id": "learning",
