@@ -48,5 +48,11 @@ def whoami():
 @login_required
 def basicprofile():
     profile = people.read_profile(current_user.email)
+    services, user_services, outstanding_services = people.read_service(current_user.email)
 
-    return jsonify(profile), 200
+    complete_profile = {
+      'profile': profile,
+      'services': user_services
+    }
+
+    return jsonify(complete_profile), 200
