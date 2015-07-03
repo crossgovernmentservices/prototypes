@@ -24,4 +24,7 @@
 
 .basicprofile__email {
   @include core-14();
+  a {
+      word-break: break-word;
+  }
 }
