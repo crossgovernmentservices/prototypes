@@ -26,6 +26,13 @@ a.settings-btn:visited {
   opacity: 0;
 }
 
+.profile__nav + main {
+  .settings-btn,
+  .settings__wrap {
+    margin-top: -($gutter);
+  }
+}
+
 .settings--active.settings__wrap {
   opacity: 1;
   max-height: 500px;
