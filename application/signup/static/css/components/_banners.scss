@@ -6,7 +6,11 @@
   color: $page-colour;
 
   p {
-    font-size: 19px;
+    font-size: 16px;
+
+    @include media(tablet) {
+      font-size: 19px;
+    }
   }
 }
 
@@ -63,6 +67,12 @@
 
   .welcome__heading {
     @extend %banner__heading;
+  }
+}
+
+.welcome__msg {
+  @include media($max-width: 769px) {
+    margin-bottom: $gutter-half;
   }
 }
 
