@@ -199,3 +199,7 @@ def hr_dashboard_capability():
 @blueprint.route('/ical-test')
 def test_apps():
     return render_template("ical-test.html")
+
+@blueprint.route('/scs_dashboard')
+def scs_dashboard():
+    return render_template('scs_data.html')
