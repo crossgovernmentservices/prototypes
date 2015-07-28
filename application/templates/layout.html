@@ -52,7 +52,9 @@ information regarding the template.
 {% block body_end %}
 
   {# TODO jsmin etc #}
-  <script type="text/javascript" src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+  {% assets "common_js" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+  {% endassets %}
 
   {% assets "js_govuk" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>

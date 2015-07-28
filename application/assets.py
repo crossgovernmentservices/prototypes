@@ -29,6 +29,12 @@ js_govuk = Bundle(
     output='public/js/govuk.js'
 )
 
+common_js = Bundle(
+    'vendor/jquery/jquery-2.1.4.min.js',
+    filters='jsmin',
+    output='gen/js/common_js.js'
+)
+
 # 'jobs' blueprint
 # Note: specifying 'css/govuk.scss' below wouldn't make govuk
 # SCSS variables available to your SCSS file, hence you still need
@@ -189,6 +195,8 @@ assets.register("js_app", js_app)
 
 assets.register('css_govuk', css_govuk)
 assets.register("js_govuk", js_govuk)
+
+assets.register("common_js", common_js)
 
 assets.register('css_jobs', css_jobs)
 assets.register('js_jobs', js_jobs)
