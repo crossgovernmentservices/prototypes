@@ -2,16 +2,29 @@
 {% block content %}
 
 {% if service %}
-<p>The <em>{{ service.name }}</em> service would like to access:</p>
-<ul class="list-bullet">
-  {% for scope in service.scopes %}
-  <li>{{ scope }}</li>
-  {% endfor %}
-</ul>
-<p>
-  <a class="button" href="{{ service.id }}/grant">Grant access</a>
-  <a class="button button-secondary" href="{{ service.id }}/deny">Deny</a>
-</p>
+<div class="grid-row">
+  <div class="column-half">
+    <p>The <em>{{ service.name }}</em> service would like to access:</p>
+    <ul class="list-bullet">
+      {% for scope in service.scopes %}
+      <li>{{ scope }}</li>
+      {% endfor %}
+    </ul>
+    <p>
+      <a class="button" href="{{ service.id }}/grant">Grant access</a>
+      <a class="button button-secondary" href="{{ service.id }}/deny">Deny</a>
+    </p>
+  </div>
+  <div class="column-half">
+    {% if service.id == "building_security" %}
+    <div class="panel-indent">
+      <p>Image must comply with passport picture rules</p>
+      <img src="{% if profile.data.profile_pic is defined %}{{profile.data.profile_pic}}{% else %}http://placehold.it/100x100{% endif %}" class="profile__pic" />
+      <button class="button button-secondary">Change</button>
+    </div>
+    {% endif %}
+  </div>
+</div>
 
 {% else %}
 <p>Invalid service</p>

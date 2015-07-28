@@ -29,7 +29,8 @@ def get_service(service_id):
 
 @blueprint.route('/services/<service_id>')
 def services(service_id):
-    return render_template('data_request.html', service=get_service(service_id))
+    profile = people.read_profile(current_user.email)
+    return render_template('data_request.html', service=get_service(service_id), profile=profile)
 
 @blueprint.route('/services/<service_id>/<action>')
 @login_required
