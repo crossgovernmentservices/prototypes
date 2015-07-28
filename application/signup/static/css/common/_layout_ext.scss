@@ -16,7 +16,7 @@
   float: $float;
   width: percentage($width);
 
-  @include ie-lte(7){
+  @include ie-lte(7) {
     width: (($site-width + $gutter) * $width) - $gutter;
   }
 
@@ -38,4 +38,8 @@
 }
 .column-three-quarter--static {
   @include grid-column-static( 3/4 );
+}
+
+.image {
+  max-width: 100%;
 }
