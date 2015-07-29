@@ -26,7 +26,12 @@
       "Graphics design"
     ],
     "team": "-",
-    "tel": "02072 761234"
+    "tel": "02072 761234",
+    "next_meeting": {
+      "subject": "CGT Demo",
+      "venue": "Red sofas",
+      "start_time": "10am"
+    }
   },
   "id": 71
 }

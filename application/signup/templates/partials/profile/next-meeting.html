@@ -4,9 +4,9 @@
     <ul class="next-meeting__details">
       <li><h3 class="next-meeting__heading">Next meeting</h3></li>
       <li class="visuallyhidden" itemprop="categories">MEETING</li>
-      <li class="next-meeting__name summary" itemprop="summary">Team show & tell</li>
-      <li class="location" itemprop="location">Red sofas</li>
-      <li><abbr class="dtstart" itemprop="dtstart" title="20150627T150000">3pm</abbr></li>
+      <li class="next-meeting__name summary" itemprop="summary">{{ profile.data.next_meeting.subject|default('None scheduled') }}</li>
+      <li class="location" itemprop="location">{{ profile.data.next_meeting.venue }}</li>
+      <li><abbr class="dtstart" itemprop="dtstart" title="20150627T150000">{{ profile.data.next_meeting.start_time }}</abbr></li>
       <li class="hidden"><abbr class="dtend" itemprop="dtend" title="20150627T160000">4pm</abbr></li>
     </ul>
   </div>

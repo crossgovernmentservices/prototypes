@@ -62,7 +62,12 @@ class People(object):
             'location': 'Aviation House, Kingsway, London',
             'profession': 'Digital',
             'function': 'Technology',
-            'organisation': 'Cabinet Office'
+            'organisation': 'Cabinet Office',
+            'next_meeting': {
+              'subject': 'Team show & tell',
+              'venue': 'Red sofas',
+              'start_time': '3pm'
+            }
         }
         # reset services
         ig1, services, ig2 = self.read_service(email)
