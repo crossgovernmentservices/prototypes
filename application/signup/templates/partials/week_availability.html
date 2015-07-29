@@ -1,10 +1,10 @@
 <section class="week-view__wrap">
   <ul class="week-view">
-    <li class="week-view__day">M</li>
-    <li class="week-view__day">T</li>
-    <li class="week-view__day week-view__day--annual-leave">W</li>
-    <li class="week-view__day">T</li>
-    <li class="week-view__day week-view__day--unavailable">F</li>
+    <li class="week-view__day week-view__day--{{ profile.data.availability.monday }}">M</li>
+    <li class="week-view__day week-view__day--{{ profile.data.availability.tuesday }}">T</li>
+    <li class="week-view__day week-view__day--{{ profile.data.availability.wednesday }}">W</li>
+    <li class="week-view__day week-view__day--{{ profile.data.availability.thursday }}">T</li>
+    <li class="week-view__day week-view__day--{{ profile.data.availability.friday }}">F</li>
   </ul>
   <a href="" class="foot-link week-view__edit">update calendar</a>
 </section>
