@@ -2,7 +2,7 @@
   <div class="basicprofile__content">
     <img src="{% if profile.data.profile_pic is defined %}{{profile.data.profile_pic}}{% else %}http://placehold.it/100x100{% endif %}" class="basicprofile__pic" itemprop="image">
     <div class="basicprofile__content__items">
-      <h3 class="heading-small basicprofile__name" itemprop="name">{{ person.name }}</h3>
+      <h3 class="heading-small basicprofile__name" itemprop="name">{{ profile.data.name }}</h3>
       <p class="basicprofile__email"><a href="mailto:{{ profile.data.email.personal }}" itemprop="email">{{ profile.data.email.personal }}</a></p>
       {% if profile.data.locations is defined %}
       <p class="basicprofile__email" itemprop="name">

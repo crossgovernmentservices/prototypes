@@ -117,6 +117,17 @@ def csprofile():
         user_services=user_services,
         profile=profile)
 
+@blueprint.route('/profile/jeremy_heywood')
+def profiles():
+  with open('application/data/civilservant.json') as data_file:
+    person = json.load(data_file)
+  with open('application/data/jeremy_heywood.json') as data_file:
+    profile = json.load(data_file)
+  return render_template(
+    "profile.html",
+    person=person,
+    profile=profile)
+
 @blueprint.route('/csprofile_more')
 def csprofile_more():
     with open('application/data/civilservant.json') as data_file:

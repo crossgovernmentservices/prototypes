@@ -56,7 +56,7 @@ class People(object):
                 'Content design',
                 'Graphics design'
             ],
-            'role': 'TODO role_id',
+            'role': 'Front-end designer',
             'team': 'Cross Government Tools',
             'area': 'GDS',
             'location': 'Aviation House, Kingsway, London',
