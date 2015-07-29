@@ -33,11 +33,11 @@
       "start_time": "10am"
     },
     "availability": {
-      "monday": "",
-      "tuesday": "",
-      "wednesday": "",
-      "thursday": "",
-      "friday": ""
+      "monday": "available",
+      "tuesday": "available",
+      "wednesday": "available",
+      "thursday": "available",
+      "friday": "available"
     }
   },
   "id": 71
