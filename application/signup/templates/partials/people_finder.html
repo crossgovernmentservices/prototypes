@@ -6,7 +6,11 @@
   <form action="" class="form">
     <div class="form-group people-finder-search">
       <label class="people-finder-label" for="person-search">Search across government</label>
-      <input type="text" class="people-finder-input" id="person-search">
+      <input list="civil-servants" type="text" class="people-finder-input" id="person-search">
+      <datalist id="civil-servants">
+        <option value="Jeremy Heywood">
+        <option value="John Manzoni">
+      </datalist>
       <input class="submit" type="submit" value="Search">
     </div>
   </form>
