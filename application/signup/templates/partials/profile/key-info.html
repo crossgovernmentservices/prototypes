@@ -5,13 +5,20 @@
         <td class="key-info__type">Role:</td>
         <td>{{ profile.data.role }}</td>
       </tr>
+      {% if profile.data.team != "-" %}
       <tr>
         <td class="key-info__type">Team:</td>
         <td>Cross government tools</td>
       </tr>
+      {% endif %}
       <tr>
+        {% if profile.data.area != "-" %}
         <td class="key-info__type">Area:</td>
-        <td>Government Digital Service (GDS)</td>
+        <td>{{ profile.data.area }}</td>
+        {% else %}
+        <td class="key-info__type">Dept:</td>
+        <td>{{ profile.data.organisation }}</td>
+        {% endif %}
       </tr>
       <tr>
         <td class="key-info__type">Location:</td>
