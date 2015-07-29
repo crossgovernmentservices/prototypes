@@ -1,0 +1,32 @@
+{
+  "created_ts": "2015-07-14 11:38:36.162337+00:00",
+  "data": {
+    "area": "-",
+    "cv": true,
+    "email": {
+      "personal": "john.manzoni@digital.cabinet-office.gov.uk",
+      "work": ""
+    },
+    "function": "Technology",
+    "integrations": {
+      "linkedin": true
+    },
+    "is_civil_servant": true,
+    "location": "-",
+    "name": "John Manzoni",
+    "organisation": "Cabinet Office",
+    "profession": "Digital",
+    "profile_pic": "/static/images/john-manzoni.jpg",
+    "role": "Chief Executive of the CS",
+    "skills": [
+      "Python",
+      "Business analysis",
+      "Stakeholder management",
+      "Content design",
+      "Graphics design"
+    ],
+    "team": "-",
+    "tel": "-"
+  },
+  "id": 71
+}
