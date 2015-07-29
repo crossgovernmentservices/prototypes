@@ -17,7 +17,7 @@
         <td>{{ profile.data.area }}</td>
         {% else %}
         <td class="key-info__type">Dept:</td>
-        <td>{{ profile.data.organisation }}</td>
+        <td><a href="https://www.gov.uk/government/organisations/{{ profile.data.organisation|lower|replace(" ", "-") }}">{{ profile.data.organisation }}</a></td>
         {% endif %}
       </tr>
       <tr>
