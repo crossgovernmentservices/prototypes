@@ -72,6 +72,15 @@
         }
       });
 
+    $(".people-finder-form")
+      .on("submit", function(e) {
+        var person = $(e.currentTarget).find("input").val();
+        var escaped_person = person.toLowerCase().replace(" ", "_");
+        var url = window.location.origin + "/signup/profile/" + escaped_person;
+        window.location.href = url;
+        e.preventDefault();
+      });
+
     $(".ical-link").ical();
 
   });
