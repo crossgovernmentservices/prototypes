@@ -67,6 +67,13 @@ class People(object):
               'subject': 'Team show & tell',
               'venue': 'Red sofas',
               'start_time': '3pm'
+            },
+            "availability": {
+              "monday": "available",
+              "tuesday": "available",
+              "wednesday": "unavailable",
+              "thursday": "available",
+              "friday": "annual-leave"
             }
         }
         # reset services

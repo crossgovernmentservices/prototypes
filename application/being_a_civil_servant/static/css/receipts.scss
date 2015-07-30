@@ -52,3 +52,7 @@
 .receipt--processed .receipt__submit {
   margin: 0 auto;
 }
+
+.btn-file::-webkit-file-upload-button {
+  @extend .button;
+}

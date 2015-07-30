@@ -28,7 +28,7 @@
       </div>
       <div class="form-group">
         <label for="take-picture" class="form-label">Upload receipts</label>
-        <input type="file" id="take-picture" accept="image/*">
+        <input class="btn-file" type="file" id="take-picture" accept="image/*">
       </div>
     </form>
   </section>
@@ -101,8 +101,6 @@
 {% block body_end %}
 
   {{ super() }}
-
-  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 
   {% assets "being_a_civil_servant/js/receipts.js",
       filters="jsmin", output="gen/js/receipts.js" %}
