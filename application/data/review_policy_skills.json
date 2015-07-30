@@ -1,0 +1,14 @@
+[
+  {"name": "Agile", "display_name": "Agile"},
+  {"name": "communication", "display_name": "Communication"},
+  {"name": "leadership", "display_name": "Leadership"},
+  {"name": "decision-making", "display_name": "Decision making"},
+  {"name": "stakeholder-engagement", "display_name": "Stakeholder engagement"},
+  {"name": "problem-solving", "display_name": "Problem solving"},
+  {"name": "people-management", "display_name": "People management"},
+  {"name": "resourcing", "display_name": "Resourcing"},
+  {"name": "delivery", "display_name": "Delivery"},
+  {"name": "performance-management", "display_name": "Performance management"},
+  {"name": "business-intelligence", "display_name": "Business intelligence"}
+]
+

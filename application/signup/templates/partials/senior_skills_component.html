@@ -1,0 +1,37 @@
+<h3 class="heading-medium component__head">Skills profile</h3>
+{% if person.cs %}
+<section class="component--inner">
+  <ul class="jd__assoc-skills">
+    <li class="skill" data-skill="Agile">Agile</li>
+    <li class="skill" data-skill="Communication">Communication</li>
+    <li class="skill" data-skill="Leadership">Leadership</li>
+    <li class="skill" data-skill="Decision making">Decision making</li>
+    <li class="skill" data-skill="Stakeholder engagement">Stakeholder engagement</li>
+    <li class="skill" data-skill="Problem solving">Problem solving</li>
+    <li class="skill" data-skill="People management">People management</li>
+    <li class="skill" data-skill="Resourcing">Resourcing</li>
+    <li class="skill" data-skill="Delivery">Delivery</li>
+    <li class="skill" data-skill="Performance management">Performance management</li>
+    <li class="skill" data-skill="Business intelligence">Business intelligence</li>
+    <li class="skill" data-skill="Javascript">Business analysis</li>
+  </ul>
+</section>
+{% endif %}
+<div class="skills__extra__wrap component--inner {% if not person.cs and not profile.data.integrations.linkedin %}skills__extra--no-linkedin{% endif %}">
+  <div class="skills__extra__head">
+    <h4 class="heading-small">Add skills</h4>
+    <button class="skills__extra__btn">+</button>
+  </div>
+  <ul class="skills__additional">
+  </ul>
+  {% if not person.cs %}
+  <div class="no__skills">
+    <p>not started</p>
+  </div>
+  {% endif %}
+</div>
+
+<div class="skills__extra">
+  <label class="form-label" for="other-skills">Enter skill(s)</label>
+  <input class="form-control" type="text" id="other-skills"/>
+</div>

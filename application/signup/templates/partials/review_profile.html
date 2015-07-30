@@ -29,7 +29,7 @@
       </li>
       <li>
         <ul>
-          <li class=""><a href="/jobs/review">perform review</a></li>
+          <li class=""><a href="{{ user.review_url|default('/jobs/review') }}">perform review</a></li>
         </ul>
       </li>
     </ul>

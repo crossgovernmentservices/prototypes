@@ -1,5 +1,5 @@
 [
-  {"name": "Helen Jones", "role": "Developer", "team": "CTS", "profile_pic": "/static/images/profiles/jen.jpg", "status": "complete"},
+  {"name": "Helen Jones", "role": "Deputy Director", "team": "Cabinet Office", "profile_pic": "/static/images/profiles/jen.jpg", "status": "complete", "review_url": "/jobs/review_policy"},
   {"name": "Daniel Hardy", "role": "Developer", "team": "Land Registry", "profile_pic": "/static/images/profiles/david.jpg", "status": "reviewed"},
   {"name": "Rachel Shade", "role": "User researcher", "team": "Land Registry", "profile_pic": "/static/images/profiles/anna.jpg", "status": "complete"}
 ]

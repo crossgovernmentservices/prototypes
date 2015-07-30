@@ -75,6 +75,18 @@ def review():
         skills = json.load(data_file)
     return render_template('review.html', skills=skills)
 
+@blueprint.route('/review_policy')
+def review_policy():
+    with open('application/data/review_policy_skills.json') as data_file:
+        skills = json.load(data_file)
+    user = {
+      "name": "Helen Jones",
+      "role": "Deputy Director",
+      "team": "Cabinet Office",
+      "profile_pic": "/static/images/profiles/jen.jpg"
+    }
+    return render_template('review_policy.html', skills=skills, user=user)
+
 
 @blueprint.route('/review_summary')
 def review_summary():
