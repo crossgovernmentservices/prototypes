@@ -74,7 +74,8 @@ class People(object):
               "wednesday": "unavailable",
               "thursday": "available",
               "friday": "annual-leave"
-            }
+            },
+            "line_manager": True
         }
         # reset services
         ig1, services, ig2 = self.read_service(email)

@@ -1,7 +1,11 @@
 <h4 class="heading-medium component__head">Team</h4>
 <h5 class="heading-small">Line manager</h5>
 <ul>
+  {% if profile.data.line_manager is defined %}
   <li><a href="/"><img src="/static/images/profiles/candice.jpg" alt="Candice Jones" title="Candice Jones" class=""></a></li>
+  {% else %}
+  <li>-- N/A --</li>
+  {% endif %}
 </ul>
 <h5 class="heading-small">Team members</h5>
 <ul class="people-pic__list">
