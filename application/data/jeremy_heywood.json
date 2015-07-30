@@ -29,8 +29,8 @@
     "tel": "02072 761234",
     "next_meeting": {
       "subject": "CGT Demo",
-      "venue": "Red sofas",
-      "start_time": "10am"
+      "venue": "Room 104",
+      "start_time": "Now"
     },
     "availability": {
       "monday": "available",
