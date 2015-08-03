@@ -34,3 +34,12 @@
   background: $highlight-colour;
   margin: -5px 5px 5px;
 }
+
+// specifically for "1st day details" layout
+.cl_item__content--map {
+  margin-top: 20px;
+}
+
+.cl-btn {
+  margin-top: $gutter-half;
+}
