@@ -127,48 +127,6 @@
         </div><!-- end grid-row -->
       </div>
 
-
-      <div class="dashboard__grouping">
-        <h3 class="heading-medium">Distribution</h3>
-        <div class="grid-row metric__group">
-          <div class="column-third metric">
-            <h3 class="heading-small">Gender</h3>
-            <div class="grid-row">
-              <div class="column-half">
-                <dl>
-                  <dt>Male</dt>
-                  <dd>56%</dd>
-                </dl>
-              </div>
-              <div class="column-half">
-                <dl>
-                  <dt>Female</dt>
-                  <dd>44%</dd>
-                </dl>
-              </div>
-            </div>
-          </div><!-- end metric -->
-
-          <div class="column-third metric">
-            <h3 class="heading-small">Avg. Age</h3>
-            <span class="metric__value">41.3 yr</span>
-          </div><!-- end metric -->
-
-          <div class="column-third metric">
-            <h3 class="heading-small">Top Locations</h3>
-            <dl class="definition-inline">
-              <dt>London</dt>
-              <dd>18%</dd>
-              <dt>Newcastle</dt>
-              <dd>10%</dd>
-              <dt>Swansea</dt>
-              <dd>8.3%</dd>
-            </dl>
-          </div><!-- end metric -->
-
-        </div><!-- end grid-row -->
-      </div>
-
       <div class="dashboard__grouping">
         <h3 class="heading-medium">Future</h3>
 
@@ -232,6 +190,56 @@
           </div><!-- end metric -->
 
         </div><!-- end grid-row -->
+      </div>
+
+        <div class="dashboard__grouping">
+          <h3 class="heading-medium">UK workforce distribution</h3>
+
+          {% include "hr_partials/map.html" ignore missing %}
+
+          <table class="table--borderless">
+            <thead>
+              <tr>
+                <th>Region</th>
+                <th class="numeric">Headcount</th>
+                <th class="numeric">%</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-location="london">
+                <td>London</td>
+                <td class="numeric">76,840</td>
+                <td class="numeric">18</td>
+              </tr>
+              <tr data-location="north_west">
+                <td>North West</td>
+                <td class="numeric">52,820</td>
+                <td class="numeric">12</td>
+              </tr>
+              <tr data-location="north_east">
+                <td>North East</td>
+                <td class="numeric">29,360</td>
+                <td class="numeric">7</td>
+              </tr>
+              <tr data-location="yorkshire">
+                <td>Yorkshire and the Humber</td>
+                <td class="numeric">32,910</td>
+                <td class="numeric">8</td>
+              </tr>
+              <tr data-location="scotland">
+                <td>Scotland</td>
+                <td class="numeric">44,250</td>
+                <td class="numeric">10</td>
+              </tr>
+              <tr data-location="wales">
+                <td>Wales</td>
+                <td class="numeric">31,060</td>
+                <td class="numeric">7</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
       </div>
 
     </div>

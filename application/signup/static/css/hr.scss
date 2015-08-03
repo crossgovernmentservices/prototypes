@@ -86,3 +86,17 @@ body {
     &.side-menu__item--active { @extend %active; }
   }
 }
+.pop_blob {
+  opacity: 0.7;
+}
+.pop_blob:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+.table--borderless tr.row--active {
+  background: $light-blue;
+  color: $page-colour;
+  td, td.numeric {
+    color: $page-colour;
+  }
+}
