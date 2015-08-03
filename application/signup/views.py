@@ -208,6 +208,10 @@ def hr_dashboard_cost():
 def hr_dashboard_capability():
     return render_template('hr_dashboard_capability.html')
 
+@blueprint.route('/hr_dashboard_diversity')
+def hr_dashboard_diversity():
+    return render_template('hr_dashboard_diversity.html', page="diversity")
+
 @blueprint.route('/ical-test')
 def test_apps():
     return render_template("ical-test.html")

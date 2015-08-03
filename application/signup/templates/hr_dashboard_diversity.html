@@ -1,0 +1,59 @@
+{% extends "hr_layout.html" %}
+{% block content %}
+
+<main id="content">
+
+  {% include "hr_partials/breadcrumb.html" ignore missing %}
+
+  {% include "hr_partials/key-metrics.html" ignore missing %}
+
+  <div class="grid-row">
+    <div class="column-quarter">
+      {% include "hr_partials/side-menu.html" ignore missing %}
+    </div>
+
+    <div class="column-three-quarter">
+      <div class="component">
+
+        <!-- Ethnicity -->
+        <div class="dashboard__grouping">
+          <h3 class="heading-medium">Ethnicity</h3>
+          <div class="grid-row metric__group">
+            <div class="column-third metric">
+              <span class="metric__value">10%</span>
+              <p>ethnic minority employees as percentage of known ethnicity status</p>
+            </div>
+            <div class="column-two-thirds metric">
+              <h3 class="heading-small">Breakdown</h3>
+              <table class="table--borderless">
+                <tbody>
+                  <tr>
+                    <td>White</td>
+                    <td class="numeric">312,970</td>
+                  </tr>
+                  <tr>
+                    <td>Ethnic Minority</td>
+                    <td class="numeric">35,180</td>
+                  </tr>
+                  <tr>
+                    <td>Not Declared</td>
+                    <td class="numeric">68,160</td>
+                  </tr>
+                  <tr>
+                    <td>Not Known</td>
+                    <td class="numeric">23,630</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div><!-- end grid-row -->
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}

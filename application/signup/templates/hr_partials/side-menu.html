@@ -2,14 +2,22 @@
   <ul class="side-menu">
     {% if page == "people" %}
     <li class="side-menu__item side-menu__item--active"><a href="hr_dashboard">People</a></li>
+    <li class="side-menu__item"><a href="hr_dashboard_diversity">Diversity</a></li>
+    <li class="side-menu__item"><a href="hr_dashboard_cost">Cost</a></li>
+    <li class="side-menu__item"><a href="hr_dashboard_capability">Capability</a></li>
+    {% elif page == "diversity" %}
+    <li class="side-menu__item"><a href="hr_dashboard">People</a></li>
+    <li class="side-menu__item side-menu__item--active"><a href="hr_dashboard_diversity">Diversity</a></li>
     <li class="side-menu__item"><a href="hr_dashboard_cost">Cost</a></li>
     <li class="side-menu__item"><a href="hr_dashboard_capability">Capability</a></li>
     {% elif page == "cost" %}
     <li class="side-menu__item"><a href="hr_dashboard">People</a></li>
+    <li class="side-menu__item"><a href="hr_dashboard_diversity">Diversity</a></li>
     <li class="side-menu__item side-menu__item--active"><a href="hr_dashboard_cost">Cost</a></li>
     <li class="side-menu__item"><a href="hr_dashboard_capability">Capability</a></li>
     {% else %}
     <li class="side-menu__item"><a href="hr_dashboard">People</a></li>
+    <li class="side-menu__item"><a href="hr_dashboard_diversity">Diversity</a></li>
     <li class="side-menu__item"><a href="hr_dashboard_cost">Cost</a></li>
     <li class="side-menu__item side-menu__item--active"><a href="hr_dashboard_capability">Capability</a></li>
     {% endif %}
