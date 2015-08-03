@@ -83,6 +83,20 @@
 
     $(".ical-link").ical();
 
+    // -------
+    // for scs resource manager
+    // -------
+    $(".expandable").find(".expandable-content").hide();
+      $("table").click(function(ev) {
+        ev.stopPropagation();
+        var $target = $(ev.target);
+        if ($target.closest("tr").hasClass("expandable") ) {
+          $target.closest("tr").find(".expandable-content").slideToggle();
+        } else {
+          $target.closest("tr").next(".expandable").find(".expandable-content").slideToggle();
+        }
+      });
+
   });
 
 }(jQuery));

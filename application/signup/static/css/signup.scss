@@ -56,3 +56,35 @@ $facebook: #3B5998;
 .loggedin .creation__form {
   display: none;
 }
+
+// -------
+// specifically for scs dashboard
+// -------
+.scs-table {
+  .secondment {
+    td {
+      color: $secondary-text-colour;
+    }
+  }
+  td {
+    border-bottom: none;
+  }
+}
+.expandable td {
+  padding: 0;
+  border-bottom: 1px solid #bfc1c3;
+}
+.expandable-content {
+  padding: $gutter-half $gutter;
+
+  .heading-small {
+    margin-top: 0;
+  }
+}
+.scs_info_item {
+  line-height: 34px;
+
+  dt {
+    font-weight: bolder;
+  }
+}
